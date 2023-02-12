@@ -6,8 +6,8 @@ Multimeediumi praktika
 
 | **Projektijuht** | Kerli Loopman             |
 |------------------|---------------------------|
-| **Arendajad**    | Kairo Luha, Kaius Karon              |
-| **Disainerid**   | Kerli Loopman,            |
+| **Arendajad**    | Kairo Luha, Kaius Karon   |
+| **Disainerid**   | Kerli Loopman, Renat Ränk |
 
 ## Ressurssid
 
