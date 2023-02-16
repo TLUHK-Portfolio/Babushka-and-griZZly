@@ -1,20 +1,21 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+
 
 public class Ball : MonoBehaviour {
     [SerializeField] private float releaseTime = .15f;
     [SerializeField] private Rigidbody2D hook;
     [SerializeField] private GameObject nextBall;
-    [FormerlySerializedAs("maxDistance")] [SerializeField] private float maxDragDistance = 2f;
+    [SerializeField] private float maxDragDistance = 2f;
     public Rigidbody2D rb;
     private bool _isPressed;
-
+    public static int Lives = 3;
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
+        //GameObject test = GameObject.Find("Canvas");
+        //Canvas can = test.GetComponent<Canvas>();
+        //Debug.Log(can.GetComponent<Image>());
     }
 
     private void Update() {
@@ -45,10 +46,12 @@ public class Ball : MonoBehaviour {
 
         yield return new WaitForSeconds(2f);
         if (nextBall != null) {
-            nextBall.SetActive(true);    
+            nextBall.SetActive(true);
+            Lives--;
         }
         else {
             Enemy.EnemiesAlive = 0;
+            Lives = 3;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
          
