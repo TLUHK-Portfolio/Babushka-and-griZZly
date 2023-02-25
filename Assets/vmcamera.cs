@@ -15,8 +15,17 @@ public class vmcamera : MonoBehaviour {
     public float waitingTime = 10f;
 
     private bool isDone = false;
+    
+    // Lerping stuff
+    // Lerping Smooth Speed
+    private float smoothSpeed = .025f;
+    // The current target position 
+    private Vector3 targetPosition;
+    // The current intermediary Lerp Position
+    private Vector3 smoothPosition;
     // Start is called before the first frame update
     void Start() {
+        
         cam = GetComponent<CinemachineVirtualCamera>();
         
         green_ball = GameObject.FindWithTag("green_ball");
@@ -24,11 +33,24 @@ public class vmcamera : MonoBehaviour {
         
         red_ball = GameObject.FindWithTag("red_ball");
         redRb = red_ball.GetComponent<Rigidbody2D>();
-        StartCoroutine(moveBalls());
+        //StartCoroutine(moveBalls());
+        
+        // algne pos
+        targetPosition = new Vector3(redRb.position.x, redRb.position.y, -10); 
+
     }
 
-    private void OnMouseDown() {
-        
+    // Late Update ////////////////////////////////////////////////////////////
+    // Lerp toward target position and rotation //////////////////////////////
+    void LateUpdate()
+    {
+        // Lerp toward target position at all times.
+        smoothPosition = Vector3.Lerp(transform.position, targetPosition, smoothSpeed);
+        transform.position = smoothPosition;
+ 
+        // Lerp toward target rotation at all times.
+        //smoothRotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothSpeed);
+        //transform.rotation = smoothRotation;
     }
 
     IEnumerator moveBalls() {
