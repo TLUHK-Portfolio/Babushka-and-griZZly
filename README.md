@@ -28,6 +28,7 @@ Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli
 
 ## Kasutatud abimaterjalid
 
+**Youtube video: 2D Character Creation And Animation For Beginners - Easy Unity Tutorial**
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=LCNt9w12fQA
 " target="_blank"><img src="http://img.youtube.com/vi/LCNt9w12fQA/0.jpg" 
 alt="2D Character Creation And Animation For Beginners - Easy Unity Tutorial
