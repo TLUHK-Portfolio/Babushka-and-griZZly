@@ -19,7 +19,7 @@ Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli
 > Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid - näiteks tehes valik, kas koguda enda viskega endale uut laskemoona või rünnata griZZly 
 > kindlust või teda ennast. Pea meeles, et ka griZZly saab vastu rünnata. Vanaemal ja griZZlyl on eluriba, mis väheneb vigastuste tekkimisel. Mäng on jagatud erinevateks tasemeteks. 
 
-## 	:information_source: Andmed
+## Andmed
 
 **Nimi:** griZZly  
 **Temaatika:** *turn-based*, *shooting*  
