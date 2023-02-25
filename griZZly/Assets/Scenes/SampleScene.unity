@@ -471,9 +471,10 @@ GameObject:
   m_Component:
   - component: {fileID: 557869214}
   - component: {fileID: 557869213}
+  - component: {fileID: 557869215}
   m_Layer: 0
   m_Name: GameControl
-  m_TagString: Untagged
+  m_TagString: Game Control
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,6 +509,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557869215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557869212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b4efcf516b0fc4384af30787d02fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  releaseTime: 0.15
+  hook: {fileID: 874651653}
+  maxDragDistance: 2
+  _isPressed: 0
+  isPlaying: 0
+  rb: {fileID: 0}
+  nextBall: {fileID: 0}
 --- !u!1 &766181803
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +538,6 @@ GameObject:
   m_Component:
   - component: {fileID: 766181806}
   - component: {fileID: 766181805}
-  - component: {fileID: 766181804}
   - component: {fileID: 766181808}
   - component: {fileID: 766181807}
   - component: {fileID: 766181809}
@@ -529,30 +548,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &766181804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766181803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660230b7569d1f049aa4b2d2d865b1db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  releaseTime: 0.15
-  hook: {fileID: 874651653}
-  nextBall: {fileID: 766181803}
-  maxDragDistance: 2
-  explosion: {fileID: 0}
-  impactRadius: 1
-  fireBurnLength: 2
-  firePrefab: {fileID: 4784087215669580142, guid: 48ae4d98cbe7d5d44be96e87ba2d106a,
-    type: 3}
-  collisionPrefab: {fileID: 3737762841272301102, guid: 188f4baffc8152943a0a8c29a5f64024,
-    type: 3}
-  power: 10
 --- !u!212 &766181805
 SpriteRenderer:
   m_ObjectHideFlags: 0
