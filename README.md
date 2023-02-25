@@ -1,5 +1,6 @@
 # rif21-MM-praktika-2
-Multimeediumi praktika
+---
+Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli on enda loodud. 
 
 
 ## :raised_hand_with_fingers_splayed:	 Meeskond "Team 2"
@@ -12,3 +13,18 @@ Multimeediumi praktika
 ## :bookmark_tabs: Ressurssid
 
 [Google Drive](https://drive.google.com/drive/folders/12y-jqBrefYDzp4aK-Ckxdw56SnxjDHFl?usp=share_link) | [Inspiratsioonitahvel](https://www.figma.com/file/Dp7A3jqcnqm0gcBiQIrzV1/Moodboard?node-id=0%3A1&t=xcevLEVAfKt5AQnP-1) | [Tegevuskava](https://github.com/orgs/tluhk/projects/16/views/3)
+
+# :video_game: griZZly mängukontseptsioon
+---
+
+griZZly on kurjakuulutav karu, kes ühel päeval hakkab endast ohtu kujutama metsamajas elavale vanaemale. Vanaema on valmis griZZlyga võitlema, kuid vanaema laskemoonaks on kõik käepärane nagu moosipurgid ja molotovi kokteilid.
+Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid - näiteks tehes valik, kas koguda enda viskega endale uut laskemoona või rünnata griZZly kindlust või teda ennast. Pea meeles, et ka griZZly saab vastu rünnata. Vanaemal ja griZZlyl on eluriba, mis väheneb vigastuste tekkimisel. Mäng on jagatud erinevateks tasemeteks. 
+
+## 	:information_source: Andmed
+
+**Nimi:** griZZly
+**Temaatika:** *turn-based*, *shooting*
+**Graafika:** 2D, multikalaadne
+**Mängumootor:** Unity
+
+
