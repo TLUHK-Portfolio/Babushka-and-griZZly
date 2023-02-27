@@ -8,10 +8,10 @@ public class Molotov : MonoBehaviour
     // [SerializeField] private Rigidbody2D hook;
     // [SerializeField] private GameObject nextBall;
     // [SerializeField] private float maxDragDistance = 2f;
-    [SerializeField] private GameObject explosion;
-
-    ThrowableScript throwableScript;
-
+    public ThrowableScript throwableScript;
+    private Unit enemyUnit;
+    private Unit playerUnit;
+    public int damage;
     public float impactRadius = 1.0f; // plahvatuse raadius
     public float fireBurnLength = 4;
     public GameObject firePrefab;
@@ -23,29 +23,34 @@ public class Molotov : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyUnit = GameObject.Find("Enemy").GetComponent<Unit>();
+        playerUnit = GameObject.Find("Player").GetComponent<Unit>();
+
+        throwableScript.damage = damage;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject, 0);
-
-        collisionPrefab.transform.localScale = new Vector3(impactRadius, impactRadius, 0);
-
-        //Instantiate(collisionPrefab, gameObject.transform.position, Quaternion.identity);
-
-        for (var flameCount = 0; flameCount < collision.contactCount;flameCount++)
+        if (throwableScript._isFlying)
         {
-            GameObject fire = Instantiate(firePrefab, collision.GetContact(flameCount).point, Quaternion.identity); // no rotation Quate...
-            fire.transform.SetParent(collision.gameObject.transform);
 
-            Destroy(fire, fireBurnLength);
+            //collisionPrefab.transform.localScale = new Vector3(impactRadius, impactRadius, 0);
+
+            //Instantiate(collisionPrefab, gameObject.transform.position, Quaternion.identity);
+
+            for (var flameCount = 0; flameCount < collision.contactCount;flameCount++)
+            {
+                GameObject fire = Instantiate(firePrefab, collision.GetContact(flameCount).point, Quaternion.identity); // no rotation Quate...
+                fire.transform.SetParent(collision.gameObject.transform);
+
+                Destroy(fire, fireBurnLength);
+            }
         }
 
         // genereerime leeke seni punktidele, kuni üks neist satub õigele objektile, et kuvada
@@ -71,4 +76,3 @@ public class Molotov : MonoBehaviour
 }
 
 // molotovi collider peaks olema eraldi tõmmatavast colliderist vms.
-// throwable stuff võiks olla üldise klassi all ja teda extendime erivõimete jaoks
