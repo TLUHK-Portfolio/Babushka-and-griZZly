@@ -33,10 +33,12 @@ Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimis
 - Võit
 - Kaotus
 
-
 ## Kasutatud abimaterjalid
 
-[Brackeys youtube kanal videomängude loomisest](https://www.youtube.com/@Brackeys/videos)
-[Youtube video: 2D Character Creation And Animation For Beginners - Easy Unity Tutorial](http://www.youtube.com/watch?feature=player_embedded&v=LCNt9w12fQA)
+[Brackeys youtube kanal videomängude loomisest](https://www.youtube.com/@Brackeys/videos)  
+[Youtube video: 2D Character Creation And Animation For Beginners - Easy Unity Tutorial](http://www.youtube.com/watch?feature=player_embedded&v=LCNt9w12fQA)  
+[2D Enemy Shooting Unity Tutorial](https://www.youtube.com/watch?v=--u20SaCCow)  
+[Unity Community teema - Calculating trajectory angle to hit target position](https://forum.unity.com/threads/calculating-trajectory-angle-to-hit-target-position-angle-always-90.373197/)
+
 
 
