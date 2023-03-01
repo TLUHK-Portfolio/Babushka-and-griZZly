@@ -5,7 +5,7 @@
 - [ ] griZZly  
 
 ## Stseenid 
-- [x] [Esimene stseen](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid/Taust]   
+- [x] [Esimene stseen](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid/Taust)  
 
 ## Laskemoon 
 - [ ] Moosipurk/kompott  
