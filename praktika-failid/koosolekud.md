@@ -1,3 +1,6 @@
+# Koosolekute memod
+[Koosolekute link](https://meet.google.com/gst-opeo-uat)
+
 # 01.03.2023 19:00
 - [ ] Vaatame koos üle readme.md ja lisame sinna ka kokkulepped
 - [ ] Otsustada mutikese käsi vs katapult(sukapüksid)
