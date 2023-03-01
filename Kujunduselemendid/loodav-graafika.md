@@ -9,7 +9,7 @@
 - [ ] griZZly  
 
 ## Stseenid 
-- [x] [Esimene stseen](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid/Taust) @Renat  
+- [x] [Esimene stseen](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/Taust/Map_01.png)) @Renat  
 
 ## Laskemoon 
 - [ ] Moosipurk/kompott  
