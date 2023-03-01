@@ -28,11 +28,7 @@ Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimis
 
 ## Kasutatud abimaterjalid
 
-**Youtube video: 2D Character Creation And Animation For Beginners - Easy Unity Tutorial**  
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=LCNt9w12fQA
-" target="_blank"><img src="http://img.youtube.com/vi/LCNt9w12fQA/0.jpg" 
-alt="2D Character Creation And Animation For Beginners - Easy Unity Tutorial
-" width="240" height="180" border="10" /></a>
-
+[Brackeys youtube kanal videomängude loomisest](https://www.youtube.com/@Brackeys/videos)
+[Youtube video: 2D Character Creation And Animation For Beginners - Easy Unity Tutorial](http://www.youtube.com/watch?feature=player_embedded&v=LCNt9w12fQA)
 
 
