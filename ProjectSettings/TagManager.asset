@@ -8,6 +8,7 @@ TagManager:
   - Start
   - red_ball
   - green_ball
+  - red_slider
   layers:
   - Default
   - TransparentFX

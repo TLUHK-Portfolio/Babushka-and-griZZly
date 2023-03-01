@@ -14,7 +14,6 @@ public class vmcamera : MonoBehaviour {
     public float thrust = 5;
     public float waitingTime = 10f;
 
-    private bool isDone = false;
     
     // Lerping stuff
     // Lerping Smooth Speed
@@ -33,10 +32,10 @@ public class vmcamera : MonoBehaviour {
         
         red_ball = GameObject.FindWithTag("red_ball");
         redRb = red_ball.GetComponent<Rigidbody2D>();
-        //StartCoroutine(moveBalls());
+        StartCoroutine(moveBalls());
         
         // algne pos
-        targetPosition = new Vector3(redRb.position.x, redRb.position.y, -10); 
+        //targetPosition = new Vector3(redRb.position.x, redRb.position.y, -10); 
 
     }
 
@@ -63,7 +62,7 @@ public class vmcamera : MonoBehaviour {
        //if (!redRb) yield break;
         cam.Follow = red_ball.transform;
         redRb.AddForce(Vector2.left * thrust, ForceMode2D.Impulse);
-        isDone = true;
+
     }
 
 }
