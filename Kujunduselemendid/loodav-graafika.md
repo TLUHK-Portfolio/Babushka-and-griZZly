@@ -8,7 +8,8 @@
 
 Kaks kokku lepitud karakterit. Mängija ise on "Babushka" ning vastane on "griZZly" (pc)
 
-- [ ] Babushka  
+- [ ] Babushka
+- [ ] Ragulka mutikesele/sukapüksid  
 - [ ] griZZly  
 
 ## Taustad
@@ -22,14 +23,17 @@ Mutikese poolel on ilus ja värviline ning karu poolel süngem ja prügimäelaad
 ## Laskemoon 
 - [ ] Moosipurk/kompott  
 - [ ] Molotovi kokteil
-- [ ] Pomm  
+- [ ] Pomm
+- [ ] Kivi
 
 ## Kindlused 
 
-Maja/kindlus peaks koosnema eri objektidest, et saaks strateegiliselt heasse kohta sihtides tekitada võimalikult suure kahju.
+Kindlus peaks koosnema eri objektidest, et saaks strateegiliselt heasse kohta sihtides tekitada võimalikult suure kahju. "Kindlused" koosnevad euroalustest/kivplokkidest
 
-- [ ] Babushka maja  
+- [ ] Babushka kindlus - katus puit, seinad kivi   
 - [ ] griZZly peidukas
+- [ ] kiviplokid
+- [ ] euroalused
 
 ## Mängu UI elemendid 
 
