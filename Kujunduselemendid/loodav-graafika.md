@@ -44,4 +44,7 @@ Kui saab, siis sticky?
 - [ ] Mängukorra info
 - [ ] Leveli info? 
 
+## Efektid 
+
+- [ ] Tule leek 
 
