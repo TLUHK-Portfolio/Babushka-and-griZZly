@@ -33,6 +33,12 @@ Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimis
 - Võit
 - Kaotus
 
+## Graafika
+Kogu kujundus on 2D ning multikalaadne. Babushka poolel on kujundus rõõmsam ning griZZly poolel süngem. Kasutame ühe objektil kahe-kolme tooniga varjutusi, gradiente.
+
+Loodavate ja loodud elementide loetelu kirjas [siin](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/loodav-graafika.md)
+
+
 ## Kasutatud abimaterjalid
 
 [Brackeys youtube kanal videomängude loomisest](https://www.youtube.com/@Brackeys/videos)  
