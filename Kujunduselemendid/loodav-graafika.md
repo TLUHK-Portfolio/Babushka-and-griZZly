@@ -15,11 +15,14 @@ Kaks kokku lepitud karakterit. Mängija ise on "Babushka" ning vastane on "griZZ
 
 Mutikese poolel on ilus ja värviline ning karu poolel süngem ja prügimäelaadne
 
-- [x] [Esimene taust](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/Taust/Map_01.png) @Renat  
+- [x] [Esimene taust](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/Taust/Map_01.png) -suvi @Renat  
+- [ ] Talv? 
+
 
 ## Laskemoon 
 - [ ] Moosipurk/kompott  
-- [ ] Molotovi kokteil  
+- [ ] Molotovi kokteil
+- [ ] Pomm  
 
 ## Kindlused 
 
@@ -29,6 +32,8 @@ Maja/kindlus peaks koosnema eri objektidest, et saaks strateegiliselt heasse koh
 - [ ] griZZly peidukas
 
 ## Mängu UI elemendid 
+
+Kui saab, siis sticky?
 
 - [ ] Elutaseme kuvamine
 - [ ] Laskemoona valik
