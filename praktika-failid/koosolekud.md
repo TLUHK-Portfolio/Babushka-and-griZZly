@@ -1,5 +1,5 @@
 # 01.03.2023 19:00
-- [ ] Vaatame koos üle readme.md
+- [ ] Vaatame koos üle readme.md ja lisame sinna ka kokkulepped
 - [ ] Vaatame üle Sprint 2 ülesanded
 - [ ] Vaatame üle graafika checklisti
 - [ ] Paneme kirja graafika põhimõtted
