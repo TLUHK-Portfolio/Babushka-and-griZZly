@@ -26,6 +26,14 @@ Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimis
 **Mängumootor:** Unity  
 **Vaade**: *side-view, side-scrolling*  
 
+## Staadiumid
+- Start
+- Mängija käik (Babushka)
+- Vastase käik (griZZly)
+- Võit
+- Kaotus
+
+
 ## Kasutatud abimaterjalid
 
 [Brackeys youtube kanal videomängude loomisest](https://www.youtube.com/@Brackeys/videos)
