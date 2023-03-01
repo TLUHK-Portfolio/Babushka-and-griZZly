@@ -23,7 +23,7 @@ Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimis
 **Nimi:** griZZly  
 **Temaatika:** *turn-based*, *shooting*  
 **Graafika:** 2D, multikalaadne  
-**Mängumootor:** Unity  
+**Mängumootor:** Unity [Loe mängumootori valiku kohta siit](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/mangumootori-aruanne.md)    
 **Vaade**: *side-view, side-scrolling*  
 **Controls**: Hiir *Kuidas see "Controls eesti keeles on?*
 
