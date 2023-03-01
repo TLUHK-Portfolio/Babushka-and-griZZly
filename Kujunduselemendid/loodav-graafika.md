@@ -1,18 +1,18 @@
 # Kokkulepped graafika osas
 
 ## Karakterid
-[ ] Babushka 
-[ ] griZZly
+- [ ] Babushka  
+- [ ] griZZly  
 
 ## Stseenid 
-[x] Esimene stseen
+- [x] Esimene stseen  
 
 #Laskemoon 
-[ ] Moosipurk/kompott
-[ ] Molotovi kokteil
+- [ ] Moosipurk/kompott  
+- [ ] Molotovi kokteil  
 
 #Kindlused 
-[ ] Babushka maja
-[ ] griZZly peidukas
+- [ ] Babushka maja  
+- [ ] griZZly peidukas  
 
 
