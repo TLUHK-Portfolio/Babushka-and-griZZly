@@ -1,6 +1,7 @@
 # 01.03.2023 19:00
 - [ ] Vaatame koos üle readme.md ja lisame sinna ka kokkulepped
 - [ ] Otsustada mutikese käsi vs katapult(sukapüksid)
+- [ ] Unity testimiste tutvustamine arendajatelt?
 - [ ] Kas Unitys oleme juba Renati taustaga testinud ja kaamera liikumine?
 - [ ] Vaatame üle Sprint 2 ülesanded
 - [ ] Vaatame üle graafika checklisti
