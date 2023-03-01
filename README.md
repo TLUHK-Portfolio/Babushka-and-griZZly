@@ -28,8 +28,8 @@ Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimis
 
 ## Staadiumid
 - Start
-- Mängija käik (Babushka)
-- Vastase käik (griZZly)
+- Mängija käik - (Babushka)
+- Vastase (pc) käik - (griZZly)
 - Võit
 - Kaotus
 
