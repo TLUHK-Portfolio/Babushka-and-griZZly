@@ -1,5 +1,9 @@
 # Kokkulepped graafika osas
 
+2D, multikalaadne
+
+[Graafika labeliga ülesanded GitHubis](https://github.com/tluhk/rif21-MM-praktika-2/issues?q=label%3AGraafika+)
+
 ## Karakterid
 - [ ] Babushka  
 - [ ] griZZly  
