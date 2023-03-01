@@ -1,4 +1,12 @@
-
+# 01.03.2023 19:00
+- [ ] Vaatame koos üle readme.md
+- [ ] Vaatame üle graafika checklisti
+- [ ] Paneme kirja graafika põhimõtted
+- [ ] Loome järgnevad graafika ülesanded
+- [ ] Vaatame üle arenduse olulisemad saavutused 
+- [ ] Kas teha arenduse osale ka sarnane checklist?
+- [ ] Paneme kirja arenduse olulisemad ülesanded
+- [ ] Alustame järgmise release drafti viimase nädala olulisemate tegevuste kirjeldamisega
 
 # 23.02.2023
 - Mängukontseptsiooni läbi mõtlemine, arutelu
