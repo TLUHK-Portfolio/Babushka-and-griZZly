@@ -7,11 +7,11 @@
 ## Stseenid 
 - [x] Esimene stseen  
 
-#Laskemoon 
+## Laskemoon 
 - [ ] Moosipurk/kompott  
 - [ ] Molotovi kokteil  
 
-#Kindlused 
+## Kindlused 
 - [ ] Babushka maja  
 - [ ] griZZly peidukas  
 
