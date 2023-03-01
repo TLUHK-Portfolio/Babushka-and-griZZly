@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public enum  BattleState  { START, PLAYERTURN, ENEMYTURN, WON, LOST}
+public enum  BattleState  { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class GameControl : MonoBehaviour {
 
@@ -58,6 +58,14 @@ public class GameControl : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (enemyUnit.isDead) {
+            state = BattleState.WON;
+            whosTurnText.text = "You won!!";
+        } else if (playerUnit.isDead) {
+            state = BattleState.LOST;
+            whosTurnText.text = "You lost.";
+        }
+
         switch (ThrowableScript.Lives) {
             case 3:
                 Live1.gameObject.SetActive(true);

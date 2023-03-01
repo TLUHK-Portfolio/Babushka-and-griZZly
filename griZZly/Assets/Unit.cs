@@ -9,6 +9,7 @@ public class Unit : MonoBehaviour {
     public HealthScript healthScript;
     [SerializeField] public int health;
     [SerializeField] public int maxHealth;
+    public bool isDead = false;
     [SerializeField] public GameObject explosion;
     public static int EnemiesAlive = 0;
     private GameControl gameControl;
@@ -31,13 +32,13 @@ public class Unit : MonoBehaviour {
 
     void EnemyDoSomething()
     {
-        Sleep(3);
+        StartCoroutine(Sleep());
         GameObject.Find("Enemy").GetComponent<Unit>().transform.localScale += new Vector3(0.2f,0.2f);
     }
 
-    IEnumerator Sleep(float sleepTime)
+    IEnumerator Sleep()
     {
-        yield return new WaitForSeconds(sleepTime);
+        yield return new WaitForSeconds(3);
     }
 
     void OnCollisionEnter2D(Collision2D colInfo) {
@@ -50,6 +51,15 @@ public class Unit : MonoBehaviour {
     {
         Debug.Log("took dmg: " + damage);
         health -= damage;
+
+        if (health <= 0)
+        {
+            isDead = true;
+        } else 
+        {
+            isDead = false;
+        }
+
         healthScript.setHP(health);
     }
 
