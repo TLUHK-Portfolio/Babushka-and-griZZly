@@ -5,7 +5,7 @@
 - [ ] griZZly  
 
 ## Stseenid 
-- [x] Esimene stseen  
+- [x] [Esimene stseen](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid/Taust]   
 
 ## Laskemoon 
 - [ ] Moosipurk/kompott  
@@ -13,6 +13,13 @@
 
 ## Kindlused 
 - [ ] Babushka maja  
-- [ ] griZZly peidukas  
+- [ ] griZZly peidukas
+
+## Mängu UI elemendid 
+
+- [ ] Elutaseme kuvamine
+- [ ] Laskemoona valik
+- [ ] Mängukorra info
+- [ ] Leveli info? 
 
 
