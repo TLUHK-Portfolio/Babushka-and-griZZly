@@ -14,14 +14,25 @@ public class GameControl : MonoBehaviour {
     [SerializeField] public GameObject Live2;
     [SerializeField] public GameObject Live3;
     public BattleState state;
+    public GameObject ballPrefab;
+    public GameObject molotovPrefab;
     private Unit enemyUnit;
     private Unit playerUnit;
     public HealthScript healthScript;
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
+    public List<GameObject> throwablePrefabs = new List<GameObject>();
     public Text whosTurnText;
+
+    void Awake()
+    {
+        throwablePrefabs.Add(ballPrefab);
+        throwablePrefabs.Add(molotovPrefab);
+    }
+
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         state = BattleState.START;
         enemyUnit = GameObject.Find("Enemy").GetComponent<Unit>();
         playerUnit = GameObject.Find("Player").GetComponent<Unit>(); 
@@ -64,6 +75,13 @@ public class GameControl : MonoBehaviour {
         } else if (playerUnit.isDead) {
             state = BattleState.LOST;
             whosTurnText.text = "You lost.";
+        }
+
+        if (state == BattleState.ENEMYTURN)
+        {
+            enemyUnit.EnemyDoSomething();
+
+            PlayerTurn();
         }
 
         switch (ThrowableScript.Lives) {

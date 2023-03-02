@@ -22,15 +22,10 @@ public class Unit : MonoBehaviour {
 
     private void Update()
     {
-        if (gameControl.state == BattleState.ENEMYTURN)
-        {
-            EnemyDoSomething();
-
-            gameControl.PlayerTurn();
-        }
+        
     }
 
-    void EnemyDoSomething()
+    public void EnemyDoSomething()
     {
         StartCoroutine(Sleep());
         GameObject.Find("Enemy").GetComponent<Unit>().transform.localScale += new Vector3(0.2f,0.2f);

@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 8748703768471716030}
   - component: {fileID: 8748703768471716026}
   - component: {fileID: 8748703768471716025}
-  - component: {fileID: 1977920150892571571}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: Ball_bk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8748703768471716031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,11 +138,11 @@ SpringJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 0
-  m_Distance: 0.005
+  m_AutoConfigureDistance: 1
+  m_Distance: 4.770335
   m_DampingRatio: 0
   m_Frequency: 1.5
 --- !u!114 &8748703768471716025
@@ -158,24 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44235240dc2f62e458376dff62b3741f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1337198075554910, guid: b522af451eb50114abfe97073e1f72cf, type: 3}
-  throwableScript: {fileID: 1977920150892571571}
-  radius: 5
-  power: 10
---- !u!114 &1977920150892571571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8748703768471716031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b4efcf516b0fc4384af30787d02fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   releaseTime: 0.15
-  hook: {fileID: 4994513684333676951, guid: 10b5581f4135dc948a9c130a1a73823b, type: 3}
+  hook: {fileID: 0}
+  nextBall: {fileID: 0}
   maxDragDistance: 2
-  _isFlying: 0
-  damage: 0
+  explosion: {fileID: 1337198075554910, guid: b522af451eb50114abfe97073e1f72cf, type: 3}

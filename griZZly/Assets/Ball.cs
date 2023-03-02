@@ -24,7 +24,9 @@ public class Ball : MonoBehaviour {
     {
         if (throwableScript._isFlying)
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            GameObject a = Instantiate(explosion, transform.position, Quaternion.identity);
+
+            Destroy(a, 2f);
         }
 
         /*var explosionPos = transform.position;

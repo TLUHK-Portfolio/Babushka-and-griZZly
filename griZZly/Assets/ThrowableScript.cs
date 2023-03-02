@@ -15,18 +15,22 @@ public class ThrowableScript : MonoBehaviour
     private Unit enemyUnit;
     private Unit playerUnit;
     private GameControl gameControl;
-    private bool canHurtPlayer = false;
     public static int Lives = 3;
-    private bool isPlaying = false;
     private Rigidbody2D rb;
-    [SerializeField] public GameObject nextBall;
-    // Start is called before the first frame update
-    void Start()
-    {
+    // siia lisatud itemitest võetakse suvaline iga mängija viske jaoks
+    List<GameObject> throwables = new List<GameObject>();
+
+    void Awake() {
         rb = GetComponent<Rigidbody2D>();
         gameControl = GameObject.Find("GameControl").GetComponent<GameControl>();
         enemyUnit = GameObject.Find("Enemy").GetComponent<Unit>();
         playerUnit = GameObject.Find("Player").GetComponent<Unit>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), playerUnit.GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -40,7 +44,7 @@ public class ThrowableScript : MonoBehaviour
             }
             else
                 rb.position = mousePos;
-        }
+            }
     }
 
     void OnMouseDown() {
@@ -56,12 +60,13 @@ public class ThrowableScript : MonoBehaviour
 
      void FixedUpdate()
     {
+        
         if (!_isFlying)
         {
-            Physics2D.IgnoreLayerCollision(1, 1);
+
         } else
         {
-            Physics2D.IgnoreLayerCollision(1, 1, false);
+
         }
     }
 
@@ -70,6 +75,7 @@ public class ThrowableScript : MonoBehaviour
         if (_isFlying)
         {
             Destroy(gameObject, 0);
+            Instantiate(gameControl.throwablePrefabs[UnityEngine.Random.Range(0, gameControl.throwablePrefabs.Count)], hook.transform.position, Quaternion.identity);
 
             if (collision.gameObject.name == "Enemy") {
                 enemyUnit.TakeDamage(damage);
@@ -88,21 +94,24 @@ public class ThrowableScript : MonoBehaviour
         //raske öelda millal täpselt pall üle hooki juba on
         yield return new WaitForSeconds(releaseTime);
         _isFlying = true;
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), playerUnit.GetComponent<Collider2D>(), false);
 
         //siin kutsume välja kaamera jälitamise?
 
         yield return new WaitForSeconds(2f);
-        if (nextBall != null) {
-            _isFlying = false;
-            Destroy(gameObject);
-            nextBall.SetActive(true);
-            Lives--;
-        }
-        else {
-            Unit.EnemiesAlive = 0;
-            Lives = 3;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        // Debug.Log(UnityEngine.Random.Range(0, throwables.Count - 1));
+        
+
+        // if (nextBall != null) {
+        //     _isFlying = false;
+        //     Destroy(gameObject);
+        //     nextBall.SetActive(true);
+        //     Lives--;
+        // }
+        // else {
+        //     Unit.EnemiesAlive = 0;
+        //     Lives = 3;
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // }
     }
 }
-//Instantiate(explosion, transform.position, Quaternion.identity); handlida
