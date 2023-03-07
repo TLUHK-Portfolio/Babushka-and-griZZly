@@ -56,7 +56,7 @@ Loodavate ja loodud elementide loetelu kirjas [siin](https://github.com/tluhk/ri
 
 - Kord nädalas koosolekud
 - Githubi ülesandeid võivad lisada kõik jooksvalt ning vaatame üle koosolekutel
-- Githubi ülesannetel küljes sprint, label, assignee
+- Githubi ülesannetel küljes tähtaja *sprint*, *label* (graafika/arendus), *assignee*
 - Release teeb Kerli, kuid koosolekul vaatame sisu koos üle
 - Graafika lisame .png failina õiges mõõdus ja tööfailina (nt. afdesign) [kujunduselementide kausta](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid) 
 
