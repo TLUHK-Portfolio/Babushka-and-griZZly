@@ -6,25 +6,25 @@
 
 ## Karakterid
 
-Kaks kokku lepitud karakterit. Mängija ise on "Babushka" ning vastane on "griZZly" (pc)
+Kaks kokku lepitud karakterit. Mängija ise on "Babushka" ning vastane on "griZZly" (pc). 
 
-- [ ] Babushka
-- [ ] Ragulka mutikesele/sukapüksid  
-- [ ] griZZly  
+- [x] Babushka, H: 250px @Kerli
+- [x] griZZly, H: 350px @Renat
 
 ## Taustad
 
-Mutikese poolel on ilus ja värviline ning karu poolel süngem ja prügimäelaadne
+Mutikese poolel on ilus ja värviline ning karu poolel süngem ja prügimäelaadne.
+Taust ise 6000px x 3000px, kuid kaadris olev vaade FHD 1920px x 1080px
 
 - [x] [Esimene taust](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/Taust/Map_01.png) -suvi @Renat  
 - [ ] Talv? 
 
 
 ## Laskemoon 
-- [ ] Moosipurk/kompott  
-- [ ] Molotovi kokteil
-- [ ] Pomm
-- [ ] Kivi
+- [x] Moosipurk/kompott @Renat
+- [x] Molotovi kokteil @Renat
+- [x] Pomm @Renat
+- [x] Kivi @Renat
 
 ## Kindlused 
 
@@ -47,4 +47,4 @@ Kui saab, siis sticky?
 ## Efektid 
 
 - [ ] Tule leek 
-
+- [ ] Ragulka mutikesele/sukapüksid  
