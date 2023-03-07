@@ -9,6 +9,8 @@ TagManager:
   - red_ball
   - green_ball
   - red_slider
+  - ground
+  - Canvas
   layers:
   - Default
   - TransparentFX

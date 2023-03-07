@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using Cinemachine;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class vmcamera : MonoBehaviour {
     private CinemachineVirtualCamera cam;
@@ -13,6 +16,7 @@ public class vmcamera : MonoBehaviour {
     private Rigidbody2D redRb;
     public float thrust = 5;
     public float waitingTime = 10f;
+    public TMP_Text tekst;
 
     
     // Lerping stuff
@@ -29,14 +33,17 @@ public class vmcamera : MonoBehaviour {
         
         green_ball = GameObject.FindWithTag("green_ball");
         greenRb = green_ball.GetComponent<Rigidbody2D>();
+        greenRb.isKinematic = true;
         
         red_ball = GameObject.FindWithTag("red_ball");
         redRb = red_ball.GetComponent<Rigidbody2D>();
+        redRb.isKinematic = true;
         StartCoroutine(moveBalls());
         
         // algne pos
-        targetPosition = new Vector3(redRb.position.x, redRb.position.y, -10); 
+        targetPosition = new Vector3(greenRb.position.x, greenRb.position.y, -25); 
 
+        
     }
 
     // Late Update ////////////////////////////////////////////////////////////
@@ -53,17 +60,24 @@ public class vmcamera : MonoBehaviour {
     }
 
     IEnumerator moveBalls() {
-        Quaternion Rotation = Quaternion.Euler( 0, 0, -45f);
-        Debug.Log("rohelise kord");
+        yield return new WaitForSeconds(1f);
+        Quaternion Rotation = Quaternion.Euler( 0, 0, -30f);
+        tekst.text = "Mutikese kord";
         cam.Follow = green_ball.transform;
+        //greenRb.gravityScale = 1;
+        greenRb.isKinematic = false;
         greenRb.AddForce( Rotation * Vector2.up * thrust, ForceMode2D.Impulse);
+        green_ball.GetComponent<BallControl>().canRotate = true;
 
         
         yield return new WaitForSeconds(waitingTime);
-        Debug.Log("punase kord");
+        tekst.text = "GriZZly kord";
         Rotation = Quaternion.Euler( 0, 0, 45f);
         cam.Follow = red_ball.transform;
-        redRb.AddForce(Rotation * Vector2.up * (thrust*1.5f), ForceMode2D.Impulse);
+        redRb.isKinematic = false;
+
+        redRb.AddForce(Rotation * Vector2.up * thrust, ForceMode2D.Impulse);
+        red_ball.GetComponent<BallControl>().canRotate = true;
  
     }
 

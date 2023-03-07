@@ -5,21 +5,29 @@ using UnityEngine;
 
 public class BallControl : MonoBehaviour {
     private float angle = 0;
-    private bool canRotate = true; 
+    public bool canRotate = false;
+    public GameObject splash;
+    private bool isSplashCreated;
+    
     private void OnCollisionEnter2D(Collision2D col) {
         Vector2 collisionForce = col.relativeVelocity;
         //Debug.Log(collisionForce.magnitude);
-        if (collisionForce.magnitude > 10) {
+        //Debug.Log(col.gameObject.tag);
+        if (collisionForce.magnitude > 5 && !col.gameObject.CompareTag("Player")) {
             canRotate = false;
             //Destroy(this.gameObject);
+        }
+
+        if (col.gameObject.CompareTag("ground") && !isSplashCreated) {
+            Instantiate(splash, transform.position, Quaternion.identity);
+            isSplashCreated = true;
         }
     }
 
     private void Update() {
-        if (canRotate) {
-            var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = rotation;
-            angle += .5f;
-        }
+        if (!canRotate) return;
+        var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = rotation;
+        angle += 1f;
     }
 }
