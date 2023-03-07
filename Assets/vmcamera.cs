@@ -35,7 +35,7 @@ public class vmcamera : MonoBehaviour {
         StartCoroutine(moveBalls());
         
         // algne pos
-        //targetPosition = new Vector3(redRb.position.x, redRb.position.y, -10); 
+        targetPosition = new Vector3(redRb.position.x, redRb.position.y, -10); 
 
     }
 
@@ -53,16 +53,18 @@ public class vmcamera : MonoBehaviour {
     }
 
     IEnumerator moveBalls() {
+        Quaternion Rotation = Quaternion.Euler( 0, 0, -45f);
         Debug.Log("rohelise kord");
         cam.Follow = green_ball.transform;
-        greenRb.AddForce(Vector2.right * thrust, ForceMode2D.Impulse);
+        greenRb.AddForce( Rotation * Vector2.up * thrust, ForceMode2D.Impulse);
+
         
         yield return new WaitForSeconds(waitingTime);
         Debug.Log("punase kord");
-       //if (!redRb) yield break;
+        Rotation = Quaternion.Euler( 0, 0, 45f);
         cam.Follow = red_ball.transform;
-        redRb.AddForce(Vector2.left * thrust, ForceMode2D.Impulse);
-
+        redRb.AddForce(Rotation * Vector2.up * (thrust*1.5f), ForceMode2D.Impulse);
+ 
     }
 
 }
