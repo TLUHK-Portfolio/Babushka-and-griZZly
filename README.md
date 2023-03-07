@@ -16,10 +16,12 @@ Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli
 # :video_game: griZZly mängukontseptsioon
 
 griZZly on kurjakuulutav karu, kes ühel päeval hakkab endast ohtu kujutama metsamajas elavale vanaemale. Vanaema on valmis griZZlyga võitlema, kuid vanaema laskemoonaks on kõik käepärane nagu moosipurgid ja molotovi kokteilid.  
-Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid - näiteks tehes valik, kas koguda enda viskega endale uut laskemoona või rünnata griZZly kindlust või teda ennast. Pea meeles, et ka griZZly saab vastu rünnata. Laskmine käib korda-mööda. Karu ja mutike on statsionaarsed. Karu laseb/viskamine käest, vanaema - laskmine sukapükstest tehtud ragulka. Iga kord kui mutikese kord on tuleb majast välja ja laseb ning peale lasku jookseb tuppa tagasi. Karu laseb random esimesel tasemel kividega, teisel lisanduvad pommid. Laskemoona on mõlemal lõputult ehk mäng kestab seni kuni kummalgi saab elutase 0%. 
+Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid - näiteks tehes valik, kas koguda enda viskega endale uut laskemoona või rünnata griZZly kindlust või teda ennast. Pea meeles, et ka griZZly saab vastu rünnata. Laskmine käib korda-mööda. Karu ja mutike on statsionaarsed. Karu viskab esimesel tasemel kividega ja teisel pommidega. Viskamine käest. Vanaema - laskmine sukapükstest tehtud ragulka. Laskemoonaks moosipurk, molotovi kokteil. Iga kord kui mutikese kord on tuleb majast välja ja laseb ning peale lasku jookseb tuppa tagasi. Laskemoona on mõlemal lõputult ehk mäng kestab seni kuni kummalgi saab elutase 0%. 
 
 Vanaemal ja griZZlyl on eluriba, mis väheneb vigastuste tekkimisel. Eluriba väheneb vastavalt laskemoona kahjutegurile ning kaugusele mängijast. Hoone/kindluse objektide kahjustused mõjutavad samuti eluriba. 
 Mäng on jagatud kaheks tasemeks. Karu kindlus on teisel tugevam, kõrgemal. Tugevam karu. 
+
+Mäng on mõeldud arvutis mängimiseks ning FullHD.
 
 ## Andmed
 
@@ -28,7 +30,7 @@ Mäng on jagatud kaheks tasemeks. Karu kindlus on teisel tugevam, kõrgemal. Tug
 **Graafika:** 2D, multikalaadne  
 **Mängumootor:** Unity [Loe mängumootori valiku kohta siit](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/mangumootori-aruanne.md)    
 **Vaade**: *side-view, side-scrolling*  
-**Kontrollerid**: Hiir *Kuidas see "Controls eesti keeles on?*
+**Kontrollerid**: Hiir
 
 ## Staadiumid
 - Start
