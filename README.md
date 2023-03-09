@@ -13,15 +13,13 @@ Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli
 
 [Google Drive](https://drive.google.com/drive/folders/12y-jqBrefYDzp4aK-Ckxdw56SnxjDHFl?usp=share_link) | [Inspiratsioonitahvel](https://www.figma.com/file/Dp7A3jqcnqm0gcBiQIrzV1/Moodboard?node-id=0%3A1&t=xcevLEVAfKt5AQnP-1) | [Tegevuskava](https://github.com/orgs/tluhk/projects/16/views/3) | [Koosolekute memod](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/koosolekud.md) | [Graafika checklist](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/loodav-graafika.md)
 
-# :video_game: griZZly mängukontseptsioon
+# :video_game: Babushka & griZZly mängukontseptsioon
 
-griZZly on kurjakuulutav karu, kes ühel päeval hakkab endast ohtu kujutama metsamajas elavale vanaemale. Vanaema on valmis griZZlyga võitlema, kuid vanaema laskemoonaks on kõik käepärane nagu moosipurgid ja molotovi kokteilid.  
-Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid - näiteks tehes valik, kas koguda enda viskega endale uut laskemoona või rünnata griZZly kindlust või teda ennast. Pea meeles, et ka griZZly saab vastu rünnata. Laskmine käib korda-mööda. Karu ja mutike on statsionaarsed. Karu viskab esimesel tasemel kividega ja teisel pommidega. Viskamine käest. Vanaema - laskmine sukapükstest tehtud ragulka. Laskemoonaks moosipurk, molotovi kokteil. Iga kord kui mutikese kord on tuleb majast välja ja laseb ning peale lasku jookseb tuppa tagasi. Laskemoona on mõlemal lõputult ehk mäng kestab seni kuni kummalgi saab elutase 0%. 
+griZZly on kurjakuulutav karu, kes ühel päeval hakkab endast ohtu kujutama metsamajas elavale vanaemale (Babushka). Babushka on valmis griZZlyga võitlema, kuid tema laskemoonaks on kõik käepärane nagu moosipurgid ja molotovi kokteilid.  
+Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid. Pea meeles, et ka griZZly saab vastu rünnata. Laskmine käib korda-mööda. Karu ja mutike on statsionaarsed. Karu viskab esimesel tasemel kividega ja teisel pommidega. Viskamine käest. Vanaema - laskmine sukapükstest tehtud ragulka. Laskemoonaks moosipurk, molotovi kokteil. Iga kord kui mutikese kord on tuleb majast välja ja laseb ning peale lasku jookseb tuppa tagasi. Vanaemal ja griZZlyl on eluriba, mis väheneb vigastuste tekkimisel. Eluriba väheneb vastavalt laskemoona kahjutegurile ning kaugusele mängijast. Hoone/kindluse objektide kahjustused mõjutavad samuti eluriba. Laskemoona on mõlemal lõputult ehk mäng kestab seni kuni kummalgi saab elutase 0%. 
+Mäng on jagatud kaheks tasemeks. Karu, laskemoon ja tema kindlus on teisel tasemel tugevam.
 
-Vanaemal ja griZZlyl on eluriba, mis väheneb vigastuste tekkimisel. Eluriba väheneb vastavalt laskemoona kahjutegurile ning kaugusele mängijast. Hoone/kindluse objektide kahjustused mõjutavad samuti eluriba. 
-Mäng on jagatud kaheks tasemeks. Karu kindlus on teisel tugevam, kõrgemal. Tugevam karu. 
-
-Mäng on mõeldud arvutis mängimiseks ning FullHD.
+Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma vaade on suurem, kuid kaamera liigub mööda vaadet ringi vastavalt sellele, mis hetkel on oluline. 
 
 ## Andmed
 
