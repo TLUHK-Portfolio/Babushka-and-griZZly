@@ -23,7 +23,7 @@ Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma
 
 ## Andmed
 
-**Nimi:** griZZly  
+**Nimi:** Babushka&GriZZly  
 **Temaatika:** *turn-based*, *shooting*  
 **Graafika:** 2D, multikalaadne  
 **Mängumootor:** Unity [Loe mängumootori valiku kohta siit](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/mangumootori-aruanne.md)    
