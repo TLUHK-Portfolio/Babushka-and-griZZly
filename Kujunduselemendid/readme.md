@@ -8,7 +8,7 @@
 
 Kaks kokku lepitud karakterit. Mängija ise on "Babushka" ning vastane on "griZZly" (pc). 
 
-- [x] Babushka, H: 250px @Kerli
+- [x] Babushka, H: 250px @Kerli [graafika](https://github.com/tluhk/rif21-MM-praktika-2/issues/35)
 - [x] griZZly, H: 350px @Renat
 
 ## Taustad
