@@ -11,6 +11,7 @@ TagManager:
   - red_slider
   - ground
   - Canvas
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,7 @@ public class GameControl : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        switch (Ball.Lives) {
+        /*switch (Ball.Lives) {
             case 3:
                 Live1.gameObject.SetActive(true);
                 Live2.gameObject.SetActive(true);
@@ -39,6 +39,6 @@ public class GameControl : MonoBehaviour {
                 Live2.gameObject.SetActive(false);
                 Live3.gameObject.SetActive(false);
                 break;
-        }
+        }*/
     }
 }

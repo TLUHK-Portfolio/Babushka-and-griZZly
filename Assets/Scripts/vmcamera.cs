@@ -33,12 +33,12 @@ public class vmcamera : MonoBehaviour {
         
         green_ball = GameObject.FindWithTag("green_ball");
         greenRb = green_ball.GetComponent<Rigidbody2D>();
-        greenRb.isKinematic = true;
+        //greenRb.isKinematic = true;
         
         red_ball = GameObject.FindWithTag("red_ball");
         redRb = red_ball.GetComponent<Rigidbody2D>();
         redRb.isKinematic = true;
-        StartCoroutine(moveBalls());
+        //StartCoroutine(moveBalls());
         
         // algne pos
         targetPosition = new Vector3(greenRb.position.x, greenRb.position.y, -25); 
@@ -65,9 +65,9 @@ public class vmcamera : MonoBehaviour {
         tekst.text = "Mutikese kord";
         cam.Follow = green_ball.transform;
         //greenRb.gravityScale = 1;
-        greenRb.isKinematic = false;
-        greenRb.AddForce( Rotation * Vector2.up * thrust, ForceMode2D.Impulse);
-        green_ball.GetComponent<BallControl>().canRotate = true;
+        //greenRb.isKinematic = false;
+        //greenRb.AddForce( Rotation * Vector2.up * thrust, ForceMode2D.Impulse);
+        //green_ball.GetComponent<BallControl>().canRotate = true;
 
         
         yield return new WaitForSeconds(waitingTime);
