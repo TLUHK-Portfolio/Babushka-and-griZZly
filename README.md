@@ -30,13 +30,6 @@ Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma
 **Vaade**: *side-view, side-scrolling*  
 **Kontrollerid**: Hiir
 
-## Staadiumid
-- Start
-- Mängija käik - (Babushka)
-- Vastase (pc) käik - (griZZly)
-- Võit
-- Kaotus
-
 ## Graafika
 Kogu kujundus on 2D ning multikalaadne. Babushka poolel on kujundus rõõmsam ning griZZly poolel süngem. Kasutame ühe objektil kahe-kolme tooniga varjutusi, gradiente.
 
