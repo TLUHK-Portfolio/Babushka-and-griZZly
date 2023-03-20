@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour {
         if (throwableScript._isFlying)
         {
             GameObject a = Instantiate(explosion, transform.position, Quaternion.identity);
-
+            Explode();
             Destroy(a, 2f);
         }
 
@@ -38,6 +38,27 @@ public class Ball : MonoBehaviour {
             if (rb != null)
                 rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
         }*/
+    }
+
+    void Explode() {
+        Collider2D[] inExplosionRadius = Physics2D.OverlapCircleAll(transform.position, radius);
+
+        foreach (Collider2D cO in inExplosionRadius)
+        {
+            Rigidbody2D cORigidbody = cO.GetComponent<Rigidbody2D>();
+
+            if (cORigidbody != null)
+            {
+                Vector2 distanceVector = cO.transform.position - transform.position;
+
+                if (distanceVector.magnitude > 0)
+                {
+                    float explosionForce = power / distanceVector.magnitude;
+
+                    cORigidbody.AddForce(distanceVector.normalized * explosionForce);
+                }
+            }
+        }
     }
 
     /*private void OnCollisionEnter2D(Collision2D col) {
