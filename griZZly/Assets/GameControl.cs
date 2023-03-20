@@ -9,10 +9,6 @@ using UnityEngine.UIElements;
 public enum  BattleState  { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class GameControl : MonoBehaviour {
-
-    [SerializeField] public GameObject Live1;
-    [SerializeField] public GameObject Live2;
-    [SerializeField] public GameObject Live3;
     public BattleState state;
     public GameObject ballPrefab;
     public GameObject molotovPrefab;
@@ -36,11 +32,6 @@ public class GameControl : MonoBehaviour {
         state = BattleState.START;
         enemyUnit = GameObject.Find("Enemy").GetComponent<Unit>();
         playerUnit = GameObject.Find("Player").GetComponent<Unit>(); 
-
-        Live1.gameObject.SetActive(true);
-        Live2.gameObject.SetActive(true);
-        Live3.gameObject.SetActive(true);
-
         StartCoroutine(SetupLevelOne());
     }
 
@@ -62,7 +53,6 @@ public class GameControl : MonoBehaviour {
 
     public void EnemyTurn()
     {
-        Debug.Log("enemy turn");
         state = BattleState.ENEMYTURN;
         whosTurnText.text = "Enemy's turn";
     }
@@ -82,29 +72,6 @@ public class GameControl : MonoBehaviour {
             enemyUnit.EnemyDoSomething();
 
             PlayerTurn();
-        }
-
-        switch (ThrowableScript.Lives) {
-            case 3:
-                Live1.gameObject.SetActive(true);
-                Live2.gameObject.SetActive(true);
-                Live3.gameObject.SetActive(true);
-                break;
-            case 2: 
-                Live1.gameObject.SetActive(true);
-                Live2.gameObject.SetActive(true);
-                Live3.gameObject.SetActive(false);
-                break;
-            case 1:
-                Live1.gameObject.SetActive(true);
-                Live2.gameObject.SetActive(false);
-                Live3.gameObject.SetActive(false);
-                break;
-            case 0:
-                Live1.gameObject.SetActive(false);
-                Live2.gameObject.SetActive(false);
-                Live3.gameObject.SetActive(false);
-                break;
         }
     }
 }

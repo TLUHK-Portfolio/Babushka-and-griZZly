@@ -47,6 +47,13 @@ public class Ball : MonoBehaviour {
         {
             Rigidbody2D cORigidbody = cO.GetComponent<Rigidbody2D>();
 
+            Debug.Log(cO.name);
+
+            if (cO.name == "Roof 1" || cO.name == "Roof 2")
+            {
+                GameObject.Find(cO.name).AddComponent<Rigidbody2D>();
+            }
+
             if (cORigidbody != null)
             {
                 Vector2 distanceVector = cO.transform.position - transform.position;

@@ -77,9 +77,11 @@ public class ThrowableScript : MonoBehaviour
             Destroy(gameObject, 0);
             Instantiate(gameControl.throwablePrefabs[UnityEngine.Random.Range(0, gameControl.throwablePrefabs.Count)], hook.transform.position, Quaternion.identity);
 
-            if (collision.gameObject.name == "Enemy") {
+            if (collision.gameObject.name == "Enemy")
+            {
                 enemyUnit.TakeDamage(damage);
-            } else if (collision.gameObject.name == "Player") {
+            } else if (collision.gameObject.name == "Player")
+            {
                 playerUnit.TakeDamage(damage);
             }
 

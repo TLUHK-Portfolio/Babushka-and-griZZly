@@ -47,7 +47,7 @@ public class Molotov : MonoBehaviour
             for (var flameCount = 0; flameCount < collision.contactCount;flameCount++)
             {
                 GameObject fire = Instantiate(firePrefab, collision.GetContact(flameCount).point, Quaternion.identity); // no rotation Quate...
-                fire.transform.SetParent(collision.gameObject.transform);
+                //fire.transform.SetParent(collision.gameObject.transform);
 
                 Destroy(fire, fireBurnLength);
             }
