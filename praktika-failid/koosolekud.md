@@ -4,7 +4,7 @@
 # 21.03.2023 
 - Mängu keel sisus (Nt moosipurgi peal "Moos" vs "Jam" ja mängija korra viide "Karu kord" või "Grizzlys turn"
 - Vaatame üle kolmandasse sprinti planeeritud issued ja alustame 4 sprindi ülesannete lisamisega
-- 
+- Kokkulepe, et ei ole maja vaid kindlused/hunnikud, mis saavad ära laguneda. Kui pihta saavad jäävad maha. 
 
 # 14.03.2023
 - Uue sprindi tegevused
