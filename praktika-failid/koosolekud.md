@@ -2,7 +2,7 @@
 [Koosolekute link](https://meet.google.com/gst-opeo-uat)
 
 # 21.03.2023 
-- Mängu keel sisus (Nt moosipurgi peal "Moos" vs "Jam" ja mängija korra viide "Karu kord" või "Grizzlys turn"
+- Mängu keel sisus (Nt moosipurgi peal "Moos" vs "Jam" ja mängija korra viide "Karu kord" või "Grizzlys turn" - otsustasime inglise keele.
 - Vaatame üle kolmandasse sprinti planeeritud issued ja alustame 4 sprindi ülesannete lisamisega
 - Kokkulepe, et ei ole maja vaid kindlused/hunnikud, mis saavad ära laguneda. Kui pihta saavad jäävad maha. 
 
