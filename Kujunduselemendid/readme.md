@@ -1,6 +1,7 @@
 # Kokkulepped graafika osas
 
-2D, multikalaadne
+2D, multikalaadne.
+Kindluste elemendid külgvaates, et saaks kasutada kukkumise füüsikat Unitys.
 
 [Graafika labeliga ülesanded GitHubis](https://github.com/tluhk/rif21-MM-praktika-2/issues?q=label%3AGraafika+)
 
