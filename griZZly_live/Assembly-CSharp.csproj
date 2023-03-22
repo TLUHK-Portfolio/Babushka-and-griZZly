@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{24d42e27-2055-0458-5551-a271af637617}</ProjectGuid>
+    <ProjectGuid>{9e59eca1-7292-8708-416b-5cbad52c3440}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\CameraManager.cs" />
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\Ammo.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -312,7 +313,7 @@
         <HintPath>C:\Program Files\Unity 2021.3.13f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity 2021.3.13f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -681,52 +682,52 @@
         <HintPath>C:\Program Files\Unity 2021.3.13f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Environments">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
-        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly2\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+        <HintPath>C:\Users\Kairo\Desktop\kool\rif21-MM-praktika-2\griZZly_live\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
