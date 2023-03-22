@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Ammo : MonoBehaviour {
@@ -12,7 +13,12 @@ public class Ammo : MonoBehaviour {
 
     public void Release() {
         CameraManager.Instance.ammo = gameObject;
-        GameManager.Instance.UpdateGameState(GameState.FallowAmmo1);
+        if (GameManager.Instance.State == GameState.PlayerTurn) {
+            GameManager.Instance.UpdateGameState(GameState.FallowAmmo1);
+        } else if (GameManager.Instance.State == GameState.EnemyTurn) {
+            GameManager.Instance.UpdateGameState(GameState.FallowAmmo2);
+        }  
+
         canRotate = true;
         PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints());
@@ -29,12 +35,10 @@ public class Ammo : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
         collided = true;
         canRotate = false;
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
         if (!isSplashCreated) {
             Instantiate(splash, transform.position, Quaternion.identity);
             isSplashCreated = true;
-            GameManager.Instance.UpdateGameState(GameState.EnemyTurn);
-            //GameObject.Find("CameraControl").GetComponent<CameraControl>().pointToEnemy();
         }
     }
 
@@ -43,5 +47,16 @@ public class Ammo : MonoBehaviour {
         var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = rotation;
         angle += this.rotation;
+    }
+
+    private void OnDestroy() {
+        switch (GameManager.Instance.State) {
+            case GameState.FallowAmmo1:
+                GameManager.Instance.UpdateGameState(GameState.EnemyTurn);
+                break;
+            case GameState.FallowAmmo2:
+                GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
+                break;
+        }
     }
 }

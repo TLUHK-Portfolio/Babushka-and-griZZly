@@ -9,19 +9,12 @@ public class CameraManager : MonoBehaviour {
     public GameObject enemy;
     public GameObject ammo;
 
-    
-    //private float smoothSpeed = .025f;
-    // The current target position 
-    //private Vector3 targetPosition;
-    // The current intermediary Lerp Position
-    //private Vector3 smoothPosition;
-
     public void Awake() {
         Instance = this;
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
-   public void OnDestroy() {
+    public void OnDestroy() {
         GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
     }
 
@@ -31,12 +24,12 @@ public class CameraManager : MonoBehaviour {
         } else if (state == GameState.EnemyTurn) {
             VMcam.Follow = enemy.transform;    
         } else if (state == GameState.FallowAmmo1) {
-           VMcam.Follow = ammo.transform;
+            VMcam.Follow = ammo.transform;
         } else if (state == GameState.FallowAmmo2) {
-           VMcam.Follow = ammo.transform;
+            Debug.Log(ammo);
+            if (ammo) VMcam.Follow = ammo.transform;
         } 
     }
-    
     
     void LateUpdate()
     {

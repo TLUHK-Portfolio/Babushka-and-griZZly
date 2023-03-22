@@ -32,12 +32,12 @@ public class Rope : MonoBehaviour {
 
     void Update() {
         DrawRope();
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.State == GameState.PlayerTurn) {
             moveToMouse = true;
             CreateAmmo();
             center = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
         }
-        else if (Input.GetMouseButtonUp(0)) {
+        else if (Input.GetMouseButtonUp(0) && GameManager.Instance.State == GameState.PlayerTurn) {
             moveToMouse = false;
             Shoot();
         }
