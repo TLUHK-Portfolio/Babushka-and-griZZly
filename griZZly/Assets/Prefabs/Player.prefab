@@ -244,7 +244,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 72fe8f90287b1dc429f6328546db9b7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e9f9cb49d96ca342b6aed5130fc6b90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -289,8 +289,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Player
+  healthScript: {fileID: 0}
   health: 50
   maxHealth: 50
+  isDead: 0
   explosion: {fileID: 0}
 --- !u!70 &7932355822436867829
 CapsuleCollider2D:
@@ -305,8 +307,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 6.84, y: 12.889999}
+  m_Offset: {x: 0.57081133, y: 0.14498863}
+  m_Size: {x: 5.1503925, y: 10.943014}
   m_Direction: 0
 --- !u!114 &7932355822436867819
 MonoBehaviour:
@@ -320,7 +322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36236964897c1ee4bb7c21e7b4fb7efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
   hpSlider: {fileID: 7932355821535975435}
 --- !u!1 &7932355822997694247
 GameObject:
@@ -335,7 +336,7 @@ GameObject:
   - component: {fileID: 7932355822997694244}
   - component: {fileID: 7932355822997694245}
   m_Layer: 1
-  m_Name: Canvas (1)
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

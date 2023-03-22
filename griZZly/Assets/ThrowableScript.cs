@@ -85,7 +85,7 @@ public class ThrowableScript : MonoBehaviour
                 playerUnit.TakeDamage(damage);
             }
 
-            gameControl.EnemyTurn();
+            gameControl.state = BattleState.ENEMYTURN;
         }
     }
 

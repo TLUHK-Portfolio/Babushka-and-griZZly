@@ -53,6 +53,7 @@ public class GameControl : MonoBehaviour {
     public void EnemyTurn()
     {
         state = BattleState.ENEMYTURN;
+        Debug.Log("Enemy turn!!");
         whosTurnText.text = "Enemy's turn";
     }
 

@@ -26,7 +26,7 @@ public class Unit : MonoBehaviour {
     public void EnemyDoSomething()
     {
         StartCoroutine(Sleep());
-        GameObject.Find("Enemy").GetComponent<Unit>().transform.localScale += new Vector3(0.2f,0.2f);
+        // GameObject.Find("Enemy").GetComponent<Unit>().transform.localScale += new Vector3(0.2f,0.2f);
     }
 
     IEnumerator Sleep()
@@ -36,9 +36,9 @@ public class Unit : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D colInfo) {
         //????????????
-        if (colInfo.relativeVelocity.magnitude > health) {
-            Diy();
-        }
+        // if (colInfo.relativeVelocity.magnitude > health) {
+        //     Diy();
+        // }
     }
 
     public void TakeDamage(int damage)

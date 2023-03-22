@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 994045492702992360}
   - component: {fileID: 3570073254522693320}
   - component: {fileID: 6345011265054836475}
-  - component: {fileID: 6806005332239269599}
+  - component: {fileID: 6233819514334755367}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3575140917154060944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.56016, y: -1.8422712, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6345011264570517423}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4336d2388d57a4944a0ef4c93c23ff99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe2b931698bdb0f4e9cf62644e9e6d1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   healthScript: {fileID: 6806005331499431954}
   health: 10
   maxHealth: 10
+  isDead: 0
   explosion: {fileID: 0}
 --- !u!114 &6345011265054836475
 MonoBehaviour:
@@ -140,8 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpSlider: {fileID: 6345011264064761681}
---- !u!61 &6806005332239269599
-BoxCollider2D:
+--- !u!70 &6233819514334755367
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,19 +154,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.61, y: 0.61}
-    newSize: {x: 0.61, y: 0.61}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.61, y: 0.61}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.1013993, y: -0.011929393}
+  m_Size: {x: 0.72095585, y: 2.4840791}
+  m_Direction: 0
 --- !u!1 &6345011263937440742
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +350,7 @@ GameObject:
   - component: {fileID: 6345011264570517421}
   - component: {fileID: 6345011264570517420}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,7 +374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.07, y: 0.65}
+  m_AnchoredPosition: {x: 0.14, y: 1.58}
   m_SizeDelta: {x: 270.5876, y: 90.4005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6345011264570517426
