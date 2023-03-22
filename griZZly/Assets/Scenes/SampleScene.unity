@@ -328,6 +328,12 @@ PrefabInstance:
       propertyPath: radius
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8748703768471716025, guid: e86442e12de513b4fab49b95e6a3cbb3,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 850562661608639044, guid: 4450533eb51136d4084c7ef61a921c75,
+        type: 3}
     - target: {fileID: 8748703768471716026, guid: e86442e12de513b4fab49b95e6a3cbb3,
         type: 3}
       propertyPath: m_Distance

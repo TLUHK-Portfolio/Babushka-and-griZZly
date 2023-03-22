@@ -158,7 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44235240dc2f62e458376dff62b3741f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1337198075554910, guid: b522af451eb50114abfe97073e1f72cf, type: 3}
+  explosion: {fileID: 850562661608639044, guid: 4450533eb51136d4084c7ef61a921c75,
+    type: 3}
   throwableScript: {fileID: 1977920150892571571}
   radius: 5
   power: 10
