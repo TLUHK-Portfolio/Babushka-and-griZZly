@@ -10,11 +10,10 @@ public enum  BattleState  { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class GameControl : MonoBehaviour {
     public BattleState state;
-    public GameObject ballPrefab;
+    public GameObject bombPrefab;
     public GameObject molotovPrefab;
     private Unit enemyUnit;
     private Unit playerUnit;
-    public HealthScript healthScript;
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     public List<GameObject> throwablePrefabs = new List<GameObject>();
@@ -22,7 +21,7 @@ public class GameControl : MonoBehaviour {
 
     void Awake()
     {
-        throwablePrefabs.Add(ballPrefab);
+        throwablePrefabs.Add(bombPrefab);
         throwablePrefabs.Add(molotovPrefab);
     }
 

@@ -7,16 +7,14 @@ using UnityEngine.SceneManagement;
 public class Unit : MonoBehaviour {
     public string unitName;
     public HealthScript healthScript;
-    [SerializeField] public int health;
+    [SerializeField] public float health;
     [SerializeField] public int maxHealth;
     public bool isDead = false;
     [SerializeField] public GameObject explosion;
-    public static int EnemiesAlive = 0;
     private GameControl gameControl;
 
     private void Start() {
         healthScript.setMaxHP(maxHealth);
-        EnemiesAlive++;
         gameControl = GameObject.Find("GameControl").GetComponent<GameControl>();
     }
 
@@ -37,6 +35,7 @@ public class Unit : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D colInfo) {
+        //????????????
         if (colInfo.relativeVelocity.magnitude > health) {
             Diy();
         }
@@ -59,13 +58,10 @@ public class Unit : MonoBehaviour {
     }
 
     private void Diy() {
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        EnemiesAlive--;
-        if (EnemiesAlive <= 0) {
-            //SceneManager.
-            Debug.Log("You WON!");
-        }
+        // Instantiate(explosion, transform.position, Quaternion.identity);
+        gameControl.state = BattleState.WON;
+        //SceneManager.
+        Debug.Log("You WON!");
         Destroy(gameObject);
-        
     }
 }

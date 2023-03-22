@@ -13,7 +13,7 @@ public class HealthScript : MonoBehaviour
         hpSlider.value = health;
     }
 
-    public void setHP(int health)
+    public void setHP(float health)
     {
         Debug.Log("setting hp to " + health);
         hpSlider.value = health;
