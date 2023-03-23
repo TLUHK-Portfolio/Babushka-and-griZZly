@@ -15,17 +15,16 @@ public class EnemyManager : MonoBehaviour {
     }
     private void CreateAmmo() {
         ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
+        ammo.transform.position = LaunchPosition;
         ammo.isKinematic = true;
-        CameraManager.Instance.ammo = AmmoPrefab;
     }
 
     void Shoot() {
         ammo.isKinematic = false;
-        ammo.velocity = LaunchPosition * force * -1;
+        Quaternion Rotation = Quaternion.Euler( 0, 0, 45f);
+        ammo.AddForce(Rotation * Vector2.up * force, ForceMode2D.Impulse);
+        CameraManager.Instance.ammo = ammo.gameObject;
         ammo.GetComponent<Ammo>().Release();
-        
-        //ammo = null;
-        //ammoCollider = null;
     }
 
     public void GameManagerOnGameStateChanged(GameState state) {

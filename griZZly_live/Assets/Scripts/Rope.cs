@@ -9,7 +9,7 @@ public class Rope : MonoBehaviour {
 
     private LineRenderer lineRenderer;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
-    private float ropeSegLen = 0.25f;
+    private float ropeSegLen = 0.15f;
     private int segmentLength = 20;
     private float lineWidth = 0.025f;
     private bool moveToMouse;
