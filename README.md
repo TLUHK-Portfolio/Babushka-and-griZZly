@@ -38,7 +38,7 @@ Loodavate ja loodud elementide loetelu kirjas [siin](https://github.com/tluhk/ri
 ## Mängu käivitamine:
 1. Mängu failide .zip fail on leitav Releases sektsioonist versioonide järgi
 2. Peale alla laadimist paki fail lahti endale sobivasse kohta
-3. Pakitud kaustas leiab mängu nimega "Babushka&griZZly" mille käivitamisel see avatakse
+3. Lahti pakitud kaustast leiab mängu nimega "Babushka&griZZly" mille käivitamisel see avatakse
 4. ???
 5. Naudi mängu
 
