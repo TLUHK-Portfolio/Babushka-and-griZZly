@@ -11,7 +11,7 @@ public class EnemyManager : MonoBehaviour {
     Rigidbody2D ammo;
     
     public void Awake() {
-        GameManager.OnGameStateChanged = GameManagerOnGameStateChanged;
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
     private void CreateAmmo() {
