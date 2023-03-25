@@ -7,10 +7,16 @@ public class Ammo : MonoBehaviour
     public bool collided;
     public float rotation = 0;
     public GameObject splash;
+    public float waitUntilAirBorne = 0.5f;
 
     private bool canRotate = false;
     private bool isSplashCreated = false;
     private float angle = 0;
+
+    private void Awake()
+    {
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("mutt_0").GetComponent<Collider2D>(), true);
+    }
 
     public void Release()
     {
@@ -27,6 +33,14 @@ public class Ammo : MonoBehaviour
         canRotate = true;
         PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints());
+        
+        StartCoroutine(EnableColliderMutiga());
+    }
+
+    IEnumerator EnableColliderMutiga()
+    {
+        yield return new WaitForSeconds(waitUntilAirBorne);
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("mutt_0").GetComponent<Collider2D>(), false);
     }
 
     IEnumerator CreatePathPoints()
