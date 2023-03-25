@@ -33,7 +33,7 @@ public class Ammo : MonoBehaviour
         canRotate = true;
         PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints());
-        
+
         StartCoroutine(EnableColliderMutiga());
     }
 
@@ -60,8 +60,10 @@ public class Ammo : MonoBehaviour
         Destroy(gameObject, 3f);
         if (!isSplashCreated)
         {
-            Instantiate(splash, transform.position, Quaternion.identity);
-            isSplashCreated = true;
+            if (splash != null) {
+                Instantiate(splash, transform.position, Quaternion.identity);
+                isSplashCreated = true;
+            }
         }
     }
 

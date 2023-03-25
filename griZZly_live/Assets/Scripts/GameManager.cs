@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ToMainMenu() {
+        UpdateGameState(GameState.Pause);
         SceneManager.LoadScene(0);
     }
 
@@ -81,6 +82,8 @@ public class GameManager : MonoBehaviour {
             case GameState.Lose:
                 text.text = "You lose :(";
                 break;
+            case GameState.Pause:
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
@@ -102,5 +105,6 @@ public enum GameState {
     EnemyTurn,
     FallowAmmo2,
     Win,
-    Lose
+    Lose,
+    Pause
 }
