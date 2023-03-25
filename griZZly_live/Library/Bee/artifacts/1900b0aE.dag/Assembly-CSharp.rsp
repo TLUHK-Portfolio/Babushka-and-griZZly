@@ -349,7 +349,6 @@
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PathPoints.cs"
 "Assets/Scripts/Rope.cs"
-"Assets/Scripts/Slingshot.cs"
 -langversion:9.0
 
 /deterministic
