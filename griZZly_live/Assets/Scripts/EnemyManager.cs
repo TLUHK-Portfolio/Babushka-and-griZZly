@@ -22,9 +22,10 @@ public class EnemyManager : MonoBehaviour {
 
     void Shoot() {
         ammo.isKinematic = false;
-        Quaternion Rotation = Quaternion.Euler( 0, 0, 45f);
+        float ai = Random.Range(.5f, 1.5f);
+        Quaternion Rotation = Quaternion.Euler( 0, 0, 45f*ai);
+        
         ammo.AddForce(Rotation * Vector2.up * force, ForceMode2D.Impulse);
-        //CameraManager.Instance.ammo = AmmoPrefab;
         ammo.GetComponent<Ammo>().Release();
     }
 

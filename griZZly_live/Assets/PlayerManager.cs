@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col) {
         HealthBar.value -= .1f;
         if (HealthBar.value <= 0) {
-            GameManager.Instance.UpdateGameState(GameState.Win);
+            GameManager.Instance.UpdateGameState(GameState.Lose);
         }
     }
 }

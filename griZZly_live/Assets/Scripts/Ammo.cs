@@ -34,7 +34,7 @@ public class Ammo : MonoBehaviour
         PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints());
 
-        StartCoroutine(EnableColliderMutiga());
+       StartCoroutine(EnableColliderMutiga());
     }
 
     IEnumerator EnableColliderMutiga()
