@@ -35,6 +35,12 @@ Kogu kujundus on 2D ning multikalaadne. Babushka poolel on kujundus rõõmsam ni
 
 Loodavate ja loodud elementide loetelu kirjas [siin](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/loodav-graafika.md)
 
+## Mängu käivitamine:
+1. Mängu failide .zip fail on leitav Releases sektsioonist versioonide järgi
+2. Peale alla laadimist paki fail lahti endale sobivasse kohta
+3. Lahti pakitud kaustast leiab mängu nimega "Babushka&griZZly" mille käivitamisel see avatakse
+4. ???
+5. Naudi mängu
 
 ### Kasutatud abimaterjalid
 

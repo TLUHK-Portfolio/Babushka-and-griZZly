@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour {
     public void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
+
     private void CreateAmmo() {
         ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
         ammo.transform.position = LaunchPosition;
