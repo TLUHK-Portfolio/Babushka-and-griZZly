@@ -26,8 +26,7 @@ public class CameraManager : MonoBehaviour {
         } else if (state == GameState.FallowAmmo1) {
             VMcam.Follow = ammo.transform;
         } else if (state == GameState.FallowAmmo2) {
-            Debug.Log(ammo);
-            VMcam.Follow = player.transform;
+            VMcam.Follow = GameObject.FindWithTag("Stone").transform;
         } 
     }
     
