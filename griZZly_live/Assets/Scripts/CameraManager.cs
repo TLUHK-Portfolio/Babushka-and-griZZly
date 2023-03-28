@@ -32,10 +32,13 @@ public class CameraManager : MonoBehaviour {
     
     void LateUpdate()
     {
+        
+        //clampedPosition.z = Mathf.Clamp(clampedPosition
+
         // Lerp toward target position at all times.
         //smoothPosition = Vector3.Lerp(  VMcam.transform.position, targetPosition, smoothSpeed);
         //VMcam.transform.position = smoothPosition;
- 
+
         // Lerp toward target rotation at all times.
         //smoothRotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothSpeed);
         //transform.rotation = smoothRotation;

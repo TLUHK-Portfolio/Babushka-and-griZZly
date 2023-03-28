@@ -5,7 +5,7 @@ public class EnemyManager : MonoBehaviour {
     
     public GameObject AmmoPrefab;
     public float force;
-    public Vector3 LaunchPosition;
+    public GameObject LaunchPosition;
     public Slider HealthBar;
     
     Rigidbody2D ammo;
@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour {
 
     private void CreateAmmo() {
         ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
-        ammo.transform.position = LaunchPosition;
+        ammo.transform.position = LaunchPosition.transform.position;
         ammo.isKinematic = true;
     }
 
