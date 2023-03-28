@@ -3,6 +3,10 @@
 2D, multikalaadne.
 Kindluste elemendid külgvaates, et saaks kasutada kukkumise füüsikat Unitys.
 
+Kasutame kindlaid fonte:
+- Pealkirjad ja logod [Luckiest Guy](https://fonts.google.com/specimen/Luckiest+Guy)
+- Sisutekstid, menüü tekstid jne [Neucha](https://fonts.google.com/specimen/Neucha)
+
 [Graafika labeliga ülesanded GitHubis](https://github.com/tluhk/rif21-MM-praktika-2/issues?q=label%3AGraafika+)
 
 ## Karakterid
@@ -32,7 +36,7 @@ Taust ise 6000px x 3000px, kuid kaadris olev vaade FHD 1920px x 1080px
 Kindlus peaks koosnema eri objektidest, et saaks strateegiliselt heasse kohta sihtides tekitada võimalikult suure kahju. "Kindlused" koosnevad euroalustest/kivplokkidest
 
 - [ ] Babushka kindlus - katus puit, seinad kivi   
-- [ ] griZZly peidukas
+- [x] griZZly peidukas - [loodud kodumasinad #50](https://github.com/tluhk/rif21-MM-praktika-2/issues/50) leiab siit repositooriumist [Spraidid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid/Spraidid) kaustast.
 - [ ] kiviplokid
 - [ ] euroalused
 
