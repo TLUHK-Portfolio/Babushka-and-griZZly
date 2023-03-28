@@ -11,7 +11,7 @@ Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli
 
 ## :bookmark_tabs: Ressurssid
 
-[Google Drive](https://drive.google.com/drive/folders/12y-jqBrefYDzp4aK-Ckxdw56SnxjDHFl?usp=share_link) | [Inspiratsioonitahvel](https://www.figma.com/file/Dp7A3jqcnqm0gcBiQIrzV1/Moodboard?node-id=0%3A1&t=xcevLEVAfKt5AQnP-1) | [Tegevuskava](https://github.com/orgs/tluhk/projects/16/views/3) | [Koosolekute memod](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/koosolekud.md) | [Graafika checklist](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/loodav-graafika.md)
+[Google Drive](https://drive.google.com/drive/folders/12y-jqBrefYDzp4aK-Ckxdw56SnxjDHFl?usp=share_link) | [Inspiratsioonitahvel](https://www.figma.com/file/Dp7A3jqcnqm0gcBiQIrzV1/Moodboard?node-id=0%3A1&t=xcevLEVAfKt5AQnP-1) | [Tegevuskava](https://github.com/orgs/tluhk/projects/16/views/3) | [Koosolekute memod](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/koosolekud.md)
 
 # :video_game: Babushka & griZZly mängukontseptsioon
 
