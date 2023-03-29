@@ -32,8 +32,14 @@ public class CameraManager : MonoBehaviour {
     
     void LateUpdate()
     {
+        if (GameManager.Instance.State == GameState.FallowAmmo1 && VMcam.transform.position.x > 22) {
+            VMcam.Follow = enemy.transform;
+        }
         
-        //clampedPosition.z = Mathf.Clamp(clampedPosition
+        if (GameManager.Instance.State == GameState.FallowAmmo2 && VMcam.transform.position.x < -1) {
+            VMcam.Follow = player.transform;
+        }
+
 
         // Lerp toward target position at all times.
         //smoothPosition = Vector3.Lerp(  VMcam.transform.position, targetPosition, smoothSpeed);
