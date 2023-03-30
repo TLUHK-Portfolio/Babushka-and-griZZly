@@ -56,3 +56,7 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.propertie
+
+# Ignore temporaries from GameCI
+/[Aa]rtifacts/
+/[Cc]odeCoverage/
