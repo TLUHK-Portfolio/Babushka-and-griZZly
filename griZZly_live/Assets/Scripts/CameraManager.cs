@@ -8,6 +8,7 @@ public class CameraManager : MonoBehaviour {
     public GameObject player;
     public GameObject enemy;
     public GameObject ammo;
+    private bool canChange;
 
     public void Awake() {
         Instance = this;
@@ -24,20 +25,24 @@ public class CameraManager : MonoBehaviour {
         } else if (state == GameState.EnemyTurn) {
             VMcam.Follow = enemy.transform;    
         } else if (state == GameState.FallowAmmo1) {
+            canChange = true;
             VMcam.Follow = ammo.transform;
         } else if (state == GameState.FallowAmmo2) {
+            canChange = true;
             VMcam.Follow = GameObject.FindWithTag("Stone").transform;
         } 
     }
     
     void LateUpdate()
     {
-        if (GameManager.Instance.State == GameState.FallowAmmo1 && VMcam.transform.position.x > 22) {
+        if (GameManager.Instance.State == GameState.FallowAmmo1 && VMcam.transform.position.x > 22 && canChange) {
             VMcam.Follow = enemy.transform;
+            canChange = false;
         }
         
-        if (GameManager.Instance.State == GameState.FallowAmmo2 && VMcam.transform.position.x < -1) {
+        if (GameManager.Instance.State == GameState.FallowAmmo2 && VMcam.transform.position.x < -1 && canChange) {
             VMcam.Follow = player.transform;
+            canChange = false;
         }
 
 

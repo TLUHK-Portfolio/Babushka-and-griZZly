@@ -41,7 +41,6 @@ public class Rope : MonoBehaviour {
             CreateAmmo();
         }
         if (Input.GetMouseButtonUp(0) && GameManager.Instance.State == GameState.PlayerTurn && ammo) {
-            Debug.Log("Shuut");
             moveToMouse = false;
             Shoot();
         }

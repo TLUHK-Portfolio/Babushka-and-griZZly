@@ -2,16 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyManager : MonoBehaviour {
-    
     public GameObject AmmoPrefab;
     public float force;
     public GameObject LaunchPosition;
     public Slider HealthBar;
-    
+
+    private Animator animator;
     Rigidbody2D ammo;
-    
+
     public void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void CreateAmmo() {
@@ -21,26 +22,37 @@ public class EnemyManager : MonoBehaviour {
     }
 
     void Shoot() {
-        ammo.isKinematic = false;
+        //GetComponent<Animator>().Play("Shoot");
+        animator.SetBool("viska", true);
         float ai = Random.Range(.5f, 1.5f);
-        Quaternion Rotation = Quaternion.Euler( 0, 0, 45f*ai);
-        
+        Quaternion Rotation = Quaternion.Euler(0, 0, 45f * ai);
+        ammo.isKinematic = false;
         ammo.AddForce(Rotation * Vector2.up * force, ForceMode2D.Impulse);
         ammo.GetComponent<Ammo>().Release();
+        animator.SetBool("viska", false);
     }
 
     public void GameManagerOnGameStateChanged(GameState state) {
         if (state == GameState.EnemyTurn) {
             CreateAmmo();
-        } else if (state == GameState.FallowAmmo2) {
+        }
+        else if (state == GameState.FallowAmmo2) {
             Shoot();
-        } 
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        HealthBar.value -= .1f;
-        if (HealthBar.value <= 0) {
-            GameManager.Instance.UpdateGameState(GameState.Win);
+        if (col.gameObject.tag != "Stone") {
+            ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
+            col.GetContacts(contacts);
+            float totalImpulse = 0;
+            foreach (ContactPoint2D contact in contacts) {
+                totalImpulse += contact.normalImpulse * .05f;
+            }
+            HealthBar.value -= totalImpulse;
+            if (HealthBar.value <= 0) {
+                GameManager.Instance.UpdateGameState(GameState.Win);
+            }
         }
     }
 }
