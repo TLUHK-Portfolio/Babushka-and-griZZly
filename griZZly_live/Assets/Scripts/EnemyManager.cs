@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -12,10 +13,12 @@ public class EnemyManager : MonoBehaviour {
     private Animator animator;
     private bool onShootingAction;
     Rigidbody2D ammo;
+    private PolygonCollider2D col;
 
     public void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
         animator = gameObject.GetComponent<Animator>();
+        col = gameObject.GetComponent<PolygonCollider2D>();
     }
 
     private void CreateAmmo() {
@@ -26,6 +29,7 @@ public class EnemyManager : MonoBehaviour {
 
     void Shoot() {
         onShootingAction = false;
+        animator.SetBool("viska", false);
         float ai = Random.Range(.5f, 1.5f);
         Quaternion Rotation = Quaternion.Euler(0, 0, 45f * ai);
         ammo.isKinematic = false;
@@ -33,15 +37,15 @@ public class EnemyManager : MonoBehaviour {
         Debug.Log(f);
         ammo.AddForce(f, ForceMode2D.Impulse);
         ammo.GetComponent<Ammo>().Release();
-        animator.SetBool("viska", false);
+        StartCoroutine("EnableCollider");
     }
 
     public void GameManagerOnGameStateChanged(GameState state) {
         if (state == GameState.EnemyTurn) {
             CreateAmmo();
+            col.enabled = false;
         }
         else if (state == GameState.FallowAmmo2) {
-            //Shoot();
             onShootingAction = true;
             animator.SetBool("viska", true);
         }
@@ -55,6 +59,7 @@ public class EnemyManager : MonoBehaviour {
             foreach (ContactPoint2D contact in contacts) {
                 totalImpulse += contact.normalImpulse * .05f;
             }
+
             HealthBar.value -= totalImpulse;
             if (HealthBar.value <= 0) {
                 GameManager.Instance.UpdateGameState(GameState.Win);
@@ -63,8 +68,13 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public void Update() {
-        if (ammo && onShootingAction) {
+        if (onShootingAction && ammo && ammo.isKinematic) {
             ammo.transform.position = LaunchPosition.transform.position;
         }
+    }
+
+    IEnumerator EnableCollider() {
+        yield return new WaitForSeconds(1);
+        col.enabled = true;
     }
 }

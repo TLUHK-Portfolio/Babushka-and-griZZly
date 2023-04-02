@@ -9,7 +9,7 @@ public class Rope : MonoBehaviour {
     public float force;
     public TMP_Text angle_val;
     public TMP_Text force_val;
-    
+
     private LineRenderer lineRenderer;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
     private float ropeSegLen = 0.15f;
@@ -18,13 +18,15 @@ public class Rope : MonoBehaviour {
     private bool moveToMouse;
     private Vector3 mousePositionWorld;
     private int indexMousePos;
-    [SerializeField]
-    private GameObject AmmoStartingPos;
-    
+    [SerializeField] private GameObject AmmoStartingPos;
+
 
     Rigidbody2D ammo;
-    Collider2D ammoCollider;
-    private bool ammoCreated; 
+
+    //Collider2D ammoCollider;
+    private bool ammoCreated;
+    private List<float> shootingAngle = new List<float>(2);
+    private List<float> shootingForce = new List<float>(2);
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -34,16 +36,24 @@ public class Rope : MonoBehaviour {
             ropeSegments.Add(new RopeSegment(ropeStartPoint));
             ropeStartPoint.y -= ropeSegLen;
         }
+
+        shootingAngle.Add(0);
+        shootingAngle.Add(0);
+        shootingForce.Add(0);
+        shootingForce.Add(0);
     }
 
     void Update() {
         DrawRope();
-        if (GameManager.Instance.State == GameState.PlayerTurn) { // Input.GetMouseButtonDown(0) && 
+        if (GameManager.Instance.State == GameState.PlayerTurn) {
+            // Input.GetMouseButtonDown(0) && 
             if (Input.GetMouseButtonDown(0) && ammo) {
-                moveToMouse = true;    
+                moveToMouse = true;
             }
+
             CreateAmmo();
         }
+
         if (Input.GetMouseButtonUp(0) && GameManager.Instance.State == GameState.PlayerTurn && ammo) {
             moveToMouse = false;
             Shoot();
@@ -53,7 +63,15 @@ public class Rope : MonoBehaviour {
         float xStart = StartPoint.position.x;
         float xEnd = EndPoint.position.x;
         mousePositionWorld = Camera.main.ScreenToWorldPoint(new Vector3(screenMousePos.x, screenMousePos.y, 10));
-        //float currX = mousePositionWorld.x;
+        if (moveToMouse) {
+            Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
+            Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+            shootingAngle[0] = Vector2.Angle(pos1, pos2);
+            Vector3 birdForce = (mousePositionWorld - AmmoStartingPos.transform.position) * (force * -1);
+            shootingForce[0] = birdForce.magnitude;
+            updateStats();
+        }
+
         float currX = AmmoStartingPos.transform.position.x;
 
         float ratio = (currX - xStart) / (xEnd - xStart);
@@ -65,10 +83,15 @@ public class Rope : MonoBehaviour {
         }
     }
 
+    private void updateStats() {
+        angle_val.text = Mathf.FloorToInt(shootingAngle[0]) + "\n" + Mathf.FloorToInt(shootingAngle[1]);
+        force_val.text = Mathf.FloorToInt(shootingForce[0]) + "\n" + Mathf.FloorToInt(shootingForce[1]);
+    }
+
     private void CreateAmmo() {
         if (!ammo) {
             ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
-            ammoCollider = ammo.GetComponent<Collider2D>();
+            //ammoCollider = ammo.GetComponent<Collider2D>();
             ammo.isKinematic = true;
             ammo.position = AmmoStartingPos.transform.position;
         }
@@ -81,12 +104,12 @@ public class Rope : MonoBehaviour {
         Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
         Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
         float angle = Vector2.Angle(pos1, pos2);
-        angle_val.text = Mathf.FloorToInt(angle).ToString();
-        force_val.text = Mathf.FloorToInt(birdForce.magnitude).ToString();
-
+        shootingAngle[1] = angle;
+        shootingForce[1] = birdForce.magnitude;
+        updateStats();
         ammo.GetComponent<Ammo>().Release();
         ammo = null;
-        ammoCollider = null;
+        //ammoCollider = null;
     }
 
     private void FixedUpdate() {
@@ -156,7 +179,8 @@ public class Rope : MonoBehaviour {
                 ropeSegments[i + 1] = secondSeg;
             }
 
-            if (moveToMouse && indexMousePos > 0 && indexMousePos < segmentLength - 1 && i == indexMousePos) { //
+            if (moveToMouse && indexMousePos > 0 && indexMousePos < segmentLength - 1 && i == indexMousePos) {
+                //
                 RopeSegment segment = ropeSegments[i];
                 RopeSegment segment2 = ropeSegments[i + 1];
                 segment.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
