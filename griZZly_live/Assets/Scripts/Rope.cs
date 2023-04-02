@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Rope : MonoBehaviour {
@@ -6,7 +7,9 @@ public class Rope : MonoBehaviour {
     public Transform EndPoint;
     public GameObject AmmoPrefab;
     public float force;
-
+    public TMP_Text angle_val;
+    public TMP_Text force_val;
+    
     private LineRenderer lineRenderer;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
     private float ropeSegLen = 0.15f;
@@ -17,6 +20,7 @@ public class Rope : MonoBehaviour {
     private int indexMousePos;
     [SerializeField]
     private GameObject AmmoStartingPos;
+    
 
     Rigidbody2D ammo;
     Collider2D ammoCollider;
@@ -74,6 +78,12 @@ public class Rope : MonoBehaviour {
         ammo.isKinematic = false;
         Vector3 birdForce = (mousePositionWorld - AmmoStartingPos.transform.position) * (force * -1);
         ammo.velocity = birdForce;
+        Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
+        Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+        float angle = Vector2.Angle(pos1, pos2);
+        angle_val.text = Mathf.FloorToInt(angle).ToString();
+        force_val.text = Mathf.FloorToInt(birdForce.magnitude).ToString();
+
         ammo.GetComponent<Ammo>().Release();
         ammo = null;
         ammoCollider = null;

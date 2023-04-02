@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator EnemyAttacks() {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         UpdateGameState(GameState.FallowAmmo2);
         //yield return new WaitForSeconds(3);
         //UpdateGameState(GameState.PlayerTurn);
