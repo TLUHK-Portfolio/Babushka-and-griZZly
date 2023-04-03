@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: bc44968117ca38f459ab2546f5b74afd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Neucha
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8114f0cc84e3f874990f0e28c0e99320, type: 3}
+  - {fileID: 12800000, guid: ce68f531bd847604f83c2d235f76c40b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
