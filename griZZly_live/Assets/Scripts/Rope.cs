@@ -7,6 +7,7 @@ public class Rope : MonoBehaviour {
     public Transform EndPoint;
     public GameObject AmmoPrefab;
     public float force;
+    public float maxForce;
     public TMP_Text angle_val;
     public TMP_Text force_val;
 
@@ -24,6 +25,7 @@ public class Rope : MonoBehaviour {
     Rigidbody2D ammo;
 
     //Collider2D ammoCollider;
+    private Vector3 ammoForce;
     private bool ammoCreated;
     private List<float> shootingAngle = new List<float>(2);
     private List<float> shootingForce = new List<float>(2);
@@ -63,19 +65,19 @@ public class Rope : MonoBehaviour {
         float xStart = StartPoint.position.x;
         float xEnd = EndPoint.position.x;
         mousePositionWorld = Camera.main.ScreenToWorldPoint(new Vector3(screenMousePos.x, screenMousePos.y, 10));
-        if (moveToMouse) {
+        ammoForce = (mousePositionWorld - AmmoStartingPos.transform.position) * (force * -1);
+        if (moveToMouse && ammoForce.magnitude < maxForce) {
             Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
             shootingAngle[0] = Vector2.Angle(pos1, pos2);
-            Vector3 birdForce = (mousePositionWorld - AmmoStartingPos.transform.position) * (force * -1);
-            shootingForce[0] = birdForce.magnitude;
+            shootingForce[0] = ammoForce.magnitude;
             updateStats();
         }
 
         float currX = AmmoStartingPos.transform.position.x;
 
         float ratio = (currX - xStart) / (xEnd - xStart);
-        if (ratio > 0) {
+        if (ratio > 0 && ammoForce.magnitude < maxForce) {
             indexMousePos = (int)(segmentLength * ratio);
             if (ammo && moveToMouse) {
                 ammo.transform.position = mousePositionWorld;
@@ -179,14 +181,22 @@ public class Rope : MonoBehaviour {
                 ropeSegments[i + 1] = secondSeg;
             }
 
-            if (moveToMouse && indexMousePos > 0 && indexMousePos < segmentLength - 1 && i == indexMousePos) {
+            if (moveToMouse && indexMousePos > 0 &&
+                indexMousePos < segmentLength - 1 &&
+                i == indexMousePos) {
                 //
                 RopeSegment segment = ropeSegments[i];
                 RopeSegment segment2 = ropeSegments[i + 1];
-                segment.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
-                segment2.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
-                //segment.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
-                //segment2.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+                if (ammoForce.magnitude >= maxForce) {
+                    segment.posNow = new Vector2(ammo.position.x, ammo.position.y);
+                    segment2.posNow = new Vector2(ammo.position.x, ammo.position.y);
+                }
+                else {
+                    segment.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
+                    segment2.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
+                    //segment.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+                    //segment2.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+                }
                 ropeSegments[i] = segment;
                 ropeSegments[i + 1] = segment2;
             }

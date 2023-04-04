@@ -34,7 +34,6 @@ public class EnemyManager : MonoBehaviour {
         Quaternion Rotation = Quaternion.Euler(0, 0, 45f * ai);
         ammo.isKinematic = false;
         Vector2 f = Rotation * Vector2.up * force;
-        Debug.Log(f);
         ammo.AddForce(f, ForceMode2D.Impulse);
         ammo.GetComponent<Ammo>().Release();
         StartCoroutine("EnableCollider");
