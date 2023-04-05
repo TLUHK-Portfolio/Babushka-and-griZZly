@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
+        Debug.Log(gameObject.name + " collided with " + col.collider.name);
         IndicateDamage();
 
         HealthBar.value -= .1f;

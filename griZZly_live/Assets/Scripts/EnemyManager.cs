@@ -25,7 +25,8 @@ public class EnemyManager : MonoBehaviour
         col = gameObject.GetComponent<PolygonCollider2D>();
     }
 
-    private void Start() {
+    private void Start()
+    {
         origColor = gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material.color;
     }
 
@@ -76,6 +77,7 @@ public class EnemyManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        Debug.Log(gameObject.name + " collided with " + col.collider.name);
         if (col.gameObject.tag != "Stone")
         {
             ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
@@ -130,7 +132,7 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator EnableCollider()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
         col.enabled = true;
     }
 }

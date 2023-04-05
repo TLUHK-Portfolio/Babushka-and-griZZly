@@ -35,7 +35,7 @@ public class Ammo : MonoBehaviour
         PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints());
 
-        //StartCoroutine(EnableColliderMutiga());
+        StartCoroutine(EnableColliderMutiga());
     }
 
     IEnumerator EnableColliderMutiga()
@@ -57,6 +57,7 @@ public class Ammo : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(gameObject.name + " collided with " + collision.collider.name);
         collided = true;
         canRotate = false;
         // Destroy(gameObject, 3f);
