@@ -22,7 +22,6 @@ public class AutoDestruct : MonoBehaviour {
         foreach (ContactPoint2D contact in contacts) {
             totalImpulse += contact.normalImpulse * .05f;
         }
-        Debug.Log(totalImpulse);
         lives -= totalImpulse;
         if (lives < 0) {
             Instantiate(explosion, transform.position, Quaternion.identity);

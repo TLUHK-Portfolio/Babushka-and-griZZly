@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class Ammo : MonoBehaviour {
+public class Ammo : MonoBehaviour
+{
     public bool collided;
     public float rotation = 0;
     public GameObject splash;
@@ -12,17 +13,21 @@ public class Ammo : MonoBehaviour {
     private bool isSplashCreated = false;
     private float angle = 0;
 
-    private void Awake() {
+    private void Awake()
+    {
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("mutt_0").GetComponent<Collider2D>(),
             true);
     }
 
-    public void Release() {
+    public void Release()
+    {
         CameraManager.Instance.ammo = gameObject;
-        if (GameManager.Instance.State == GameState.PlayerTurn) {
+        if (GameManager.Instance.State == GameState.PlayerTurn)
+        {
             GameManager.Instance.UpdateGameState(GameState.FallowAmmo1);
         }
-        else if (GameManager.Instance.State == GameState.EnemyTurn) {
+        else if (GameManager.Instance.State == GameState.EnemyTurn)
+        {
             GameManager.Instance.UpdateGameState(GameState.FallowAmmo2);
         }
 
@@ -33,42 +38,49 @@ public class Ammo : MonoBehaviour {
         //StartCoroutine(EnableColliderMutiga());
     }
 
-    IEnumerator EnableColliderMutiga() {
+    IEnumerator EnableColliderMutiga()
+    {
         yield return new WaitForSeconds(waitUntilAirBorne);
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("mutt_0").GetComponent<Collider2D>(),
             false);
     }
 
-    IEnumerator CreatePathPoints() {
-        while (true) {
+    IEnumerator CreatePathPoints()
+    {
+        while (true)
+        {
             if (collided) break;
             PathPoints.instance.CreateCurrentPathPoint(transform.position);
             yield return new WaitForSeconds(PathPoints.instance.timeInterval);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         collided = true;
         canRotate = false;
-        Destroy(gameObject, 3f);
-        if (!isSplashCreated) {
-            if (splash != null) {
+        // Destroy(gameObject, 3f);
+        if (!isSplashCreated)
+        {
+            if (splash != null)
+            {
                 Instantiate(splash, transform.position, Quaternion.identity);
                 isSplashCreated = true;
             }
         }
+
+        StartCoroutine(NextStop());
     }
 
-    private void Update() {
-        if (canRotate) {
-            var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = rotation;
-            angle += this.rotation;
-        }
-    }
+    IEnumerator NextStop()
+    {
+        //Wait for 3 seconds
+        yield return new WaitForSeconds(3);
 
-    private void OnDestroy() {
-        switch (GameManager.Instance.State) {
+        Destroy(gameObject);
+
+        switch (GameManager.Instance.State)
+        {
             case GameState.FallowAmmo1:
                 GameManager.Instance.UpdateGameState(GameState.EnemyTurn);
                 break;
@@ -76,5 +88,28 @@ public class Ammo : MonoBehaviour {
                 GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
                 break;
         }
+    }
+
+    private void Update()
+    {
+        if (canRotate)
+        {
+            var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = rotation;
+            angle += this.rotation;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // switch (GameManager.Instance.State)
+        // {
+        //     case GameState.FallowAmmo1:
+        //         GameManager.Instance.UpdateGameState(GameState.EnemyTurn);
+        //         break;
+        //     case GameState.FallowAmmo2:
+        //         GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
+        //         break;
+        // }
     }
 }

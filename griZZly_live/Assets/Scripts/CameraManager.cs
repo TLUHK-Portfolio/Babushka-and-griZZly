@@ -16,7 +16,10 @@ public class CameraManager : MonoBehaviour {
     }
 
     public void OnDestroy() {
-        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+        if (GameManager.Instance)
+        {
+            GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+        }
     }
 
     public void GameManagerOnGameStateChanged(GameState state) {
