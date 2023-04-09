@@ -187,11 +187,12 @@ public class Rope : MonoBehaviour {
                 //
                 RopeSegment segment = ropeSegments[i];
                 RopeSegment segment2 = ropeSegments[i + 1];
-                if (ammoForce.magnitude >= maxForce) {
+                if (ammoForce.magnitude >= maxForce) { // tõmbab liiga tugevalt
                     segment.posNow = new Vector2(ammo.position.x, ammo.position.y);
                     segment2.posNow = new Vector2(ammo.position.x, ammo.position.y);
-                }
-                else {
+                } else if (mousePositionWorld.x > AmmoStartingPos.transform.position.x) { // tõmbab vales suunas
+                  Debug.Log("mis nüüd juhtus");  
+                } else { // ok
                     segment.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
                     segment2.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
                     //segment.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);

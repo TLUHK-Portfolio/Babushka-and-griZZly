@@ -26,6 +26,7 @@ public class AutoDestruct : MonoBehaviour {
         if (lives < 0) {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject,1f);
+            Destroy(explosion, 2f);
         }
         
     }

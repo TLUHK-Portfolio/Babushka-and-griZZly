@@ -15,7 +15,7 @@ public class Ammo : MonoBehaviour
 
     private void Awake()
     {
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("mutt_0").GetComponent<Collider2D>(),
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Mutt").GetComponent<Collider2D>(),
             true);
     }
 
@@ -41,7 +41,7 @@ public class Ammo : MonoBehaviour
     IEnumerator EnableColliderMutiga()
     {
         yield return new WaitForSeconds(waitUntilAirBorne);
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("mutt_0").GetComponent<Collider2D>(),
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Mutt").GetComponent<Collider2D>(),
             false);
     }
 
