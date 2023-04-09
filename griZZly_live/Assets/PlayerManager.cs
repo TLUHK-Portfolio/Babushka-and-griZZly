@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerManager : MonoBehaviour
-{
+public class PlayerManager : MonoBehaviour {
     public Slider HealthBar;
     public float damageFlashTime = .45f;
-    private Color origColor;
-    private SpriteRenderer playerSpriteRenderer;
+    private List<Color> origColor = new List<Color>();
+
 
     private void Start() {
-        playerSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        origColor = playerSpriteRenderer.color;
+        foreach (Transform child in gameObject.transform) {
+            if (child.GetComponent<MeshRenderer>()) {
+                Debug.Log(child.GetComponent<MeshRenderer>().material.color);
+                origColor.Add(child.GetComponent<MeshRenderer>().material.color);
+            }
+        }
+        Debug.Log(origColor.Count);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
@@ -25,16 +29,24 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-     private void IndicateDamage()
-    {
-
-        playerSpriteRenderer.color = Color.red;
+    private void IndicateDamage() {
+        foreach (Transform child in gameObject.transform) {
+            if (child.GetComponent<MeshRenderer>()) {
+                child.GetComponent<MeshRenderer>().material.color = Color.red;
+            }
+        }
 
         Invoke("ResetMesh", damageFlashTime);
     }
 
-    private void ResetMesh()
-    {
-        playerSpriteRenderer.color = origColor;
+    private void ResetMesh() {
+        int i = 0;
+        foreach (Transform child in gameObject.transform) {
+            if (child.GetComponent<MeshRenderer>()) {
+                child.GetComponent<MeshRenderer>().material.color = origColor[i];
+                i++;
+            }
+        }
     }
+    
 }

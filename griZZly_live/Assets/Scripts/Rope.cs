@@ -21,10 +21,7 @@ public class Rope : MonoBehaviour {
     private int indexMousePos;
     [SerializeField] private GameObject AmmoStartingPos;
 
-
     Rigidbody2D ammo;
-
-    //Collider2D ammoCollider;
     private Vector3 ammoForce;
     private bool ammoCreated;
     private List<float> shootingAngle = new List<float>(2);
@@ -93,7 +90,6 @@ public class Rope : MonoBehaviour {
     private void CreateAmmo() {
         if (!ammo) {
             ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
-            //ammoCollider = ammo.GetComponent<Collider2D>();
             ammo.isKinematic = true;
             ammo.position = AmmoStartingPos.transform.position;
         }
@@ -187,17 +183,27 @@ public class Rope : MonoBehaviour {
                 //
                 RopeSegment segment = ropeSegments[i];
                 RopeSegment segment2 = ropeSegments[i + 1];
-                if (ammoForce.magnitude >= maxForce) { // tõmbab liiga tugevalt
+                if (ammoForce.magnitude >= maxForce) {
+                    // tõmbab liiga tugevalt
                     segment.posNow = new Vector2(ammo.position.x, ammo.position.y);
                     segment2.posNow = new Vector2(ammo.position.x, ammo.position.y);
-                } else if (mousePositionWorld.x > AmmoStartingPos.transform.position.x) { // tõmbab vales suunas
-                  Debug.Log("mis nüüd juhtus");  
-                } else { // ok
+                }
+                else if (mousePositionWorld.x > AmmoStartingPos.transform.position.x) {
+                    // tõmbab vales suunas
+                    Debug.Log("mis nüüd juhtus");
+                }
+                else if (mousePositionWorld.y > AmmoStartingPos.transform.position.y) {
+                    // tõmbab vales suunas
+                    Debug.Log("mis nüüd juhtus");
+                }
+                else {
+                    // ok
                     segment.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
                     segment2.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
                     //segment.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
                     //segment2.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
                 }
+
                 ropeSegments[i] = segment;
                 ropeSegments[i + 1] = segment2;
             }
