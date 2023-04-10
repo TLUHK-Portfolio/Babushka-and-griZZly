@@ -6,6 +6,7 @@ TagManager:
   tags:
   - VMCam
   - Stone
+  - Hand
   layers:
   - Default
   - TransparentFX

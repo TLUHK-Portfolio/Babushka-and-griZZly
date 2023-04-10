@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
     public Slider HealthBar;
     public float damageFlashTime = .45f;
-    private List<Color> origColor = new List<Color>();
-
+    private Color origColor;
 
     private void Start() {
         foreach (Transform child in gameObject.transform) {
             if (child.GetComponent<MeshRenderer>()) {
                 Debug.Log(child.GetComponent<MeshRenderer>().material.color);
-                origColor.Add(child.GetComponent<MeshRenderer>().material.color);
+                origColor = child.GetComponent<MeshRenderer>().material.color;
+                break;
             }
         }
-        Debug.Log(origColor.Count);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
@@ -40,11 +37,9 @@ public class PlayerManager : MonoBehaviour {
     }
 
     private void ResetMesh() {
-        int i = 0;
         foreach (Transform child in gameObject.transform) {
             if (child.GetComponent<MeshRenderer>()) {
-                child.GetComponent<MeshRenderer>().material.color = origColor[i];
-                i++;
+                child.GetComponent<MeshRenderer>().material.color = origColor;
             }
         }
     }

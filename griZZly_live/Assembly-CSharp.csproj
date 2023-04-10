@@ -48,7 +48,7 @@
      <Compile Include="Assets\Scripts\PathPoints.cs" />
      <Compile Include="Assets\Scripts\CameraManager.cs" />
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
-     <Compile Include="Assets\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Ammo.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Folder Include="Assets" />

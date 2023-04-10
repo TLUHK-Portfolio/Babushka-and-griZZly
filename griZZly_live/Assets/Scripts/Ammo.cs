@@ -34,7 +34,6 @@ public class Ammo : MonoBehaviour
         canRotate = true;
         PathPoints.instance.Clear();
         StartCoroutine(CreatePathPoints());
-
         StartCoroutine(EnableColliderMutiga());
     }
 

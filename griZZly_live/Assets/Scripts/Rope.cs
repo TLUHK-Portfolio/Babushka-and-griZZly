@@ -6,6 +6,7 @@ public class Rope : MonoBehaviour {
     public Transform StartPoint;
     public Transform EndPoint;
     public GameObject AmmoPrefab;
+    public GameObject Player;
     public float force;
     public float maxForce;
     public TMP_Text angle_val;
@@ -68,6 +69,9 @@ public class Rope : MonoBehaviour {
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
             shootingAngle[0] = Vector2.Angle(pos1, pos2);
             shootingForce[0] = ammoForce.magnitude;
+            if (Player) {
+                Player.transform.position = new Vector3(ammo.transform.position.x-.7f, Player.transform.position.y, Player.transform.position.z);
+            }
             updateStats();
         }
 
@@ -92,6 +96,9 @@ public class Rope : MonoBehaviour {
             ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
             ammo.isKinematic = true;
             ammo.position = AmmoStartingPos.transform.position;
+            if (Player) {
+                Player.transform.position = new Vector3(AmmoStartingPos.transform.position.x-.7f, Player.transform.position.y, Player.transform.position.z);
+            }
         }
     }
 
