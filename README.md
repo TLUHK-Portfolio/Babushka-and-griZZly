@@ -1,6 +1,6 @@
 # rif21-MM-praktika-2
-Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli on enda loodud. 
 
+Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli on enda loodud.
 
 ## :raised_hand_with_fingers_splayed:	 Meeskond "Team 2"
 
@@ -9,17 +9,27 @@ Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli
 | **Arendajad**    | Kairo Luha, Kaius Karon   |
 | **Disainerid**   | Kerli Loopman, Renat Ränk |
 
+
+## Navigatsioon repositooriumis
+
+Repositooriumis on järngevad kaustad:
+[Helid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Helid) - Sellest kaustast leiad kõik meie loodud heliefektid ja täpsema info leiad selle kausta readme.md-st. 
+[Kujunduselemendid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid) - Kujunduselemendid sisaldavad tööfaile ning ka mängumootorisse imporditavaid PNG faile ja ka Blenderis loodud animatsioone. Täpsema info leiad selle kausta readme.md-st. 
+[Mängumootori failid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/griZZly) - siin on kogu vajalik sisu mängu jaoks.
+[praktika-failid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/praktika-failid) - sellest kaustast leiad faile, mis ei ole kujunduse, heli ega arendusega seotud, kuid sisaldavad olulist infot praktika läbimise kohta.
+
 ## :bookmark_tabs: Ressurssid
 
-[Google Drive](https://drive.google.com/drive/folders/12y-jqBrefYDzp4aK-Ckxdw56SnxjDHFl?usp=share_link) | [Inspiratsioonitahvel](https://www.figma.com/file/Dp7A3jqcnqm0gcBiQIrzV1/Moodboard?node-id=0%3A1&t=xcevLEVAfKt5AQnP-1) | [Tegevuskava](https://github.com/orgs/tluhk/projects/16/views/3) | [Koosolekute memod](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/koosolekud.md)
+[Google Drive](https://drive.google.com/drive/folders/12y-jqBrefYDzp4aK-Ckxdw56SnxjDHFl?usp=share_link) | [Inspiratsioonitahvel](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/Moodboard%20(1).pdf) | [Tegevuskava](https://github.com/orgs/tluhk/projects/16/views/3) | [Koosolekute memod](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/koosolekud.md)
 
 # :video_game: Babushka & griZZly mängukontseptsioon
 
 griZZly on kurjakuulutav karu, kes ühel päeval hakkab endast ohtu kujutama metsamajas elavale vanaemale (Babushka). Babushka on valmis griZZlyga võitlema, kuid tema laskemoonaks on kõik käepärane nagu moosipurgid ja molotovi kokteilid.  
-Selles 2D tulistamismängus aitad sina vanaemal oma kodu kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid. Pea meeles, et ka griZZly saab vastu rünnata. Laskmine käib korda-mööda. Karu ja mutike on statsionaarsed. Karu viskab esimesel tasemel kividega ja teisel pommidega. Viskamine käest. Vanaema - laskmine sukapükstest tehtud ragulka. Laskemoonaks moosipurk, molotovi kokteil. Iga kord kui mutikese kord on tuleb majast välja ja laseb ning peale lasku jookseb tuppa tagasi. Vanaemal ja griZZlyl on eluriba, mis väheneb vigastuste tekkimisel. Eluriba väheneb vastavalt laskemoona kahjutegurile ning kaugusele mängijast. Hoone/kindluse objektide kahjustused mõjutavad samuti eluriba. Laskemoona on mõlemal lõputult ehk mäng kestab seni kuni kummalgi saab elutase 0%. 
+Selles 2D tulistamismängus aitad sina vanaemal oma kindlust kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid. Pea meeles, et ka griZZly saab vastu rünnata. Laskmine käib korda-mööda. Karu ja mutike on statsionaarsed. Karu viskab esimesel tasemel kividega ja teisel pommidega. Karu viskab oma laskemoona käest, ning Babushka kasutab puude vahele asetatud pesunööri. Tegelastel on eluriba, mis väheneb vigastuste tekkimisel. Eluriba väheneb vastavalt laskemoona kahjutegurile ning kaugusele mängijast. Hoone/kindluse objektide kahjustused mõjutavad samuti eluriba. Laskemoona on mõlemal lõputult ehk mäng kestab seni kuni kummalgi saab elutase 0%.
+
 Mäng on jagatud kaheks tasemeks. Karu, laskemoon ja tema kindlus on teisel tasemel tugevam.
 
-Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma vaade on suurem, kuid kaamera liigub mööda vaadet ringi vastavalt sellele, mis hetkel on oluline. 
+Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma vaade on suurem, kui mänguhetkel pildis olev kaader ning kaamera liigub mööda vaadet ringi vastavalt sellele, mis hetkel on oluline. 
 
 ## Andmed
 
@@ -36,7 +46,7 @@ Kogu kujundus on 2D ning multikalaadne. Babushka poolel on kujundus rõõmsam ni
 Loodavate ja loodud elementide loetelu kirjas [siin](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/loodav-graafika.md)
 
 ## Mängu käivitamine:
-1. Selle repositooriumi parempoolsest menüüst leiad "Releases" ja viimase release avamisel on võimalik sealt alla laadida mängu failide .zip, mis tuleb alla laadida.
+1. Selle repositooriumi parempoolsest menüüst leiad "Releases" ja viimase release avamisel on võimalik sealt leida mängu failide .zip, mis tuleb alla laadida.
 2. Peale alla laadimist paki fail lahti endale sobivasse kohta
 3. Lahti pakitud kaustast leiab mängu nimega "Babushka&griZZly.exe" mille käivitamisel see avatakse
 4. Naudi mängu
