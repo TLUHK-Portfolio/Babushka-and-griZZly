@@ -12,11 +12,16 @@ public class Ammo : MonoBehaviour
     private bool canRotate = false;
     private bool isSplashCreated = false;
     private float angle = 0;
+    private AudioSource source;
 
     private void Awake()
     {
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Mutt").GetComponent<Collider2D>(),
             true);
+    }
+
+    private void Start() {
+        source = GetComponent<AudioSource>();
     }
 
     public void Release()
@@ -66,9 +71,10 @@ public class Ammo : MonoBehaviour
             {
                 Instantiate(splash, transform.position, Quaternion.identity);
                 isSplashCreated = true;
+                
             }
         }
-
+        source.Play();
         StartCoroutine(NextStop());
     }
 
