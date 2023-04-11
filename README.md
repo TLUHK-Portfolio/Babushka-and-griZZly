@@ -13,10 +13,10 @@ Multimeediumi praktika eesmärgiks on luua arvutimäng, mille graafika ning heli
 ## Navigatsioon repositooriumis
 
 Repositooriumis on järngevad kaustad:
-[Helid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Helid) - Sellest kaustast leiad kõik meie loodud heliefektid ja täpsema info leiad selle kausta readme.md-st. 
-[Kujunduselemendid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid) - Kujunduselemendid sisaldavad tööfaile ning ka mängumootorisse imporditavaid PNG faile ja ka Blenderis loodud animatsioone. Täpsema info leiad selle kausta readme.md-st. 
-[Mängumootori failid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/griZZly) - siin on kogu vajalik sisu mängu jaoks.
-[praktika-failid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/praktika-failid) - sellest kaustast leiad faile, mis ei ole kujunduse, heli ega arendusega seotud, kuid sisaldavad olulist infot praktika läbimise kohta.
+[Helid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Helid) - Sellest kaustast leiad kõik meie loodud heliefektid ja täpsema info leiad selle kausta readme.md-st.   
+[Kujunduselemendid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/Kujunduselemendid) - Kujunduselemendid sisaldavad tööfaile ning ka mängumootorisse imporditavaid PNG faile ja ka Blenderis loodud animatsioone. Täpsema info leiad selle kausta readme.md-st.   
+[Mängumootori failid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/griZZly) - siin on kogu vajalik sisu mängu jaoks.  
+[praktika-failid](https://github.com/tluhk/rif21-MM-praktika-2/tree/master/praktika-failid) - sellest kaustast leiad faile, mis ei ole kujunduse, heli ega arendusega seotud, kuid sisaldavad olulist infot praktika läbimise kohta.  
 
 ## :bookmark_tabs: Ressurssid
 
