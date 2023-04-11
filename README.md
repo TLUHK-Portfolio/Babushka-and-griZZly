@@ -43,7 +43,7 @@ Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma
 ## Graafika
 Kogu kujundus on 2D ning multikalaadne. Babushka poolel on kujundus rõõmsam ning griZZly poolel süngem. Kasutame ühe objektil kahe-kolme tooniga varjutusi, gradiente.
 
-Loodavate ja loodud elementide loetelu kirjas [siin](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/loodav-graafika.md)
+Kujunduse kohta on rohkem kirjas [siin](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/readme.md)
 
 ## Mängu käivitamine:
 1. Selle repositooriumi parempoolsest menüüst leiad "Releases" ja viimase release avamisel on võimalik sealt leida mängu failide .zip, mis tuleb alla laadida.
