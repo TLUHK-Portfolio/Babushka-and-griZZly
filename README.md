@@ -35,15 +35,10 @@ Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma
 
 **Nimi:** Babushka&GriZZly  
 **Temaatika:** *turn-based*, *shooting*  
-**Graafika:** 2D, multikalaadne  
+**Graafika:** 2D, multikalaadne [Kujunduse kohta loe rohkem siit](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/readme.md)  
 **Mängumootor:** Unity [Loe mängumootori valiku kohta siit](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/praktika-failid/mangumootori-aruanne.md)    
 **Vaade**: *side-view, side-scrolling*  
 **Kontrollerid**: Hiir
-
-## Graafika
-Kogu kujundus on 2D ning multikalaadne. Babushka poolel on kujundus rõõmsam ning griZZly poolel süngem. Kasutame ühe objektil kahe-kolme tooniga varjutusi, gradiente.
-
-Kujunduse kohta on rohkem kirjas [siin](https://github.com/tluhk/rif21-MM-praktika-2/blob/master/Kujunduselemendid/readme.md)
 
 ## Mängu käivitamine:
 1. Selle repositooriumi parempoolsest menüüst leiad "Releases" ja viimase release avamisel on võimalik sealt leida mängu failide .zip, mis tuleb alla laadida.
