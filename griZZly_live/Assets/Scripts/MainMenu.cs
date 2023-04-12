@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
         backgroundMusic = GameObject.Find("BackgroundMusic");
     }
 
-    public void PlayGame ()
+    public void PlayGame()
     {
         StartCoroutine(FadeOut(backgroundMusic.GetComponent<AudioSource>(), 1, gameObject));
     }

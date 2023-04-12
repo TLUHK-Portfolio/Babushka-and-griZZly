@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -21,12 +22,16 @@ public class Rope : MonoBehaviour {
     private Vector3 mousePositionWorld;
     private int indexMousePos;
     [SerializeField] private GameObject AmmoStartingPos;
+    private List<String> clickDisabledObjects = new List<String>();
 
     Rigidbody2D ammo;
     private Vector3 ammoForce;
     private bool ammoCreated;
     private List<float> shootingAngle = new List<float>(2);
     private List<float> shootingForce = new List<float>(2);
+
+    private void Awake() {
+    }
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -44,6 +49,16 @@ public class Rope : MonoBehaviour {
     }
 
     void Update() {
+        // if (Input.GetMouseButtonUp(0)) {
+        //     Vector3 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //     RaycastHit2D hit = Physics2D.Raycast(new Vector2(ray.x, ray.y), Vector2.zero);
+
+        //     if (hit)
+        //     {
+        //         Debug.Log("clicked on: " + hit.collider.name);
+        //     }
+        // }
+
         DrawRope();
         if (GameManager.Instance.State == GameState.PlayerTurn) {
             // Input.GetMouseButtonDown(0) && 
@@ -84,6 +99,21 @@ public class Rope : MonoBehaviour {
                 ammo.transform.position = mousePositionWorld;
             }
         }
+    }
+
+    private bool ClickedOnNonAllowedObjects()
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        // võib ükskõik mis kaugus olla aga peaks olema kaugemal kui kaamera asub stseenist - 100
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log("clicked on: " + hit.collider.name);
+            return true;
+        }
+
+        return false;
     }
 
     private void updateStats() {
