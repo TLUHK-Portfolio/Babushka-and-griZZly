@@ -1,6 +1,11 @@
 # Koosolekute memod
 [Koosolekute link](https://meet.google.com/gst-opeo-uat)
 
+# 11.04.2023
+- Taskide üle vaatamine
+- Progressi tutvustus
+- Arutelu animatsioonide teemal
+
 # 28.03.2023
 ## Martti tagasisidest tulnud teemade arutelu
 - Uuendasime kokkuleppeid: lisame ülesande loomisel rohkem sisu ja lahendatuks märkides ka lisaks commitile ka kirjelduse, kuidas läks, et ülesanne poleks nii lakooniline
