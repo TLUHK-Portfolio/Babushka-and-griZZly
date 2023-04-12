@@ -132,7 +132,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6272585680651445889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 06592f5bc0010f0409b01fc53e914bd7, type: 2}
   m_IsTrigger: 0

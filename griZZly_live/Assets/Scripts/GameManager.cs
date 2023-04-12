@@ -4,8 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public static GameManager Instance;
     public GameState State;
     public static Action<GameState> OnGameStateChanged;
@@ -14,70 +13,57 @@ public class GameManager : MonoBehaviour
     private Boolean gamePaused = false;
 
 
-    private void Awake()
-    {
+    private void Awake() {
         Instance = this;
     }
 
-    void Start()
-    {
+    void Start() {
         UpdateGameState(GameState.PlayerTurn);
     }
 
-    private void Update()
-    {
+    private void Update() {
         //kui vajutada mängus escape'i
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             //kui menüü oli juba aktiivne, sulgeme selle
-            if (pauseMenu.activeSelf)
-            {
+            if (pauseMenu.activeSelf) {
                 PauseGame();
             }
-            else
-            {
+            else {
                 ResumeGame();
             }
         }
     }
 
-    public void PauseGame()
-    {
+    public void PauseGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         pauseMenu.SetActive(false);
 
         gamePaused = false;
     }
 
-    public void ResumeGame()
-    {
+    public void ResumeGame() {
         pauseMenu.SetActive(true);
 
         gamePaused = true;
     }
 
-    public void ToMainMenu()
-    {
+    public void ToMainMenu() {
         SceneManager.LoadScene(0);
     }
 
-    public void PauseHandler()
-    {
-        if (gamePaused)
-        {
+    public void PauseHandler() {
+        if (gamePaused) {
             PauseGame();
         }
-        else
-        {
+        else {
             ResumeGame();
         }
     }
 
-    public void UpdateGameState(GameState newState)
-    {
+    public void UpdateGameState(GameState newState) {
         State = newState;
 
-        switch (newState)
-        {
+        switch (newState) {
             case GameState.PlayerTurn:
                 text.text = "Babushka turn";
                 break;
@@ -93,27 +79,31 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Win:
                 text.text = "You WIN!!!";
+                StartCoroutine(showMainMenu());
                 break;
             case GameState.Lose:
                 text.text = "You lose :(";
+                StartCoroutine(showMainMenu());
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
+
         OnGameStateChanged?.Invoke(newState);
     }
 
-    IEnumerator EnemyAttacks()
-    {
+    IEnumerator EnemyAttacks() {
         yield return new WaitForSeconds(2);
         UpdateGameState(GameState.FallowAmmo2);
-        //yield return new WaitForSeconds(3);
-        //UpdateGameState(GameState.PlayerTurn);
+    }
+
+    IEnumerator showMainMenu() {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);        
     }
 }
 
-public enum GameState
-{
+public enum GameState {
     PlayerTurn,
     FallowAmmo1,
     EnemyTurn,
