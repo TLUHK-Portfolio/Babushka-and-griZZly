@@ -30,9 +30,10 @@ public class SettingsController : MonoBehaviour
     //     LoadValues();
     // }
 
-    void LoadValues()
+    public void LoadValues()
     {
         float savedVolume = PlayerPrefs.GetFloat("VolumeValue");
+        Debug.Log("Volume Value: " + savedVolume);
 
         volumeSlider.value = savedVolume;
         AudioListener.volume = savedVolume / 100;

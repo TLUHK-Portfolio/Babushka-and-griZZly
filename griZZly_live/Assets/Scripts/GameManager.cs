@@ -35,7 +35,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void PauseGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Main Menu");
         pauseMenu.SetActive(false);
 
         gamePaused = false;
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour {
             case GameState.Win:
                 text.text = "You WIN!!!";
                 StartCoroutine(showMainMenu());
+                PlayerPrefs.SetInt("LevelOneCompleted", 1);
                 break;
             case GameState.Lose:
                 text.text = "You lose :(";
