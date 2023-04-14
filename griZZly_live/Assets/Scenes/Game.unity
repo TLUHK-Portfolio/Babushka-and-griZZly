@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 429271078}
   m_Layer: 0
   m_Name: euroalus1
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 468262249}
   m_Layer: 0
   m_Name: Kast2
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2003,6 +2003,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "K\xFClmik_K\xFClg_01"
       objectReference: {fileID: 0}
+    - target: {fileID: 3753729576786870536, guid: 8a4ba7dcd290ada43bf9a3859a6644c0,
+        type: 3}
+      propertyPath: m_TagString
+      value: TakistusObject
+      objectReference: {fileID: 0}
     - target: {fileID: 4198163738186883489, guid: 8a4ba7dcd290ada43bf9a3859a6644c0,
         type: 3}
       propertyPath: m_Mass
@@ -2272,6 +2277,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mikrolaineahi_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2517004346890953549, guid: 447d3e59bc64df442817da409f0aa2a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: TakistusObject
+      objectReference: {fileID: 0}
     - target: {fileID: 4832615255845216284, guid: 447d3e59bc64df442817da409f0aa2a3,
         type: 3}
       propertyPath: m_SortingLayer
@@ -2427,7 +2437,7 @@ GameObject:
   - component: {fileID: 787922935}
   m_Layer: 0
   m_Name: euroalus1 (1)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2560,7 +2570,7 @@ GameObject:
   - component: {fileID: 833560911}
   m_Layer: 0
   m_Name: kast1 (1)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3023,6 +3033,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "K\xFClmik_eest_01"
       objectReference: {fileID: 0}
+    - target: {fileID: 3499918799670138968, guid: da6e2fcbf5581da42aa1e3c1f974637c,
+        type: 3}
+      propertyPath: m_TagString
+      value: TakistusObject
+      objectReference: {fileID: 0}
     - target: {fileID: 6028151758220267552, guid: da6e2fcbf5581da42aa1e3c1f974637c,
         type: 3}
       propertyPath: m_SortingLayer
@@ -3316,7 +3331,7 @@ GameObject:
   - component: {fileID: 1053234009}
   m_Layer: 0
   m_Name: euroalus1 (3)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3449,7 +3464,7 @@ GameObject:
   - component: {fileID: 1117335407}
   m_Layer: 0
   m_Name: kast1
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3561,7 +3576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117335406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.064015, y: -0.8808667, z: 0.07992199}
+  m_LocalPosition: {x: 6.12, y: -0.8808667, z: 0.07992199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3582,7 +3597,7 @@ GameObject:
   - component: {fileID: 1141985431}
   m_Layer: 0
   m_Name: Kast2 (1)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3791,7 +3806,7 @@ GameObject:
   - component: {fileID: 1176602302}
   m_Layer: 0
   m_Name: euroalus1 (5)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4109,7 +4124,7 @@ GameObject:
   - component: {fileID: 1415721529}
   m_Layer: 0
   m_Name: kast1 (2)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4576,7 +4591,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 919132148037868334}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1582596242
 AudioSource:
@@ -5131,7 +5146,7 @@ GameObject:
   - component: {fileID: 1880908269}
   m_Layer: 0
   m_Name: euroalus1 (2)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5601,6 +5616,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mikrolaineahi_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2517004346890953549, guid: 447d3e59bc64df442817da409f0aa2a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: TakistusObject
+      objectReference: {fileID: 0}
     - target: {fileID: 2768927518674495865, guid: 447d3e59bc64df442817da409f0aa2a3,
         type: 3}
       propertyPath: m_Enabled
@@ -5910,7 +5930,7 @@ GameObject:
   - component: {fileID: 2079419807}
   m_Layer: 0
   m_Name: euroalus1 (4)
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6182,7 +6202,7 @@ GameObject:
   - component: {fileID: 2120938932}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6569,6 +6589,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 443104319659494832, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 443104319659494832, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
       propertyPath: m_CullingMode
       value: 2
       objectReference: {fileID: 0}
@@ -6587,40 +6612,60 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3361134730439235972, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131776585561460942, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4808666067726407412, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792358786017666680, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5792358786017666680, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.0000029443254
+      value: 0.0000032086787
       objectReference: {fileID: 0}
     - target: {fileID: 5792358786017666680, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.000000030495656
+      value: 0.0000000268369
       objectReference: {fileID: 0}
     - target: {fileID: 5792358786017666680, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.13248229
+      value: 0.2306397
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744552297869209485, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6744552297869209485, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.00000308065
+      value: 0.0000024108137
       objectReference: {fileID: 0}
     - target: {fileID: 6744552297869209485, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.00000086633054
+      value: 0.00000067851926
       objectReference: {fileID: 0}
     - target: {fileID: 6744552297869209485, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 15.738239
+      value: 15.71916
       objectReference: {fileID: 0}
     - target: {fileID: 6976984598747971250, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
@@ -6630,7 +6675,7 @@ PrefabInstance:
     - target: {fileID: 6976984598747971250, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.00000025415233
+      value: -0.00000025415235
       objectReference: {fileID: 0}
     - target: {fileID: 6976984598747971250, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
@@ -6639,18 +6684,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7953175438343555082, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953175438343555082, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.0000024637948
+      value: 0.0000020158325
       objectReference: {fileID: 0}
     - target: {fileID: 7953175438343555082, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.000001816483
+      value: 0.0000014862134
       objectReference: {fileID: 0}
     - target: {fileID: 7953175438343555082, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 36.51349
+      value: 36.40025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350289284665310372, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a811703247b2474db4b3027fb9c8c8f, type: 3}

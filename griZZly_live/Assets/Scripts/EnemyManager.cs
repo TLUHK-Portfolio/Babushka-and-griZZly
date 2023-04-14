@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class EnemyManager : MonoBehaviour {
+public class EnemyManager : MonoBehaviour
+{
     public GameObject AmmoPrefab;
     public float force;
     public GameObject LaunchPosition;
@@ -17,20 +18,28 @@ public class EnemyManager : MonoBehaviour {
     Rigidbody2D ammo;
     private PolygonCollider2D col;
     private AudioSource source;
+    GameState currentGameState;
+    private bool karuThrowing;
 
-    public void Awake() {
+    public void Awake()
+    {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
         animator = gameObject.GetComponent<Animator>();
         col = gameObject.GetComponent<PolygonCollider2D>();
+
+        karuThrowing = false;
     }
 
-    private void Start() {
+    private void Start()
+    {
         source = GetComponent<AudioSource>();
         origColor = gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material.color;
     }
 
-    private void CreateAmmo() {
-        if (!GameObject.FindWithTag("Stone")) {
+    private void CreateAmmo()
+    {
+        if (!GameObject.FindWithTag("Stone"))
+        {
             ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
             LaunchPosition = GameObject.Find("KiviPos");
             ammo.transform.position = LaunchPosition.transform.position;
@@ -38,7 +47,8 @@ public class EnemyManager : MonoBehaviour {
         }
     }
 
-    void Shoot() {
+    void Shoot()
+    {
         ammo = GameObject.FindWithTag("Stone").GetComponent<Rigidbody2D>();
         onShootingAction = false;
         animator.SetBool("viska", false);
@@ -51,45 +61,83 @@ public class EnemyManager : MonoBehaviour {
         StartCoroutine("EnableCollider");
     }
 
-    public void GameManagerOnGameStateChanged(GameState state) {
-        if (state == GameState.EnemyTurn) {
+    public void GameManagerOnGameStateChanged(GameState state)
+    {
+        GameState currentGameState = state;
+
+        if (state == GameState.EnemyTurn)
+        {
             CreateAmmo();
-            if (col) {
+            if (col)
+            {
                 col.enabled = false;
             }
+
+            karuThrowing = true;
         }
-        else if (state == GameState.FallowAmmo2) {
+        else if (state == GameState.FallowAmmo2)
+        {
             onShootingAction = true;
-            if (animator) {
+            if (animator)
+            {
                 animator.SetBool("viska", true);
                 if (source)
                     source.Play();
             }
+
+            karuThrowing = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
+    private void OnCollisionEnter2D(Collision2D col)
+    {
         Debug.Log(gameObject.name + " collided with " + col.collider.name);
-        if (col.gameObject.tag != "Stone") {
+
+        if (!karuThrowing)
+        {
             ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
             col.GetContacts(contacts);
             float totalImpulse = 0;
-            foreach (ContactPoint2D contact in contacts) {
+            foreach (ContactPoint2D contact in contacts)
+            {
                 totalImpulse += contact.normalImpulse * .05f;
             }
 
             IndicateDamage();
 
             HealthBar.value -= totalImpulse;
-            if (HealthBar.value <= 0) {
+            if (HealthBar.value <= 0)
+            {
                 GameManager.Instance.UpdateGameState(GameState.Win);
             }
         }
+
+        // if (col.gameObject.tag != "Stone")
+        // {
+        //     ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
+        //     col.GetContacts(contacts);
+        //     float totalImpulse = 0;
+        //     foreach (ContactPoint2D contact in contacts)
+        //     {
+        //         totalImpulse += contact.normalImpulse * .05f;
+        //     }
+
+        //     IndicateDamage();
+
+        //     HealthBar.value -= totalImpulse;
+        //     if (HealthBar.value <= 0)
+        //     {
+        //         GameManager.Instance.UpdateGameState(GameState.Win);
+        //     }
+        // }
     }
 
-    private void IndicateDamage() {
-        foreach (Transform child in gameObject.transform) {
-            if (child.GetComponent<MeshRenderer>()) {
+    private void IndicateDamage()
+    {
+        foreach (Transform child in gameObject.transform)
+        {
+            if (child.GetComponent<MeshRenderer>())
+            {
                 child.GetComponent<MeshRenderer>().material.color = Color.red;
             }
         }
@@ -97,21 +145,27 @@ public class EnemyManager : MonoBehaviour {
         Invoke("ResetMesh", damageFlashTime);
     }
 
-    private void ResetMesh() {
-        foreach (Transform child in gameObject.transform) {
-            if (child.GetComponent<MeshRenderer>()) {
+    private void ResetMesh()
+    {
+        foreach (Transform child in gameObject.transform)
+        {
+            if (child.GetComponent<MeshRenderer>())
+            {
                 child.GetComponent<MeshRenderer>().material.color = origColor;
             }
         }
     }
 
-    public void Update() {
-        if (onShootingAction && ammo && ammo.isKinematic) {
+    public void Update()
+    {
+        if (onShootingAction && ammo && ammo.isKinematic)
+        {
             ammo.transform.position = LaunchPosition.transform.position;
         }
     }
 
-    IEnumerator EnableCollider() {
+    IEnumerator EnableCollider()
+    {
         yield return new WaitForSeconds(.5f);
         col.enabled = true;
     }
