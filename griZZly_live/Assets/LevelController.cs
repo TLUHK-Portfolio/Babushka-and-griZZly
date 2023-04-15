@@ -39,10 +39,10 @@ public class LevelController : MonoBehaviour
 
     public void StartLevelOne()
     {
-        StartCoroutine(FadeOut(backgroundMusic.GetComponent<AudioSource>(), 1, gameObject));
+        StartCoroutine(FadeOut(backgroundMusic.GetComponent<AudioSource>(), 1));
     }
 
-    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, GameObject mainMenuObject)
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
     {
         float startVolume = audioSource.volume;
 
@@ -55,9 +55,9 @@ public class LevelController : MonoBehaviour
 
         audioSource.Stop();
         audioSource.volume = startVolume;
-
+        
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("Game");
-        mainMenuObject.SetActive(false);
+        // mainMenuObject.SetActive(false);
     }
 }

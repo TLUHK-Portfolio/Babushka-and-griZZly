@@ -49,17 +49,8 @@ public class Rope : MonoBehaviour {
     }
 
     void Update() {
-        // if (Input.GetMouseButtonUp(0)) {
-        //     Vector3 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //     RaycastHit2D hit = Physics2D.Raycast(new Vector2(ray.x, ray.y), Vector2.zero);
-
-        //     if (hit)
-        //     {
-        //         Debug.Log("clicked on: " + hit.collider.name);
-        //     }
-        // }
-
         DrawRope();
+
         if (GameManager.Instance.State == GameState.PlayerTurn) {
             // Input.GetMouseButtonDown(0) && 
             if (Input.GetMouseButtonDown(0) && ammo) {
@@ -106,7 +97,6 @@ public class Rope : MonoBehaviour {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // võib ükskõik mis kaugus olla aga peaks olema kaugemal kui kaamera asub stseenist - 100
         if (Physics.Raycast(ray, out hit))
         {
             Debug.Log("clicked on: " + hit.collider.name);
