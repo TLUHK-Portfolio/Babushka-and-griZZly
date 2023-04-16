@@ -19,7 +19,7 @@ public class EnemyManager : MonoBehaviour
     private PolygonCollider2D col;
     private AudioSource source;
     GameState currentGameState;
-    private bool karuThrowing;
+    private bool grizzlyThrowing;
 
     public void Awake()
     {
@@ -27,7 +27,7 @@ public class EnemyManager : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         col = gameObject.GetComponent<PolygonCollider2D>();
 
-        karuThrowing = false;
+        grizzlyThrowing = false;
     }
 
     private void Start()
@@ -47,24 +47,24 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    void Shoot()
-    {
-        ammo = GameObject.FindWithTag("Stone").GetComponent<Rigidbody2D>();
-        onShootingAction = false;
-        animator.SetBool("viska", false);
-        float ai = Random.Range(.5f, 1.5f);
-        Quaternion Rotation = Quaternion.Euler(0, 0, 45f * ai);
-        ammo.isKinematic = false;
-        Vector2 f = Rotation * Vector2.up * force;
-        ammo.AddForce(f, ForceMode2D.Impulse);
-        ammo.GetComponent<Ammo>().Release();
-        StartCoroutine("EnableCollider");
+    void Shoot() {
+        GameObject stone = GameObject.FindWithTag("Stone");
+        if (stone) {
+            ammo =  stone.GetComponent<Rigidbody2D>();
+            onShootingAction = false;
+            animator.SetBool("viska", false);
+            float ai = Random.Range(.5f, 1.5f);
+            Quaternion Rotation = Quaternion.Euler(0, 0, 45f * ai);
+            ammo.isKinematic = false;
+            Vector2 f = Rotation * Vector2.up * force;
+            ammo.AddForce(f, ForceMode2D.Impulse);
+            ammo.GetComponent<Ammo>().Release();
+            StartCoroutine("EnableCollider");
+        }
     }
 
     public void GameManagerOnGameStateChanged(GameState state)
     {
-        GameState currentGameState = state;
-
         if (state == GameState.EnemyTurn)
         {
             CreateAmmo();
@@ -73,7 +73,7 @@ public class EnemyManager : MonoBehaviour
                 col.enabled = false;
             }
 
-            karuThrowing = true;
+            grizzlyThrowing = true;
         }
         else if (state == GameState.FallowAmmo2)
         {
@@ -85,7 +85,7 @@ public class EnemyManager : MonoBehaviour
                     source.Play();
             }
 
-            karuThrowing = false;
+            grizzlyThrowing = false;
         }
     }
 
@@ -93,14 +93,14 @@ public class EnemyManager : MonoBehaviour
     {
         Debug.Log(gameObject.name + " collided with " + col.collider.name);
 
-        if (!karuThrowing)
+        if (!grizzlyThrowing)
         {
             ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
             col.GetContacts(contacts);
             float totalImpulse = 0;
             foreach (ContactPoint2D contact in contacts)
             {
-                totalImpulse += contact.normalImpulse * .05f;
+                totalImpulse += contact.normalImpulse * .025f;
             }
 
             IndicateDamage();

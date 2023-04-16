@@ -7,6 +7,7 @@ public class Ammo : MonoBehaviour {
     public float rotation = 0;
     public GameObject splash;
     public float waitUntilAirBorne = 0.5f;
+    public bool destroyOnCollision;
 
     private bool canRotate = false;
     private bool isSplashCreated = false;
@@ -74,14 +75,16 @@ public class Ammo : MonoBehaviour {
             isSplashCreated = true;
             source.Play();
         }
-
+        
         StartCoroutine(NextStop());
+        //if (destroyOnCollision) {
+        //    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //}
     }
 
     IEnumerator NextStop() {
         //Wait for 3 seconds
         yield return new WaitForSeconds(3);
-
         Destroy(gameObject);
 
         switch (GameManager.Instance.State) {

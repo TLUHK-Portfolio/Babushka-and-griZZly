@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Cinemachine;
 using UnityEngine;
 
@@ -8,8 +9,15 @@ public class CameraManager : MonoBehaviour {
     public GameObject player;
     public GameObject enemy;
     public GameObject ammo;
+    
+    public float introDuration = 5;
     private bool canChange;
 
+    private float orthographicSize = 15f;
+    float t = 0;
+    private bool startMovement = false;
+    
+    
     public void Awake() {
         Instance = this;
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
@@ -23,7 +31,9 @@ public class CameraManager : MonoBehaviour {
     }
 
     public void GameManagerOnGameStateChanged(GameState state) {
-        if (state == GameState.PlayerTurn) {
+        if (state == GameState.Intro) {
+
+        } else if (state == GameState.PlayerTurn) {
             VMcam.Follow = player.transform;    
         } else if (state == GameState.EnemyTurn) {
             VMcam.Follow = enemy.transform;    
@@ -48,13 +58,30 @@ public class CameraManager : MonoBehaviour {
             canChange = false;
         }
 
+        if (GameManager.Instance.State == GameState.Intro ) {
+            StartCoroutine(enableMovement());
+            if (startMovement) {
+                t += Time.deltaTime / introDuration;
+                orthographicSize = Mathf.Lerp(15, 5, t); // camera zoom
+                VMcam.m_Lens.OrthographicSize = orthographicSize;
+                VMcam.transform.position =
+                    Vector3.Lerp(
+                        new Vector3(7.9f, 7.3f, -10f), 
+                        new Vector3(-11.6f, -1.4f, -10f), 
+                        t); // move to babushka
 
-        // Lerp toward target position at all times.
-        //smoothPosition = Vector3.Lerp(  VMcam.transform.position, targetPosition, smoothSpeed);
-        //VMcam.transform.position = smoothPosition;
+                // todo näita kuidas moosiga visata
+                if (orthographicSize < 5.05) {
+                    //GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
+                }
+            }
+        }
+        
+        IEnumerator enableMovement()
+        {
+            yield return new WaitForSeconds(3);
+            startMovement = true;
+        }
 
-        // Lerp toward target rotation at all times.
-        //smoothRotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothSpeed);
-        //transform.rotation = smoothRotation;
     }
 }

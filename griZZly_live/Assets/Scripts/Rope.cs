@@ -22,16 +22,13 @@ public class Rope : MonoBehaviour {
     private Vector3 mousePositionWorld;
     private int indexMousePos;
     [SerializeField] private GameObject AmmoStartingPos;
-    private List<String> clickDisabledObjects = new List<String>();
+    //private List<String> clickDisabledObjects = new List<String>();
 
     Rigidbody2D ammo;
     private Vector3 ammoForce;
     private bool ammoCreated;
     private List<float> shootingAngle = new List<float>(2);
     private List<float> shootingForce = new List<float>(2);
-
-    private void Awake() {
-    }
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -75,9 +72,9 @@ public class Rope : MonoBehaviour {
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
             shootingAngle[0] = Vector2.Angle(pos1, pos2);
             shootingForce[0] = ammoForce.magnitude;
-            if (Player) {
+            /*if (Player) {
                 Player.transform.position = new Vector3(ammo.transform.position.x-.7f, Player.transform.position.y, Player.transform.position.z);
-            }
+            }*/
             updateStats();
         }
 
@@ -92,7 +89,7 @@ public class Rope : MonoBehaviour {
         }
     }
 
-    private bool ClickedOnNonAllowedObjects()
+    /*private bool ClickedOnNonAllowedObjects()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -104,33 +101,33 @@ public class Rope : MonoBehaviour {
         }
 
         return false;
-    }
+    }*/
 
     private void updateStats() {
         angle_val.text = Mathf.FloorToInt(shootingAngle[0]) + "\n" + Mathf.FloorToInt(shootingAngle[1]);
         force_val.text = Mathf.FloorToInt(shootingForce[0]) + "\n" + Mathf.FloorToInt(shootingForce[1]);
     }
 
-    private void CreateAmmo() {
+    public void CreateAmmo() {
         if (!ammo) {
             ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
             ammo.isKinematic = true;
             ammo.position = AmmoStartingPos.transform.position;
-            if (Player) {
+            /*if (Player) {
                 Player.transform.position = new Vector3(AmmoStartingPos.transform.position.x-.7f, Player.transform.position.y, Player.transform.position.z);
-            }
+            }*/
         }
     }
 
     void Shoot() {
         ammo.isKinematic = false;
-        Vector3 birdForce = (mousePositionWorld - AmmoStartingPos.transform.position) * (force * -1);
-        ammo.velocity = birdForce;
-        Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
-        Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+        Vector3 ammoForce = (ammo.transform.position - AmmoStartingPos.transform.position) * (force * -1); // mousePositionWorld
+        ammo.velocity = ammoForce;
+        Vector2 pos1 = ammo.transform.position; //new Vector2(mousePositionWorld.x, mousePositionWorld.y);
+        Vector2 pos2 = AmmoStartingPos.transform.position; //new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
         float angle = Vector2.Angle(pos1, pos2);
         shootingAngle[1] = angle;
-        shootingForce[1] = birdForce.magnitude;
+        shootingForce[1] = ammoForce.magnitude;
         updateStats();
         ammo.GetComponent<Ammo>().Release();
         ammo = null;

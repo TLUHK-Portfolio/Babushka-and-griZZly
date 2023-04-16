@@ -4,8 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public static GameManager Instance;
     public GameState State;
     public static Action<GameState> OnGameStateChanged;
@@ -13,14 +12,13 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     GameState lastGameState;
 
-    private void Awake()
-    {
+
+    private void Awake() {
         Instance = this;
     }
 
-    void Start()
-    {
-        UpdateGameState(GameState.PlayerTurn);
+    void Start() {
+        UpdateGameState(GameState.Intro);
     }
 
     private void Update()
@@ -41,9 +39,9 @@ public class GameManager : MonoBehaviour
     public void UpdateGameState(GameState newState)
     {
         State = newState;
-
-        switch (newState)
-        {
+        switch (newState) {
+            case GameState.Intro:
+                break;
             case GameState.PlayerTurn:
                 text.text = "Babushka turn";
                 break;
@@ -102,28 +100,28 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-    public void PauseGame()
+    /*public void PauseGame()
     {
         UpdateGameState(GameState.Pause);
-    }
+    }*/
 
     public void PauseHandler()
     {
         // kui pausimenüü on hetkel ees
-        if (GameManager.Instance.State == GameState.Pause)
+        if (State == GameState.Pause)
         {
             disablePause();
         }
         else
         {
-            lastGameState = GameManager.Instance.State;
+            lastGameState = State;
             UpdateGameState(GameState.Pause);
         }
     }
 }
 
-public enum GameState
-{
+public enum GameState {
+    Intro,
     PlayerTurn,
     FallowAmmo1,
     EnemyTurn,
