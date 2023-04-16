@@ -15,7 +15,7 @@ public class CameraManager : MonoBehaviour {
 
     private float orthographicSize = 15f;
     float t = 0;
-    private bool startMovement = false;
+   private bool startMovement = false;
     
     
     public void Awake() {
@@ -70,9 +70,8 @@ public class CameraManager : MonoBehaviour {
                         new Vector3(-11.6f, -1.4f, -10f), 
                         t); // move to babushka
 
-                // todo näita kuidas moosiga visata
                 if (orthographicSize < 5.05) {
-                    //GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
+                    
                 }
             }
         }

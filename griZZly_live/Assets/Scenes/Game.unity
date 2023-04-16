@@ -1560,7 +1560,8 @@ MonoBehaviour:
   demoAmmo: {fileID: 947185069997800561, guid: 851dd03848aefa54998c28507042ffc8, type: 3}
   ammoStartPoint: {fileID: 1678535077}
   demoMouse: {fileID: 801795009}
-  introDuration: 3
+  introDuration: 5
+  State: 0
 --- !u!1 &572628577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,7 +2828,7 @@ MonoBehaviour:
   player: {fileID: 919132148250807931}
   enemy: {fileID: 919132148037868327}
   ammo: {fileID: 0}
-  introDuration: 5
+  introDuration: 2
 --- !u!4 &856170603
 Transform:
   m_ObjectHideFlags: 0
