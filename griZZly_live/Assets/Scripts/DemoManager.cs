@@ -14,12 +14,14 @@ public class DemoManager : MonoBehaviour {
     float t = 0;
     float t2 = 0;
     private GameObject ammo;
+    private AudioSource source;
 
 
     void Start() {
         demoMouse.GetComponent<Animator>().StopPlayback();
         mouseAnimator = demoMouse.GetComponent<Animator>();
         State = IntroState.MoveMouseToStartingPosition;
+        source = GetComponent<AudioSource>();
     }
 
     
@@ -56,10 +58,13 @@ public class DemoManager : MonoBehaviour {
 
                         State = IntroState.ExitIntro;
                     }
+                    source.volume = Mathf.Lerp(1, 0, t2);
                     break;
                 case IntroState.Shoot:
                     break;
                 case IntroState.ExitIntro:
+                    source.Stop();
+                    
                     StartCoroutine(StartGame());
                     break;
             }
