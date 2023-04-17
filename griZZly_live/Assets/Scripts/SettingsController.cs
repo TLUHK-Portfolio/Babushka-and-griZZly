@@ -3,17 +3,71 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class SettingsController : MonoBehaviour
 {
     [SerializeField] public TMP_Text volumeTextUI;
     [SerializeField] public Slider volumeSlider;
+    [SerializeField] public TMP_Dropdown resolutionDropdown;
+    private Resolution[] resolutions;
+    private List<Resolution> filteredResolutions;
+    private float currentRefreshRate;
+    private int currentResolutionIndex = 0;
 
-    private void Start() {
+    private void Start()
+    {
+        PopulateDResolutionDropdown();
+
         LoadValues();
     }
 
-    private void Update() {
+    private void PopulateDResolutionDropdown()
+    {
+        resolutions = Screen.resolutions;
+        filteredResolutions = new List<Resolution>(resolutions);
+
+        resolutionDropdown.ClearOptions();
+        currentRefreshRate = Screen.currentResolution.refreshRate;
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            if (resolutions[i].refreshRate == currentRefreshRate)
+            {
+                filteredResolutions.Add(resolutions[i]);
+            }
+        }
+
+        List<string> options = new List<string>();
+
+        for (int i = 0; i < filteredResolutions.Count; i++)
+        {
+            string option = filteredResolutions[i].width + " x " + filteredResolutions[i].height;
+            
+            if (!options.Contains(option))
+            {
+                options.Add(option);
+            }
+
+            if (filteredResolutions[i].width == Screen.currentResolution.width && filteredResolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = filteredResolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, true);
+    }
+
+    private void Update()
+    {
         float volumeValue = volumeSlider.value;
         volumeTextUI.text = volumeValue.ToString();
 
@@ -33,7 +87,7 @@ public class SettingsController : MonoBehaviour
     public void LoadValues()
     {
         float savedVolume = PlayerPrefs.GetFloat("VolumeValue");
-        Debug.Log("Volume Value: " + savedVolume);
+        // Debug.Log("Volume Value: " + savedVolume);
 
         volumeSlider.value = savedVolume;
         AudioListener.volume = savedVolume / 100;
