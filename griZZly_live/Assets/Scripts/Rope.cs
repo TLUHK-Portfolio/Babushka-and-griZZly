@@ -48,6 +48,19 @@ public class Rope : MonoBehaviour {
     void Update() {
         DrawRope();
 
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+            if (hit.collider != null) {
+                if (hit.collider.name == "PauseButton")
+                {
+                    return;
+                }
+            }
+        }
+
         if (GameManager.Instance.State == GameState.PlayerTurn) {
             // Input.GetMouseButtonDown(0) && 
             if (Input.GetMouseButtonDown(0) && ammo) {
@@ -88,20 +101,6 @@ public class Rope : MonoBehaviour {
             }
         }
     }
-
-    /*private bool ClickedOnNonAllowedObjects()
-    {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log("clicked on: " + hit.collider.name);
-            return true;
-        }
-
-        return false;
-    }*/
 
     private void updateStats() {
         angle_val.text = Mathf.FloorToInt(shootingAngle[0]) + "\n" + Mathf.FloorToInt(shootingAngle[1]);

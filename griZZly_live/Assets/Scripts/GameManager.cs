@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour {
     public GameObject pauseMenu;
     GameState lastGameState;
 
-
     private void Awake() {
         Instance = this;
     }
@@ -71,6 +70,8 @@ public class GameManager : MonoBehaviour {
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
+
+        Debug.Log("Game state changed to: " + newState);
 
         OnGameStateChanged?.Invoke(newState);
     }
