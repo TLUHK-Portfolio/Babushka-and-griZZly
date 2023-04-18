@@ -32,7 +32,7 @@ public class SettingsController : MonoBehaviour
 
     public void LoadValues()
     {
-        float savedVolume = PlayerPrefs.GetFloat("VolumeValue");
+        float savedVolume = PlayerPrefs.GetFloat("VolumeValue", 100f);
         Debug.Log("Volume Value: " + savedVolume);
 
         volumeSlider.value = savedVolume;
