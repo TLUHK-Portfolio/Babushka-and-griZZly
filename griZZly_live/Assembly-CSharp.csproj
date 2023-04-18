@@ -48,7 +48,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\PathPoints.cs" />
      <Compile Include="Assets\Scripts\CameraManager.cs" />
-     <Compile Include="Assets\LevelController.cs" />
+     <Compile Include="Assets\Scripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\VideoPlayerEndReachedEvent.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
