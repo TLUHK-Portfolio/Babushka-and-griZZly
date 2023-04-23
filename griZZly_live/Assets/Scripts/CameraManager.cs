@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Cinemachine;
 using UnityEngine;
@@ -34,7 +33,9 @@ public class CameraManager : MonoBehaviour {
         if (state == GameState.Intro) {
 
         } else if (state == GameState.PlayerTurn) {
-            VMcam.Follow = player.transform;    
+            VMcam.Follow = player.transform;
+            VMcam.m_Lens.OrthographicSize = 4f;
+            //VMcam.m_Follow.
         } else if (state == GameState.EnemyTurn) {
             VMcam.Follow = enemy.transform;    
         } else if (state == GameState.FallowAmmo1) {
@@ -62,17 +63,13 @@ public class CameraManager : MonoBehaviour {
             StartCoroutine(enableMovement());
             if (startMovement) {
                 t += Time.deltaTime / introDuration;
-                orthographicSize = Mathf.Lerp(15, 5, t); // camera zoom
+                orthographicSize = Mathf.Lerp(15, 4.5f, t); // camera zoom
                 VMcam.m_Lens.OrthographicSize = orthographicSize;
                 VMcam.transform.position =
                     Vector3.Lerp(
                         new Vector3(7.9f, 7.3f, -10f), 
-                        new Vector3(-11.6f, -1.4f, -10f), 
+                        new Vector3(-11.6f, -1.8f, -10f), 
                         t); // move to babushka
-
-                if (orthographicSize < 5.05) {
-                    
-                }
             }
         }
         

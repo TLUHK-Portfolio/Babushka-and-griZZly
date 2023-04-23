@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Ammo : MonoBehaviour {
@@ -9,18 +10,27 @@ public class Ammo : MonoBehaviour {
     public float waitUntilAirBorne = 0.5f;
     public bool destroyOnCollision;
 
+
     private bool canRotate = false;
     private bool isSplashCreated = false;
     private float angle = 0;
     private AudioSource source;
+    private float collisionCheckRadius = 1f;
+    private LineRenderer lr; // projectile
+    private GameObject ropeObject;
+    private Rope ropeScript;
 
     private void Awake() {
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Mutt").GetComponent<Collider2D>(),
             true);
+        lr = GetComponent<LineRenderer>();
+        if (lr) lr.startColor = Color.white;
     }
 
     private void Start() {
         source = GetComponent<AudioSource>();
+        ropeObject = GameObject.FindGameObjectWithTag("Rope");
+        ropeScript = ropeObject.GetComponent<Rope>();
     }
 
     public void Release() {
@@ -34,7 +44,7 @@ public class Ammo : MonoBehaviour {
 
         canRotate = true;
         PathPoints.instance.Clear();
-        
+
         StartCoroutine(CreatePathPoints());
         StartCoroutine(EnableCollider());
         StartCoroutine(EnableColliderMutiga());
@@ -56,9 +66,12 @@ public class Ammo : MonoBehaviour {
 
     IEnumerator EnableCollider() {
         yield return new WaitForSeconds(.5f);
-        if (gameObject.GetComponent<BoxCollider2D>()) { // moosipurk
+        if (gameObject.GetComponent<BoxCollider2D>()) {
+            // moosipurk
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        } else if (gameObject.GetComponent<PolygonCollider2D>()) { // kivi
+        }
+        else if (gameObject.GetComponent<PolygonCollider2D>()) {
+            // kivi
             gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
     }
@@ -67,24 +80,21 @@ public class Ammo : MonoBehaviour {
         Debug.Log(gameObject.name + " collided with " + collision.collider.name);
         collided = true;
         canRotate = false;
-        // Destroy(gameObject, 3f);
         if (!isSplashCreated) {
             if (splash != null) {
                 Instantiate(splash, transform.position, Quaternion.identity);
             }
+
             isSplashCreated = true;
             source.Play();
         }
-        
+
         StartCoroutine(NextStop());
-        //if (destroyOnCollision) {
-        //    gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        //}
     }
 
     IEnumerator NextStop() {
         //Wait for 3 seconds
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(destroyOnCollision ? .5f : 3f);
         Destroy(gameObject);
 
         switch (GameManager.Instance.State) {
@@ -103,17 +113,54 @@ public class Ammo : MonoBehaviour {
             transform.rotation = rotation;
             angle += this.rotation;
         }
+        else if (lr && ropeScript.ammoForce2.magnitude > 0) {
+            lr.positionCount = 0;
+            SimulateArc();
+        }
     }
 
-    private void OnDestroy() {
-        // switch (GameManager.Instance.State)
-        // {
-        //     case GameState.FallowAmmo1:
-        //         GameManager.Instance.UpdateGameState(GameState.EnemyTurn);
-        //         break;
-        //     case GameState.FallowAmmo2:
-        //         GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
-        //         break;
-        // }
+    private void SimulateArc() {
+        float simulateForDuration = 5f; //simulate for 5 secs in the furture
+        float simulationStep = 0.1f; //Will add a point every 0.1 secs.
+
+        int steps = (int)(simulateForDuration / simulationStep); //50 in this example
+        lr.positionCount = steps;
+        List<Vector2> lineRendererPoints = new List<Vector2>();
+        Vector2 calculatedPosition;
+        Vector2 directionVector = ropeScript.ammoDirection; 
+        Vector2 launchPosition = transform.position; //Position where you launch from
+        float launchSpeed = ropeScript.ammoForce2.magnitude * (float)Math.Sqrt(2); 
+
+        for (int i = 0; i < steps; ++i) {
+            calculatedPosition = launchPosition + (directionVector * (launchSpeed * i * simulationStep));
+            //Calculate gravity
+            calculatedPosition.y += Physics2D.gravity.y * (i * simulationStep) * (i * simulationStep);
+            lineRendererPoints.Add(calculatedPosition);
+            lr.SetPosition(i, calculatedPosition);
+            if (CheckForCollision(calculatedPosition)) //if you hit something
+            {
+                break; //stop adding positions
+            }
+        }
+
+        //Assign all the positions to the line renderer.
+    }
+
+    private bool CheckForCollision(Vector2 position) {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(position, collisionCheckRadius);
+        if (hits.Length > 0) {
+            //We hit something 
+            //check if its a wall or something
+            //if its a valid hit then return true
+            /*for (int x = 0;x < hits.Length;x++)
+            {
+                if (hits[x].tag != "Background")
+                {
+                    return true;
+                }
+            }*/
+        }
+
+        return false;
     }
 }

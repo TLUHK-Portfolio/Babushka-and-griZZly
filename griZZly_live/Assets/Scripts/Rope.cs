@@ -19,13 +19,15 @@ public class Rope : MonoBehaviour {
     private int segmentLength = 20;
     private float lineWidth = 0.025f;
     private bool moveToMouse;
-    private Vector3 mousePositionWorld;
+    public Vector3 mousePositionWorld;
     private int indexMousePos;
     [SerializeField] private GameObject AmmoStartingPos;
-    //private List<String> clickDisabledObjects = new List<String>();
+
 
     Rigidbody2D ammo;
-    private Vector3 ammoForce;
+    public Vector3 ammoForce;
+    public Vector3 ammoForce2;
+    public Vector3 ammoDirection;
     private bool ammoCreated;
     private List<float> shootingAngle = new List<float>(2);
     private List<float> shootingForce = new List<float>(2);
@@ -81,8 +83,10 @@ public class Rope : MonoBehaviour {
         mousePositionWorld = Camera.main.ScreenToWorldPoint(new Vector3(screenMousePos.x, screenMousePos.y, 10));
         ammoForce = (mousePositionWorld - AmmoStartingPos.transform.position) * (force * -1);
         if (moveToMouse && ammoForce.magnitude < maxForce) {
+            ammoForce2 = ammoForce;
             Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+            ammoDirection = (pos2 - pos1).normalized; 
             shootingAngle[0] = Vector2.Angle(pos1, pos2);
             shootingForce[0] = ammoForce.magnitude;
             /*if (Player) {
@@ -255,4 +259,5 @@ public class Rope : MonoBehaviour {
             posOld = pos;
         }
     }
+    
 }

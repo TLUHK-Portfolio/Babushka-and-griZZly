@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +6,6 @@ public class PlayerManager : MonoBehaviour
     public Slider HealthBar;
     public float damageFlashTime = .45f;
     private Color origColor;
-    private GameState currentGameState;
     public bool mutikeThrowing;
 
     private void Awake() {
@@ -31,8 +29,6 @@ public class PlayerManager : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        currentGameState = state;
-
         if (state == GameState.PlayerTurn)
         {
             mutikeThrowing = true;

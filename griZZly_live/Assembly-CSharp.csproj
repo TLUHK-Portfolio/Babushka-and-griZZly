@@ -87,10 +87,8 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <Folder Include="Assets\TextMesh Pro\Shaders" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
-     <Folder Include="Assets\Models\Karu_3" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <Folder Include="Assets\Models\Karu_3\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <Folder Include="Assets\Graphics" />

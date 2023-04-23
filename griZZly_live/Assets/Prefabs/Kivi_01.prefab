@@ -105,7 +105,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 06592f5bc0010f0409b01fc53e914bd7, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   rotation: 3
   splash: {fileID: 0}
   waitUntilAirBorne: 0.5
+  destroyOnCollision: 0
 --- !u!60 &6272585680651445900
 PolygonCollider2D:
   m_ObjectHideFlags: 0

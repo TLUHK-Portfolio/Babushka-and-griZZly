@@ -9,6 +9,9 @@ TagManager:
   - Hand
   - PauseButton
   - TakistusObject
+  - Ammo
+  - Rope
+  - Background
   layers:
   - Default
   - TransparentFX

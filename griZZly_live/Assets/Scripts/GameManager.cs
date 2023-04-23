@@ -17,26 +17,29 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start() {
-        UpdateGameState(GameState.Intro);
+        var showIntro = PlayerPrefs.GetInt("FirstGame", 1);
+        if (showIntro == 1) {
+            UpdateGameState(GameState.Intro);
+            PlayerPrefs.SetInt("FirstGame", 0);
+        }
+        else {
+            UpdateGameState(GameState.PlayerTurn);
+        }
     }
 
-    private void Update()
-    {
+    private void Update() {
         //kui vajutada mängus escape'i
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             PauseHandler();
         }
     }
 
-    public void ToMainMenu()
-    {
+    public void ToMainMenu() {
         Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void UpdateGameState(GameState newState)
-    {
+    public void UpdateGameState(GameState newState) {
         State = newState;
         switch (newState) {
             case GameState.Intro:
@@ -76,45 +79,33 @@ public class GameManager : MonoBehaviour {
         OnGameStateChanged?.Invoke(newState);
     }
 
-    public void showPause()
-    {
+    public void showPause() {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
 
-    public void disablePause()
-    {
+    public void disablePause() {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         UpdateGameState(lastGameState);
     }
 
-    IEnumerator EnemyAttacks()
-    {
+    IEnumerator EnemyAttacks() {
         yield return new WaitForSeconds(2);
         UpdateGameState(GameState.FallowAmmo2);
     }
 
-    IEnumerator showMainMenu()
-    {
+    IEnumerator showMainMenu() {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-    /*public void PauseGame()
-    {
-        UpdateGameState(GameState.Pause);
-    }*/
-
-    public void PauseHandler()
-    {
+    public void PauseHandler() {
         // kui pausimenüü on hetkel ees
-        if (State == GameState.Pause)
-        {
+        if (State == GameState.Pause) {
             disablePause();
         }
-        else
-        {
+        else {
             lastGameState = State;
             UpdateGameState(GameState.Pause);
         }
