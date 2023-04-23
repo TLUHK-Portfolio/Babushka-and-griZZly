@@ -15,7 +15,7 @@ public class Ammo : MonoBehaviour {
     private bool isSplashCreated = false;
     private float angle = 0;
     private AudioSource source;
-    private float collisionCheckRadius = 1f;
+    private float collisionCheckRadius = .1f;
     private LineRenderer lr; // projectile
     private GameObject ropeObject;
     private Rope ropeScript;
@@ -113,23 +113,23 @@ public class Ammo : MonoBehaviour {
             transform.rotation = rotation;
             angle += this.rotation;
         }
-        else if (lr && ropeScript.ammoForce2.magnitude > 0) {
+        else if (lr && ropeScript.ammoForce2.magnitude > 0 && !collided) {
             lr.positionCount = 0;
             SimulateArc();
         }
     }
 
     private void SimulateArc() {
-        float simulateForDuration = 5f; //simulate for 5 secs in the furture
+        float simulateForDuration = 5f; //simulate for 5 secs in the future
         float simulationStep = 0.1f; //Will add a point every 0.1 secs.
 
         int steps = (int)(simulateForDuration / simulationStep); //50 in this example
         lr.positionCount = steps;
         List<Vector2> lineRendererPoints = new List<Vector2>();
         Vector2 calculatedPosition;
-        Vector2 directionVector = ropeScript.ammoDirection; 
+        Vector2 directionVector = ropeScript.ammoDirection;
         Vector2 launchPosition = transform.position; //Position where you launch from
-        float launchSpeed = ropeScript.ammoForce2.magnitude * (float)Math.Sqrt(2); 
+        float launchSpeed = ropeScript.ammoForce2.magnitude * (float)Math.Sqrt(2);
 
         for (int i = 0; i < steps; ++i) {
             calculatedPosition = launchPosition + (directionVector * (launchSpeed * i * simulationStep));
@@ -142,8 +142,6 @@ public class Ammo : MonoBehaviour {
                 break; //stop adding positions
             }
         }
-
-        //Assign all the positions to the line renderer.
     }
 
     private bool CheckForCollision(Vector2 position) {
@@ -152,13 +150,20 @@ public class Ammo : MonoBehaviour {
             //We hit something 
             //check if its a wall or something
             //if its a valid hit then return true
-            /*for (int x = 0;x < hits.Length;x++)
-            {
-                if (hits[x].tag != "Background")
-                {
+            for (int x = 0; x < hits.Length; x++) {
+                if (hits[x].tag == "TakistusObject" && PlayerPrefs.GetInt("ShowProjectile", 1) == 1) {
+                    // karukoobas
+                    lr.startColor = Color.yellow;
                     return true;
                 }
-            }*/
+
+                if (hits[x].tag == "Grizzly" && PlayerPrefs.GetInt("ShowProjectile", 1) == 1) {
+                    lr.startColor = Color.green;
+                    return true;
+                }
+
+                lr.startColor = Color.white;
+            }
         }
 
         return false;

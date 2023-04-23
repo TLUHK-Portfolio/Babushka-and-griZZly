@@ -29,8 +29,8 @@ public class Rope : MonoBehaviour {
     public Vector3 ammoForce2;
     public Vector3 ammoDirection;
     private bool ammoCreated;
-    private List<float> shootingAngle = new List<float>(2);
-    private List<float> shootingForce = new List<float>(2);
+    //private List<float> shootingAngle = new List<float>(2);
+    //private List<float> shootingForce = new List<float>(2);
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -41,10 +41,10 @@ public class Rope : MonoBehaviour {
             ropeStartPoint.y -= ropeSegLen;
         }
 
-        shootingAngle.Add(0);
-        shootingAngle.Add(0);
-        shootingForce.Add(0);
-        shootingForce.Add(0);
+        //shootingAngle.Add(0);
+        //shootingAngle.Add(0);
+        //shootingForce.Add(0);
+        //shootingForce.Add(0);
     }
 
     void Update() {
@@ -87,12 +87,12 @@ public class Rope : MonoBehaviour {
             Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
             ammoDirection = (pos2 - pos1).normalized; 
-            shootingAngle[0] = Vector2.Angle(pos1, pos2);
-            shootingForce[0] = ammoForce.magnitude;
+            //shootingAngle[0] = Vector2.Angle(pos1, pos2);
+            //shootingForce[0] = ammoForce.magnitude;
             /*if (Player) {
                 Player.transform.position = new Vector3(ammo.transform.position.x-.7f, Player.transform.position.y, Player.transform.position.z);
             }*/
-            updateStats();
+            //updateStats();
         }
 
         float currX = AmmoStartingPos.transform.position.x;
@@ -106,10 +106,10 @@ public class Rope : MonoBehaviour {
         }
     }
 
-    private void updateStats() {
+    /*private void updateStats() {
         angle_val.text = Mathf.FloorToInt(shootingAngle[0]) + "\n" + Mathf.FloorToInt(shootingAngle[1]);
         force_val.text = Mathf.FloorToInt(shootingForce[0]) + "\n" + Mathf.FloorToInt(shootingForce[1]);
-    }
+    }*/
 
     public void CreateAmmo() {
         if (!ammo) {
@@ -126,12 +126,12 @@ public class Rope : MonoBehaviour {
         ammo.isKinematic = false;
         Vector3 ammoForce = (ammo.transform.position - AmmoStartingPos.transform.position) * (force * -1); // mousePositionWorld
         ammo.velocity = ammoForce;
-        Vector2 pos1 = ammo.transform.position; //new Vector2(mousePositionWorld.x, mousePositionWorld.y);
-        Vector2 pos2 = AmmoStartingPos.transform.position; //new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
-        float angle = Vector2.Angle(pos1, pos2);
-        shootingAngle[1] = angle;
-        shootingForce[1] = ammoForce.magnitude;
-        updateStats();
+        //Vector2 pos1 = ammo.transform.position; //new Vector2(mousePositionWorld.x, mousePositionWorld.y);
+        //Vector2 pos2 = AmmoStartingPos.transform.position; //new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
+        //float angle = Vector2.Angle(pos1, pos2);
+        //shootingAngle[1] = angle;
+        //shootingForce[1] = ammoForce.magnitude;
+        //updateStats();
         ammo.GetComponent<Ammo>().Release();
         ammo = null;
         //ammoCollider = null;

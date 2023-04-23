@@ -12,6 +12,7 @@ TagManager:
   - Ammo
   - Rope
   - Background
+  - Grizzly
   layers:
   - Default
   - TransparentFX

@@ -1,24 +1,24 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class SettingsController : MonoBehaviour
 {
     [SerializeField] public TMP_Text volumeTextUI;
     [SerializeField] public Slider volumeSlider;
     [SerializeField] public TMP_Dropdown resolutionDropdown;
+    [SerializeField] public Toggle showProjectile;
     private Resolution[] resolutions;
     private List<Resolution> filteredResolutions;
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
+    private int currentShowProjectile = 0;
 
     private void Start()
     {
         PopulateDResolutionDropdown();
-
         LoadValues();
     }
 
@@ -91,5 +91,18 @@ public class SettingsController : MonoBehaviour
 
         volumeSlider.value = savedVolume;
         AudioListener.volume = savedVolume / 100;
+
+        showProjectile.isOn = PlayerPrefs.GetInt("ShowProjectile", 1) == 1;
+    }
+
+    public void SetProjectile(bool value) {
+        Debug.Log(value);
+        showProjectile.isOn = value;
+        if (value) {
+            PlayerPrefs.SetInt("ShowProjectile", 1);
+        }
+        else {
+            PlayerPrefs.SetInt("ShowProjectile", 0);
+        }
     }
 }
