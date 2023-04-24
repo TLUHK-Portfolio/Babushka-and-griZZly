@@ -96,7 +96,6 @@ public class SettingsController : MonoBehaviour
     }
 
     public void SetProjectile(bool value) {
-        Debug.Log(value);
         showProjectile.isOn = value;
         if (value) {
             PlayerPrefs.SetInt("ShowProjectile", 1);

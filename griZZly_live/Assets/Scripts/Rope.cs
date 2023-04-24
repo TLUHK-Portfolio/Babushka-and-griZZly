@@ -10,8 +10,8 @@ public class Rope : MonoBehaviour {
     public GameObject Player;
     public float force;
     public float maxForce;
-    public TMP_Text angle_val;
-    public TMP_Text force_val;
+    //public TMP_Text angle_val;
+    //public TMP_Text force_val;
 
     private LineRenderer lineRenderer;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();

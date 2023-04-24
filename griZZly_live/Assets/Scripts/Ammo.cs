@@ -136,11 +136,11 @@ public class Ammo : MonoBehaviour {
             //Calculate gravity
             calculatedPosition.y += Physics2D.gravity.y * (i * simulationStep) * (i * simulationStep);
             lineRendererPoints.Add(calculatedPosition);
-            lr.SetPosition(i, calculatedPosition);
             if (CheckForCollision(calculatedPosition)) //if you hit something
             {
                 break; //stop adding positions
             }
+            lr.SetPosition(i, calculatedPosition);
         }
     }
 
@@ -154,15 +154,13 @@ public class Ammo : MonoBehaviour {
                 if (hits[x].tag == "TakistusObject" && PlayerPrefs.GetInt("ShowProjectile", 1) == 1) {
                     // karukoobas
                     lr.startColor = Color.yellow;
-                    return true;
-                }
-
-                if (hits[x].tag == "Grizzly" && PlayerPrefs.GetInt("ShowProjectile", 1) == 1) {
+                } else if (hits[x].tag == "Grizzly" && PlayerPrefs.GetInt("ShowProjectile", 1) == 1) {
                     lr.startColor = Color.green;
-                    return true;
                 }
-
-                lr.startColor = Color.white;
+                else {
+                    lr.startColor = Color.white;
+                }
+                return true;
             }
         }
 
