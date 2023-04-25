@@ -1315,10 +1315,8 @@ MonoBehaviour:
   AmmoPrefab: {fileID: 947185069997800561, guid: 851dd03848aefa54998c28507042ffc8,
     type: 3}
   Player: {fileID: 919132148250807931}
-  force: 15
+  force: 11
   maxForce: 22
-  angle_val: {fileID: 442008560}
-  force_val: {fileID: 2040000449}
   mousePositionWorld: {x: 0, y: 0, z: 0}
   AmmoStartingPos: {fileID: 1428572792}
   ammoForce: {x: 0, y: 0, z: 0}
