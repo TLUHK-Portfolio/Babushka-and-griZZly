@@ -217,11 +217,11 @@ public class Rope : MonoBehaviour {
                 }
                 else if (mousePositionWorld.x > AmmoStartingPos.transform.position.x) {
                     // tõmbab vales suunas
-                    Debug.Log("mis nüüd juhtus");
+                    //Debug.Log("mis nüüd juhtus");
                 }
                 else if (mousePositionWorld.y > AmmoStartingPos.transform.position.y) {
                     // tõmbab vales suunas
-                    Debug.Log("mis nüüd juhtus");
+                    //Debug.Log("mis nüüd juhtus");
                 }
                 else {
                     // ok

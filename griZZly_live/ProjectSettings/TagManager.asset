@@ -13,6 +13,7 @@ TagManager:
   - Rope
   - Background
   - Grizzly
+  - BabushkaHouse
   layers:
   - Default
   - TransparentFX
