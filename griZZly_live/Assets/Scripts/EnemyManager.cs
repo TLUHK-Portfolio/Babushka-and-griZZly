@@ -12,7 +12,6 @@ public class EnemyManager : MonoBehaviour
     public Slider HealthBar;
     public float damageFlashTime = .45f;
     private Color origColor;
-
     private Animator animator;
     private bool onShootingAction;
     Rigidbody2D ammo;
@@ -26,7 +25,6 @@ public class EnemyManager : MonoBehaviour
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
         animator = gameObject.GetComponent<Animator>();
         col = gameObject.GetComponent<PolygonCollider2D>();
-
         grizzlyThrowing = false;
     }
 

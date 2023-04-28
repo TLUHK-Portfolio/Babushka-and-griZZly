@@ -10,7 +10,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
-
         mutikeThrowing = false;
     }
 
