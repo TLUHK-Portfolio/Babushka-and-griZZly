@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\SettingsController.cs" />
+     <Compile Include="Assets\Scripts\SliderColor.cs" />
      <Compile Include="Assets\Scripts\Rope.cs" />
      <Compile Include="Assets\Scripts\DestroyGameObject.cs" />
      <Compile Include="Assets\Scripts\AutoDestruct.cs" />
@@ -55,7 +56,6 @@
      <Compile Include="Assets\Scripts\Ammo.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\DemoManager.cs" />
-     <Compile Include="Assets\Scripts\SliderColor.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

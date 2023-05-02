@@ -92,16 +92,16 @@ public class SettingsController : MonoBehaviour
         volumeSlider.value = savedVolume;
         AudioListener.volume = savedVolume / 100;
 
-        showProjectile.isOn = PlayerPrefs.GetInt("ShowProjectile", 1) == 1;
+        showProjectile.isOn = PlayerPrefs.GetInt("ShootingAid", 1) == 1;
     }
 
     public void SetProjectile(bool value) {
         showProjectile.isOn = value;
         if (value) {
-            PlayerPrefs.SetInt("ShowProjectile", 1);
+            PlayerPrefs.SetInt("ShootingAid", 1);
         }
         else {
-            PlayerPrefs.SetInt("ShowProjectile", 0);
+            PlayerPrefs.SetInt("ShootingAid", 0);
         }
     }
 }

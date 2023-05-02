@@ -115,7 +115,9 @@ public class Ammo : MonoBehaviour {
         }
         else if (lr && ropeScript.ammoForce2.magnitude > 0 && !collided) {
             lr.positionCount = 0;
-            SimulateArc();
+            if (PlayerPrefs.GetInt("ShhotingAid", 1) == 1) {
+                SimulateArc();
+            }
         }
     }
 
@@ -124,7 +126,7 @@ public class Ammo : MonoBehaviour {
         float simulationStep = 0.05f; //Will add a point every 0.1 secs.
 
         int steps = (int)(simulateForDuration / simulationStep); //50 in this example
-        lr.positionCount = steps;
+        //lr.positionCount = 0;
         List<Vector2> lineRendererPoints = new List<Vector2>();
         Vector2 calculatedPosition;
         Vector2 directionVector = ropeScript.ammoDirection;
@@ -140,6 +142,7 @@ public class Ammo : MonoBehaviour {
             {
                 break; //stop adding positions
             }
+            lr.positionCount += 1;
             lr.SetPosition(i, calculatedPosition);
         }
     }
@@ -151,12 +154,11 @@ public class Ammo : MonoBehaviour {
             //check if its a wall or something
             //if its a valid hit then return true
             for (int x = 0; x < hits.Length; x++) {
-                Debug.Log(hits[x].tag);
-                if (hits[x].tag == "TakistusObject" && PlayerPrefs.GetInt("ShowProjectile", 1) == 1) {
+                if (hits[x].tag == "TakistusObject") {
                     // karukoobas
                     lr.startColor = Color.yellow;
                     return true;
-                } if (hits[x].tag == "Grizzly" && PlayerPrefs.GetInt("ShowProjectile", 1) == 1) {
+                } if (hits[x].tag == "Grizzly") {
                     lr.startColor = Color.green;
                     return true;
                 }

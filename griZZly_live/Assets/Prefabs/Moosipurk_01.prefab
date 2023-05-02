@@ -302,12 +302,12 @@ LineRenderer:
       - serializedVersion: 3
         time: 0.038993835
         value: 0.9983919
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.95749366
+        outSlope: -0.95749366
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.17324094
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
