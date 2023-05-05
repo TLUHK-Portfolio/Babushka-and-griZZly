@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start() {
         backgroundMusic = GameObject.Find("BackgroundMusic");
+        SettingsController.GetComponent<SettingsController>().SetResolution(PlayerPrefs.GetInt("ResolutionIndex"));
         SettingsController.GetComponent<SettingsController>().LoadValues();
     }
 

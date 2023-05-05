@@ -18,11 +18,10 @@ public class SettingsController : MonoBehaviour
 
     private void Start()
     {
-        PopulateDResolutionDropdown();
         LoadValues();
     }
 
-    private void PopulateDResolutionDropdown()
+    public void PopulateDResolutionDropdown()
     {
         resolutions = Screen.resolutions;
         filteredResolutions = new List<Resolution>(resolutions);
@@ -43,15 +42,22 @@ public class SettingsController : MonoBehaviour
         for (int i = 0; i < filteredResolutions.Count; i++)
         {
             string option = filteredResolutions[i].width + " x " + filteredResolutions[i].height;
-            
+
             if (!options.Contains(option))
             {
                 options.Add(option);
             }
 
-            if (filteredResolutions[i].width == Screen.currentResolution.width && filteredResolutions[i].height == Screen.currentResolution.height)
+            if (PlayerPrefs.GetInt("ResolutionIndex") != null)
             {
-                currentResolutionIndex = i;
+                currentResolutionIndex = PlayerPrefs.GetInt("ResolutionIndex");
+            }
+            else
+            {
+                if (filteredResolutions[i].width == Screen.currentResolution.width && filteredResolutions[i].height == Screen.currentResolution.height)
+                {
+                    currentResolutionIndex = i;
+                }
             }
         }
 
@@ -62,8 +68,21 @@ public class SettingsController : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
+        Debug.Log("Resolution Index: " + resolutionIndex);
+        if (filteredResolutions == null)
+        {
+            PopulateDResolutionDropdown();
+        }
+
+        if (resolutionIndex == null)
+        {
+            resolutionIndex = filteredResolutions.Count - 1;
+        }
+
+        PlayerPrefs.SetInt("ResolutionIndex", resolutionIndex);
         Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, true);
+        // Debug.Log("Resolution changed to: " + resolution.width + " x " + resolution.height);
     }
 
     private void Update()
@@ -95,12 +114,15 @@ public class SettingsController : MonoBehaviour
         showProjectile.isOn = PlayerPrefs.GetInt("ShootingAid", 1) == 1;
     }
 
-    public void SetProjectile(bool value) {
+    public void SetProjectile(bool value)
+    {
         showProjectile.isOn = value;
-        if (value) {
+        if (value)
+        {
             PlayerPrefs.SetInt("ShootingAid", 1);
         }
-        else {
+        else
+        {
             PlayerPrefs.SetInt("ShootingAid", 0);
         }
     }

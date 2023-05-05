@@ -38,10 +38,13 @@ public class EnemyManager : MonoBehaviour
     {
         if (!GameObject.FindWithTag("Stone"))
         {
-            ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
-            LaunchPosition = GameObject.Find("KiviPos");
-            ammo.transform.position = LaunchPosition.transform.position;
+            GameObject kiviPossa = GameObject.Find("KiviPos");
+            ammo = Instantiate(AmmoPrefab, kiviPossa.transform.TransformPoint(Vector3.zero), Quaternion.identity).GetComponent<Rigidbody2D>();
+            // ammo.transform.position = LaunchPosition.transform.position;
+            GameObject.FindWithTag("Stone").transform.position = GameObject.FindWithTag("KiviPos").transform.TransformPoint(Vector3.zero);
             ammo.isKinematic = true;
+            Debug.Log(kiviPossa);
+            Debug.Log(ammo);
         }
     }
 
