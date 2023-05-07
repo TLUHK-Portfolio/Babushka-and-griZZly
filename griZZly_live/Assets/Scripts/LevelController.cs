@@ -37,12 +37,12 @@ public class LevelController : MonoBehaviour
         level.transform.Find("Text").gameObject.SetActive(true);
     }
 
-    public void StartLevelOne()
+    public void StartLevel(int index)
     {
-        StartCoroutine(FadeOut(backgroundMusic.GetComponent<AudioSource>(), 1));
+        StartCoroutine(FadeOut(backgroundMusic.GetComponent<AudioSource>(), 1, index));
     }
 
-    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, int index)
     {
         float startVolume = audioSource.volume;
 
@@ -56,8 +56,8 @@ public class LevelController : MonoBehaviour
         audioSource.Stop();
         audioSource.volume = startVolume;
         
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + index);
+        //SceneManager.LoadScene("Level1");
         // mainMenuObject.SetActive(false);
     }
 }

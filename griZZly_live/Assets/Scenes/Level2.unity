@@ -1096,10 +1096,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPoint: {fileID: 1421753941}
   EndPoint: {fileID: 1051808508}
-  AmmoPrefab: {fileID: 947185069997800561, guid: 851dd03848aefa54998c28507042ffc8,
+  AmmoPrefab: {fileID: 947185069997800561, guid: 835e0ac96c68b1c48bcff9e07a386d13,
     type: 3}
   Player: {fileID: 919132148250807931}
-  force: 11
+  force: 15
   maxForce: 22
   mousePositionWorld: {x: 0, y: 0, z: 0}
   AmmoStartingPos: {fileID: 1428572792}
@@ -1528,7 +1528,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &572628581
 MonoBehaviour:
@@ -2362,8 +2362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathTemplates:
   - {fileID: 72567072}
-  - {fileID: 0}
-  - {fileID: 296036167}
+  - {fileID: 72567072}
+  - {fileID: 72567072}
   lastPoints: []
   timeInterval: 0.075
 --- !u!4 &783216553
@@ -2919,7 +2919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130fb69845dfb484c97db41a7f93f952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 0
+  State: 1
   text: {fileID: 546512109}
   pauseMenu: {fileID: 987863661}
 --- !u!4 &941618464
@@ -3013,13 +3013,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964083802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5603695, y: -2.14, z: 0}
-  m_LocalScale: {x: 0.88509, y: 0.88509, z: 0.88509}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7203693, y: -9.42, z: 0}
+  m_LocalScale: {x: 0.88509, y: 0.88509, z: 1.187355}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1894885552}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &978103274
 PrefabInstance:
@@ -4400,7 +4400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428572792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.989, y: -3.187, z: -0.32249758}
+  m_LocalPosition: {x: -9.871, y: -2.991, z: -0.32249758}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4440,7 +4440,7 @@ Transform:
   - {fileID: 1028078312}
   - {fileID: 1962927845}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501495228
 GameObject:
@@ -4525,7 +4525,7 @@ Transform:
   m_Children:
   - {fileID: 1421753941}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1582596240
 GameObject:
@@ -4703,7 +4703,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1648097896 stripped
 Transform:
@@ -5292,9 +5292,11 @@ Transform:
   m_LocalPosition: {x: 6.84, y: 7.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.74543}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 964083804}
+  - {fileID: 1940494965}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1894885554
 BoxCollider2D:
@@ -5399,8 +5401,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 22.989296, y: -3.6147084}
-      - {x: 19.383854, y: -4.0267363}
+    - - {x: 22.824326, y: -2.8448455}
+      - {x: 17.514187, y: -3.0094175}
       - {x: 16.576996, y: -5.219128}
       - {x: 13.44705, y: -7.395256}
       - {x: 10.93161, y: -9.149239}
@@ -5578,13 +5580,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940494963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.307678, y: -3.0205984, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.467678, y: -10.300598, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1.3415077}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1894885552}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1962927845 stripped
 Transform:
@@ -6167,7 +6169,7 @@ RectTransform:
   - {fileID: 1371077222}
   - {fileID: 1884640703}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6662,7 +6664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46684e32d4b994e40882a7034ab32e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPrefab: {fileID: 6272585680651445889, guid: 9a1f21459feb2cf42a58078b2489211b,
+  AmmoPrefab: {fileID: 6272585680651445889, guid: 886b937a15963e84c8e5dbcd1435543e,
     type: 3}
   force: 19
   LaunchPosition: {fileID: 2129135473}

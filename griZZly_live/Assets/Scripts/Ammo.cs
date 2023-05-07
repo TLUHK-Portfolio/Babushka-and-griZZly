@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ammo : MonoBehaviour {
     public bool collided;
@@ -115,7 +116,7 @@ public class Ammo : MonoBehaviour {
         }
         else if (lr && ropeScript.ammoForce2.magnitude > 0 && !collided) {
             lr.positionCount = 0;
-            if (PlayerPrefs.GetInt("ShhotingAid", 1) == 1) {
+            if (PlayerPrefs.GetInt("ShootingAid", 1) == 1 && SceneManager.GetActiveScene().buildIndex<2) {
                 SimulateArc();
             }
         }
