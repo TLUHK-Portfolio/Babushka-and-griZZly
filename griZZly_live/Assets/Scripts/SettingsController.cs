@@ -105,6 +105,11 @@ public class SettingsController : MonoBehaviour
 
     public void LoadValues()
     {
+        if (filteredResolutions == null)
+        {
+            PopulateDResolutionDropdown();
+        }
+
         float savedVolume = PlayerPrefs.GetFloat("VolumeValue", 100f);
         //Debug.Log("Volume Value: " + savedVolume);
 

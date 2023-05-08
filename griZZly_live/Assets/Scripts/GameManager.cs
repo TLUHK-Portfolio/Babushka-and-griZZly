@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public static Action<GameState> OnGameStateChanged;
     public TMP_Text text;
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     GameState lastGameState;
 
     private void Awake() {
@@ -37,6 +38,16 @@ public class GameManager : MonoBehaviour {
     public void ToMainMenu() {
         Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void ToSettingsMenu() {
+        settingsMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void ToPauseMenu() {
+        settingsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
     }
 
     public void UpdateGameState(GameState newState) {
