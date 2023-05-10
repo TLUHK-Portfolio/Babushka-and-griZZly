@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     GameState lastGameState;
     public GameObject fireworks;
     public GameObject winMenu;
+    public GameObject loseMenu;
 
     private void Awake() {
         Instance = this;
@@ -81,7 +82,8 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.Lose:
                 text.text = "You lose :(";
-                StartCoroutine(showMainMenu());
+                OpenLoseMenu();
+                // StartCoroutine(showMainMenu());
                 PathPoints.instance.Clear();
                 break;
             case GameState.Pause:
@@ -97,6 +99,11 @@ public class GameManager : MonoBehaviour {
         OnGameStateChanged?.Invoke(newState);
     }
 
+    private void OpenLoseMenu()
+    {
+        loseMenu.SetActive(true);
+    }
+
     private void OpenWinMenu()
     {
         winMenu.SetActive(true);
@@ -105,6 +112,10 @@ public class GameManager : MonoBehaviour {
 
     public void ToLevelTwo() {
         SceneManager.LoadScene("Level2");
+    }
+
+    public void ToLevelOne() {
+        SceneManager.LoadScene("Level1");
     }
 
     public void showPause() {
