@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     public GameObject fireworks;
     public GameObject winMenu;
     public GameObject loseMenu;
+    public AudioSource victorySound;
+    public AudioSource loseSound;
 
     private void Awake() {
         Instance = this;
@@ -79,12 +81,14 @@ public class GameManager : MonoBehaviour {
                 Instantiate(fireworks, new Vector3(-11, -4.2f, 0), Quaternion.Euler(-100, 0, 0));
                 PlayerPrefs.SetInt("LevelOneCompleted", 1);
                 PathPoints.instance.Clear();
+                victorySound.Play();
                 break;
             case GameState.Lose:
                 text.text = "You lose :(";
                 OpenLoseMenu();
                 // StartCoroutine(showMainMenu());
                 PathPoints.instance.Clear();
+                loseSound.Play();
                 break;
             case GameState.Pause:
                 text.text = "Game paused";
