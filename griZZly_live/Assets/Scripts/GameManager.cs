@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject settingsMenu;
     GameState lastGameState;
+    public GameObject fireworks;
+    public GameObject winMenu;
 
     private void Awake() {
         Instance = this;
@@ -70,12 +72,17 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.Win:
                 text.text = "You WIN!!!";
-                StartCoroutine(showMainMenu());
+                // StartCoroutine(showMainMenu());
+                OpenWinMenu();
+                // particle käitub 3D maailmas
+                Instantiate(fireworks, new Vector3(-11, -4.2f, 0), Quaternion.Euler(-100, 0, 0));
                 PlayerPrefs.SetInt("LevelOneCompleted", 1);
+                PathPoints.instance.Clear();
                 break;
             case GameState.Lose:
                 text.text = "You lose :(";
                 StartCoroutine(showMainMenu());
+                PathPoints.instance.Clear();
                 break;
             case GameState.Pause:
                 text.text = "Game paused";
@@ -88,6 +95,16 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Game state changed to: " + newState);
 
         OnGameStateChanged?.Invoke(newState);
+    }
+
+    private void OpenWinMenu()
+    {
+        winMenu.SetActive(true);
+        // Time.timeScale = 0;
+    }
+
+    public void ToLevelTwo() {
+        SceneManager.LoadScene("Level2");
     }
 
     public void showPause() {

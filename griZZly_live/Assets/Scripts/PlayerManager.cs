@@ -45,7 +45,15 @@ public class PlayerManager : MonoBehaviour
         {
             IndicateDamage();
 
-            HealthBar.value -= .1f;
+            if (col.gameObject.name.Contains("Pomm"))
+            {
+                HealthBar.value -= .4f;
+            }
+            else
+            {
+                HealthBar.value -= .1f;
+            }
+
             if (HealthBar.value <= 0)
             {
                 GameManager.Instance.UpdateGameState(GameState.Lose);

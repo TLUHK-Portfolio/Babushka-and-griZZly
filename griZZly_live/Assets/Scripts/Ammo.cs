@@ -24,6 +24,8 @@ public class Ammo : MonoBehaviour {
     private void Awake() {
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Mutt").GetComponent<Collider2D>(),
             true);
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.FindWithTag("PauseButton").GetComponent<Collider2D>(),
+            true);
         lr = GetComponent<LineRenderer>();
         if (lr) lr.startColor = Color.white;
     }

@@ -38,7 +38,6 @@ public class CameraManager : MonoBehaviour {
             VMcam.Follow = player.transform;
             VMcam.m_Lens.OrthographicSize = 4f;
             transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 0, 0);
-
         }
         else if (state == GameState.EnemyTurn) {
             VMcam.Follow = enemy.transform;
@@ -53,6 +52,16 @@ public class CameraManager : MonoBehaviour {
             canChange = true;
             VMcam.Follow = GameObject.FindWithTag("Stone").transform;
             transposer.m_TrackedObjectOffset = new Vector3(0, 0, 0);
+        }
+        else if (state == GameState.Win) {
+            VMcam.Follow = GameObject.Find("Mutt").transform;
+            transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 4, 0);
+            VMcam.m_Lens.OrthographicSize = 6f;
+        }
+        else if (state == GameState.Lose) {
+            VMcam.Follow = GameObject.Find("Grizzly").transform;
+            transposer.m_TrackedObjectOffset = new Vector3(EnemyOffset, 4, 0);
+            VMcam.m_Lens.OrthographicSize = 6f;
         }
     }
 

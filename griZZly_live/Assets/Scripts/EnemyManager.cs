@@ -19,6 +19,8 @@ public class EnemyManager : MonoBehaviour
     private AudioSource source;
     GameState currentGameState;
     private bool grizzlyThrowing;
+    // hoia nulli peal kui tahad normaalset mängu, vastasel juhul saab karu ühe hitiga kotti
+    public int debugDamage = 100000;
 
     public void Awake()
     {
@@ -104,7 +106,7 @@ public class EnemyManager : MonoBehaviour
             float totalImpulse = 0;
             foreach (ContactPoint2D contact in contacts)
             {
-                totalImpulse += contact.normalImpulse * .025f;
+                totalImpulse += contact.normalImpulse * .025f + debugDamage;
             }
 
             IndicateDamage();
