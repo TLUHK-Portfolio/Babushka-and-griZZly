@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
         backgroundMusic = GameObject.Find("BackgroundMusic");
         SettingsController.GetComponent<SettingsController>().SetResolution(PlayerPrefs.GetInt("ResolutionIndex"));
         SettingsController.GetComponent<SettingsController>().LoadValues();
+
+        GameObject.Find("Intro").SetActive(false);
     }
 
     public void QuitGame ()
