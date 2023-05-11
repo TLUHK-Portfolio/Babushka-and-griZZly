@@ -10,6 +10,8 @@ public class VideoPlayerEndReachedEvent : MonoBehaviour {
     void Start() {
         AudioListener.volume = PlayerPrefs.GetFloat("VolumeValue", 100f) / 100f;
         videoPlayer.loopPointReached += VideoPlayer_loopPointReached;
+
+        GameObject.Find("Intro").SetActive(true);
     }
 
     private void VideoPlayer_loopPointReached(VideoPlayer source) {

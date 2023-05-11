@@ -74,7 +74,7 @@ public class SettingsController : MonoBehaviour
             PopulateDResolutionDropdown();
         }
 
-        if (resolutionIndex == null)
+        if (resolutionIndex == null || resolutionIndex == 1000)
         {
             resolutionIndex = filteredResolutions.Count - 1;
         }

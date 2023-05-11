@@ -38,6 +38,32 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             PauseHandler();
         }
+
+        // loeme x sekundit ja siis kontrollime uuesti kas visatav objekt on tekkinud
+        // kui pole tekkinud, siis muudame kelle käik on
+        checkIfGameStuck();
+    }
+
+    private void checkIfGameStuck()
+    {
+        GameState state = GameManager.Instance.State;
+
+        if (state == GameState.PlayerTurn) return;
+
+        StartCoroutine(changeTurn(state));
+    }
+
+    IEnumerator changeTurn(GameState state)
+    {
+        yield return new WaitForSeconds(6);
+
+        GameState newState = GameManager.Instance.State;
+
+        if (state == newState)
+        {
+            Debug.Log("Game stuck, changing to player's turn");
+            UpdateGameState(GameState.PlayerTurn);
+        }
     }
 
     public void ToMainMenu() {
