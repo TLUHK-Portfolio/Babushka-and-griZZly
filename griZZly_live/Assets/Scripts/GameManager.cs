@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
     {
         GameState state = GameManager.Instance.State;
 
-        if (state == GameState.PlayerTurn) return;
+        if (state == GameState.PlayerTurn || state == GameState.Lose || state == GameState.Win || state == GameState.Intro || state == GameState.Pause) return;
 
         StartCoroutine(changeTurn(state));
     }
