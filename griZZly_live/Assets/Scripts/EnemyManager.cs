@@ -145,6 +145,8 @@ public class EnemyManager : MonoBehaviour
             if (child.GetComponent<MeshRenderer>())
             {
                 child.GetComponent<MeshRenderer>().material.color = Color.red;
+            } else if (child.GetComponent<SpriteRenderer>()) {
+                child.GetComponent<SpriteRenderer>().material.color = Color.red;
             }
         }
 
@@ -158,6 +160,8 @@ public class EnemyManager : MonoBehaviour
             if (child.GetComponent<MeshRenderer>())
             {
                 child.GetComponent<MeshRenderer>().material.color = origColor;
+            } else if (child.GetComponent<SpriteRenderer>()) {
+                child.GetComponent<SpriteRenderer>().material.color = origColor;
             }
         }
     }
