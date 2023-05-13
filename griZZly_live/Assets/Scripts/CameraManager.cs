@@ -35,13 +35,10 @@ public class CameraManager : MonoBehaviour {
     public void GameManagerOnGameStateChanged(GameState state) {
         if (state == GameState.Intro) { }
         else if (state == GameState.PlayerTurn) {
-            VMcam.Follow = player.transform;
-            VMcam.m_Lens.OrthographicSize = 4f;
-            transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 0, 0);
+            StartCoroutine(showPlayer());
         }
         else if (state == GameState.EnemyTurn) {
-            VMcam.Follow = enemy.transform;
-            transposer.m_TrackedObjectOffset = new Vector3(EnemyOffset, 0, 0);
+            StartCoroutine(showEnemy());
         }
         else if (state == GameState.FallowAmmo1) {
             canChange = true;
@@ -94,5 +91,18 @@ public class CameraManager : MonoBehaviour {
             yield return new WaitForSeconds(3);
             startMovement = true;
         }
+    }
+    
+    IEnumerator showPlayer() {
+        yield return new WaitForSeconds(1);
+        VMcam.Follow = player.transform;
+        VMcam.m_Lens.OrthographicSize = 4f;
+        transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 0, 0);
+    }
+
+    IEnumerator showEnemy() {
+        yield return new WaitForSeconds(1);
+        VMcam.Follow = enemy.transform;
+        transposer.m_TrackedObjectOffset = new Vector3(EnemyOffset, 0, 0);
     }
 }

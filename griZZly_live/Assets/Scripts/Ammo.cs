@@ -97,7 +97,7 @@ public class Ammo : MonoBehaviour {
 
     IEnumerator NextStop() {
         //Wait for 3 seconds
-        yield return new WaitForSeconds(destroyOnCollision ? .5f : 3f);
+        yield return new WaitForSeconds(destroyOnCollision ? 1.5f : 3f);
         Destroy(gameObject);
 
         switch (GameManager.Instance.State) {

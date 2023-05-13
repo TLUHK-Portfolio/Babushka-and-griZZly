@@ -7,11 +7,9 @@ public class Rope : MonoBehaviour {
     public Transform StartPoint;
     public Transform EndPoint;
     public GameObject AmmoPrefab;
-    public GameObject Player;
     public float force;
     public float maxForce;
-    //public TMP_Text angle_val;
-    //public TMP_Text force_val;
+
 
     private LineRenderer lineRenderer;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
@@ -29,8 +27,7 @@ public class Rope : MonoBehaviour {
     public Vector3 ammoForce2;
     public Vector3 ammoDirection;
     private bool ammoCreated;
-    //private List<float> shootingAngle = new List<float>(2);
-    //private List<float> shootingForce = new List<float>(2);
+
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -40,11 +37,6 @@ public class Rope : MonoBehaviour {
             ropeSegments.Add(new RopeSegment(ropeStartPoint));
             ropeStartPoint.y -= ropeSegLen;
         }
-
-        //shootingAngle.Add(0);
-        //shootingAngle.Add(0);
-        //shootingForce.Add(0);
-        //shootingForce.Add(0);
     }
 
     void Update() {
@@ -87,12 +79,6 @@ public class Rope : MonoBehaviour {
             Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
             ammoDirection = (pos2 - pos1).normalized; 
-            //shootingAngle[0] = Vector2.Angle(pos1, pos2);
-            //shootingForce[0] = ammoForce.magnitude;
-            /*if (Player) {
-                Player.transform.position = new Vector3(ammo.transform.position.x-.7f, Player.transform.position.y, Player.transform.position.z);
-            }*/
-            //updateStats();
         }
 
         float currX = AmmoStartingPos.transform.position.x;
@@ -106,19 +92,11 @@ public class Rope : MonoBehaviour {
         }
     }
 
-    /*private void updateStats() {
-        angle_val.text = Mathf.FloorToInt(shootingAngle[0]) + "\n" + Mathf.FloorToInt(shootingAngle[1]);
-        force_val.text = Mathf.FloorToInt(shootingForce[0]) + "\n" + Mathf.FloorToInt(shootingForce[1]);
-    }*/
-
     public void CreateAmmo() {
         if (!ammo) {
             ammo = Instantiate(AmmoPrefab).GetComponent<Rigidbody2D>();
             ammo.isKinematic = true;
             ammo.position = AmmoStartingPos.transform.position;
-            /*if (Player) {
-                Player.transform.position = new Vector3(AmmoStartingPos.transform.position.x-.7f, Player.transform.position.y, Player.transform.position.z);
-            }*/
         }
     }
 
@@ -126,15 +104,8 @@ public class Rope : MonoBehaviour {
         ammo.isKinematic = false;
         Vector3 ammoForce = (ammo.transform.position - AmmoStartingPos.transform.position) * (force * -1); // mousePositionWorld
         ammo.velocity = ammoForce;
-        //Vector2 pos1 = ammo.transform.position; //new Vector2(mousePositionWorld.x, mousePositionWorld.y);
-        //Vector2 pos2 = AmmoStartingPos.transform.position; //new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
-        //float angle = Vector2.Angle(pos1, pos2);
-        //shootingAngle[1] = angle;
-        //shootingForce[1] = ammoForce.magnitude;
-        //updateStats();
         ammo.GetComponent<Ammo>().Release();
         ammo = null;
-        //ammoCollider = null;
     }
 
     private void FixedUpdate() {
@@ -176,7 +147,7 @@ public class Rope : MonoBehaviour {
         RopeSegment endSegment = ropeSegments[ropeSegments.Count - 1];
         endSegment.posNow = EndPoint.position;
         ropeSegments[ropeSegments.Count - 1] = endSegment;
-
+        
         for (int i = 0; i < segmentLength - 1; i++) {
             RopeSegment firstSeg = ropeSegments[i];
             RopeSegment secondSeg = ropeSegments[i + 1];
@@ -227,14 +198,14 @@ public class Rope : MonoBehaviour {
                     // ok
                     segment.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
                     segment2.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
-                    //segment.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
-                    //segment2.posNow = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
                 }
 
                 ropeSegments[i] = segment;
                 ropeSegments[i + 1] = segment2;
             }
         }
+        
+        ropeSegments[ropeSegments.Count - 1] = endSegment;
     }
 
     private void DrawRope() {
