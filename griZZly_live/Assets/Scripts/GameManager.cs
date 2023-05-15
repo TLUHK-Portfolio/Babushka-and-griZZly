@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator changeTurn(GameState state)
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(7);
 
         GameState newState = GameManager.Instance.State;
 

@@ -20,6 +20,8 @@ public class Ammo : MonoBehaviour {
     private LineRenderer lr; // projectile
     private GameObject ropeObject;
     private Rope ropeScript;
+    public AudioSource kodumasinaHitSound;
+    public AudioSource mutiKoduHitSound;
 
     private void Awake() {
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Mutt").GetComponent<Collider2D>(),
@@ -90,6 +92,19 @@ public class Ammo : MonoBehaviour {
 
             isSplashCreated = true;
             source.Play();
+        }
+
+        if (collision.collider.tag == "TakistusObject") {
+            // karukoobas
+            if (kodumasinaHitSound) {
+                kodumasinaHitSound.Play();
+            }
+        }
+        else if (collision.collider.tag == "BabushkaHouse") {
+            // kivi
+            if (kodumasinaHitSound) {
+                mutiKoduHitSound.Play();
+            }
         }
 
         StartCoroutine(NextStop());

@@ -20,7 +20,8 @@ public class EnemyManager : MonoBehaviour
     GameState currentGameState;
     private bool grizzlyThrowing;
     // hoia nulli peal kui tahad normaalset mängu, vastasel juhul saab karu ühe hitiga kotti
-    public int debugDamage = 100000;
+    public int debugDamage = 0;
+    public AudioSource grizzlyHitSound;
 
     public void Awake()
     {
@@ -114,6 +115,11 @@ public class EnemyManager : MonoBehaviour
             }
 
             IndicateDamage();
+
+            if (grizzlyHitSound)
+            {
+                grizzlyHitSound.Play();
+            }
 
             HealthBar.value -= totalImpulse;
             if (HealthBar.value <= 0) {

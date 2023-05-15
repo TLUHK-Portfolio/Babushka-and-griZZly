@@ -329,6 +329,12 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!82 &192279876 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5073362912753114867, guid: 7a811703247b2474db4b3027fb9c8c8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 443104318387468134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &232848967
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +832,7 @@ GameObject:
   - component: {fileID: 429271078}
   m_Layer: 0
   m_Name: euroalus1
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -959,7 +965,7 @@ GameObject:
   - component: {fileID: 468262249}
   m_Layer: 0
   m_Name: Kast2
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1612,7 +1618,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 941618463}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
@@ -2832,7 +2838,7 @@ GameObject:
   - component: {fileID: 787922935}
   m_Layer: 0
   m_Name: euroalus1 (1)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2977,7 +2983,7 @@ GameObject:
   - component: {fileID: 833560911}
   m_Layer: 0
   m_Name: kast1 (1)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3863,7 +3869,7 @@ GameObject:
   - component: {fileID: 1053234009}
   m_Layer: 0
   m_Name: euroalus1 (3)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3996,7 +4002,7 @@ GameObject:
   - component: {fileID: 1117335407}
   m_Layer: 0
   m_Name: kast1
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4129,7 +4135,7 @@ GameObject:
   - component: {fileID: 1141985431}
   m_Layer: 0
   m_Name: Kast2 (1)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4338,7 +4344,7 @@ GameObject:
   - component: {fileID: 1176602302}
   m_Layer: 0
   m_Name: euroalus1 (5)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4989,7 +4995,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
     m_HighlightedColor: {r: 0.62352943, g: 0.62352943, b: 0.62352943, a: 1}
     m_PressedColor: {r: 0.42352942, g: 0.42352942, b: 0.42352942, a: 0.9490196}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5007,7 +5013,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1403485684}
   m_OnClick:
     m_PersistentCalls:
@@ -5076,7 +5082,7 @@ GameObject:
   - component: {fileID: 1415721529}
   m_Layer: 0
   m_Name: kast1 (2)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5268,7 +5274,7 @@ GameObject:
   - component: {fileID: 1435214865}
   m_Layer: 0
   m_Name: KaruKoobas
-  m_TagString: Untagged
+  m_TagString: TakistusObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6220,7 +6226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: level 2
+  m_text: level 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89bdc450ae8e6454094f562fa735858d, type: 2}
   m_sharedMaterial: {fileID: 5850350706595846485, guid: 89bdc450ae8e6454094f562fa735858d,
@@ -6230,8 +6236,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280177321
-  m_fontColor: {r: 0.6627451, g: 0.32156864, b: 0.11764707, a: 1}
+    rgba: 4287730065
+  m_fontColor: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6490,7 +6496,7 @@ GameObject:
   - component: {fileID: 1880908269}
   m_Layer: 0
   m_Name: euroalus1 (2)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7349,7 +7355,7 @@ GameObject:
   - component: {fileID: 2079419807}
   m_Layer: 0
   m_Name: euroalus1 (4)
-  m_TagString: Untagged
+  m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7869,6 +7875,11 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1884640704}
+    - target: {fileID: 164929117653565247, guid: e1d47fab63cdf524b96d4dc7ec7c5144,
+        type: 3}
+      propertyPath: mutikeHitSound
+      value: 
+      objectReference: {fileID: 164929117823676206}
     - target: {fileID: 415258421717007340, guid: e1d47fab63cdf524b96d4dc7ec7c5144,
         type: 3}
       propertyPath: m_RootOrder
@@ -8026,6 +8037,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1d47fab63cdf524b96d4dc7ec7c5144, type: 3}
+--- !u!82 &164929117823676206 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6843007363222288032, guid: e1d47fab63cdf524b96d4dc7ec7c5144,
+    type: 3}
+  m_PrefabInstance: {fileID: 164929117823676205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &443104318387468134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8147,6 +8164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073362912753114867, guid: 7a811703247b2474db4b3027fb9c8c8f,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5792358786017666680, guid: 7a811703247b2474db4b3027fb9c8c8f,
         type: 3}
@@ -8270,6 +8292,7 @@ MonoBehaviour:
   HealthBar: {fileID: 1371077223}
   damageFlashTime: 0.15
   debugDamage: 0
+  grizzlyHitSound: {fileID: 192279876}
 --- !u!60 &919132148037868329
 PolygonCollider2D:
   m_ObjectHideFlags: 0

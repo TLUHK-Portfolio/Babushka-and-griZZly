@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     public float damageFlashTime = .45f;
     private Color origColor;
     public bool mutikeThrowing;
+    public float debugDamage = 0;
+    public AudioSource mutikeHitSound;
 
     private void Awake() {
         GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
@@ -53,6 +55,13 @@ public class PlayerManager : MonoBehaviour
             else
             {
                 HealthBar.value -= .1f;
+            }
+
+            HealthBar.value -= debugDamage;
+
+            if (mutikeHitSound)
+            {
+                mutikeHitSound.Play();
             }
 
             if (HealthBar.value <= 0) {
