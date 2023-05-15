@@ -42,21 +42,18 @@ public class Rope : MonoBehaviour {
     void Update() {
         DrawRope();
 
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0))
-        {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
             if (hit.collider != null) {
-                if (hit.collider.name == "PauseButton")
-                {
+                if (hit.collider.name == "PauseButton") {
                     return;
                 }
             }
         }
 
         if (GameManager.Instance.State == GameState.PlayerTurn) {
-            // Input.GetMouseButtonDown(0) && 
             if (Input.GetMouseButtonDown(0) && ammo) {
                 moveToMouse = true;
             }
@@ -78,17 +75,28 @@ public class Rope : MonoBehaviour {
             ammoForce2 = ammoForce;
             Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
-            ammoDirection = (pos2 - pos1).normalized; 
-        }
+            ammoDirection = (pos2 - pos1).normalized;
 
-        float currX = AmmoStartingPos.transform.position.x;
 
-        float ratio = (currX - xStart) / (xEnd - xStart);
-        if (ratio > 0 && ammoForce.magnitude < maxForce) {
-            indexMousePos = (int)(segmentLength * ratio);
-            if (ammo && moveToMouse) {
-                ammo.transform.position = mousePositionWorld;
-            }
+            float currX = AmmoStartingPos.transform.position.x;
+
+            float ratio = (currX - xStart) / (xEnd - xStart);
+            if (ratio > 0) {
+                indexMousePos = (int)(segmentLength * ratio);
+                if (ammoForce.magnitude < maxForce) {
+                    ammo.transform.position = mousePositionWorld;
+                }
+                else {
+
+                    Debug.Log(ammoForce.x);
+                    Debug.Log(ammoForce.y);
+                }
+            } /*else if (ammo && moveToMouse) {
+            Vector3 lookAt = mousePositionWorld;
+            float AngleRad = Mathf.Atan2(lookAt.y - ammo.transform.position.y, lookAt.x - ammo.transform.position.x);
+            float AngleDeg = (180 / Mathf.PI) * AngleRad;
+            ammo.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+        }*/
         }
     }
 
@@ -102,7 +110,8 @@ public class Rope : MonoBehaviour {
 
     void Shoot() {
         ammo.isKinematic = false;
-        Vector3 ammoForce = (ammo.transform.position - AmmoStartingPos.transform.position) * (force * -1); // mousePositionWorld
+        Vector3 ammoForce =
+            (ammo.transform.position - AmmoStartingPos.transform.position) * (force * -1); // mousePositionWorld
         ammo.velocity = ammoForce;
         ammo.GetComponent<Ammo>().Release();
         ammo = null;
@@ -132,22 +141,11 @@ public class Rope : MonoBehaviour {
     }
 
     private void ApplyConstraint() {
-        //Constrant to Mouse
-        //RopeSegment firstSegment = ropeSegments[0];
-        //firstSegment.posNow = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //ropeSegments[0] = firstSegment;
-
         //Constrant to First Point 
         RopeSegment firstSegment = ropeSegments[0];
         firstSegment.posNow = StartPoint.position;
         ropeSegments[0] = firstSegment;
 
-
-        //Constrant to Second Point 
-        RopeSegment endSegment = ropeSegments[ropeSegments.Count - 1];
-        endSegment.posNow = EndPoint.position;
-        ropeSegments[ropeSegments.Count - 1] = endSegment;
-        
         for (int i = 0; i < segmentLength - 1; i++) {
             RopeSegment firstSeg = ropeSegments[i];
             RopeSegment secondSeg = ropeSegments[i + 1];
@@ -183,9 +181,10 @@ public class Rope : MonoBehaviour {
                 RopeSegment segment2 = ropeSegments[i + 1];
                 if (ammoForce.magnitude >= maxForce) {
                     // tõmbab liiga tugevalt
+                    //Debug.Log("liiga tugevalt!");
                     segment.posNow = new Vector2(ammo.position.x, ammo.position.y);
                     segment2.posNow = new Vector2(ammo.position.x, ammo.position.y);
-                }
+                }/*
                 else if (mousePositionWorld.x > AmmoStartingPos.transform.position.x) {
                     // tõmbab vales suunas
                     //Debug.Log("mis nüüd juhtus");
@@ -193,7 +192,7 @@ public class Rope : MonoBehaviour {
                 else if (mousePositionWorld.y > AmmoStartingPos.transform.position.y) {
                     // tõmbab vales suunas
                     //Debug.Log("mis nüüd juhtus");
-                }
+                }*/
                 else {
                     // ok
                     segment.posNow = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
@@ -204,7 +203,10 @@ public class Rope : MonoBehaviour {
                 ropeSegments[i + 1] = segment2;
             }
         }
-        
+
+        //Constrant to Second Point 
+        RopeSegment endSegment = ropeSegments[ropeSegments.Count - 1];
+        endSegment.posNow = EndPoint.position;
         ropeSegments[ropeSegments.Count - 1] = endSegment;
     }
 
@@ -230,5 +232,4 @@ public class Rope : MonoBehaviour {
             posOld = pos;
         }
     }
-    
 }

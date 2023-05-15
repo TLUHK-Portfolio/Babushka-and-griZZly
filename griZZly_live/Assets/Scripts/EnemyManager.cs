@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -60,12 +60,16 @@ public class EnemyManager : MonoBehaviour
             onShootingAction = false;
             animator.SetBool("viska", false);
             float ai = Random.Range(.5f, 1.5f);
+            if (SceneManager.GetActiveScene().buildIndex == 2) {
+                ai = Random.Range(.75f, 1.25f);
+            }
+
             Quaternion Rotation = Quaternion.Euler(0, 0, 45f * ai);
             ammo.isKinematic = false;
             Vector2 f = Rotation * Vector2.up * force;
             ammo.AddForce(f, ForceMode2D.Impulse);
             ammo.GetComponent<Ammo>().Release();
-            StartCoroutine("EnableCollider");
+            StartCoroutine(EnableCollider());
         }
     }
 
@@ -112,30 +116,11 @@ public class EnemyManager : MonoBehaviour
             IndicateDamage();
 
             HealthBar.value -= totalImpulse;
-            if (HealthBar.value <= 0)
-            {
-                GameManager.Instance.UpdateGameState(GameState.Win);
+            if (HealthBar.value <= 0) {
+                StartCoroutine(waitForIt());
             }
         }
-
-        // if (col.gameObject.tag != "Stone")
-        // {
-        //     ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
-        //     col.GetContacts(contacts);
-        //     float totalImpulse = 0;
-        //     foreach (ContactPoint2D contact in contacts)
-        //     {
-        //         totalImpulse += contact.normalImpulse * .05f;
-        //     }
-
-        //     IndicateDamage();
-
-        //     HealthBar.value -= totalImpulse;
-        //     if (HealthBar.value <= 0)
-        //     {
-        //         GameManager.Instance.UpdateGameState(GameState.Win);
-        //     }
-        // }
+        
     }
 
     private void IndicateDamage()
@@ -179,4 +164,12 @@ public class EnemyManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         col.enabled = true;
     }
+    
+    IEnumerator waitForIt()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.UpdateGameState(GameState.Win);
+    }
+    
+    
 }

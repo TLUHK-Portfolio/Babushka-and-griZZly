@@ -129,7 +129,6 @@ public class Ammo : MonoBehaviour {
         float simulationStep = 0.05f; //Will add a point every 0.1 secs.
 
         int steps = (int)(simulateForDuration / simulationStep); //50 in this example
-        //lr.positionCount = 0;
         List<Vector2> lineRendererPoints = new List<Vector2>();
         Vector2 calculatedPosition;
         Vector2 directionVector = ropeScript.ammoDirection;

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,9 +55,8 @@ public class PlayerManager : MonoBehaviour
                 HealthBar.value -= .1f;
             }
 
-            if (HealthBar.value <= 0)
-            {
-                GameManager.Instance.UpdateGameState(GameState.Lose);
+            if (HealthBar.value <= 0) {
+                StartCoroutine(waitForIt());
             }
         }
     }
@@ -87,6 +87,12 @@ public class PlayerManager : MonoBehaviour
                 child.GetComponent<SpriteRenderer>().material.color = origColor;
             }
         }
+    }
+    
+    IEnumerator waitForIt()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.UpdateGameState(GameState.Lose);
     }
 
 }

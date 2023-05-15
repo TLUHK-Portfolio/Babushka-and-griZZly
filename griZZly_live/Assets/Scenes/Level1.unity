@@ -2392,6 +2392,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Close
       objectReference: {fileID: 0}
+    - target: {fileID: 2819792172868501695, guid: 920365e4150d8d449b1b43c3d9417bfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: PauseButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3166402675974712255, guid: 920365e4150d8d449b1b43c3d9417bfc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

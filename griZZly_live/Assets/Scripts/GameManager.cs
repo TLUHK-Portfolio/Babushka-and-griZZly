@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour {
             case GameState.Intro:
                 break;
             case GameState.PlayerTurn:
-                text.text = "Babushka turn";
+                text.text = "Babushka's turn";
                 break;
             case GameState.FallowAmmo1:
                 text.text = "Babushka attacks";
