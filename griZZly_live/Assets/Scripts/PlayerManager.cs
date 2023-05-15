@@ -44,7 +44,8 @@ public class PlayerManager : MonoBehaviour
     {
         Debug.Log(gameObject.name + " collided with " + col.collider.name);
 
-        if (!mutikeThrowing)
+        // if (!mutikeThrowing)
+        if (col.gameObject.tag == "Stone" || col.gameObject.tag == "Pomm" || col.gameObject.tag == "BabushkaHouse")
         {
             IndicateDamage();
 

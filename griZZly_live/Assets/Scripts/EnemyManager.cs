@@ -104,7 +104,8 @@ public class EnemyManager : MonoBehaviour
     {
         Debug.Log(gameObject.name + " collided with " + col.collider.name);
 
-        if (!grizzlyThrowing)
+        // if (!grizzlyThrowing)
+        if (col.gameObject.tag == "Ammo" || col.gameObject.tag == "TakistusObject")
         {
             ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
             col.GetContacts(contacts);

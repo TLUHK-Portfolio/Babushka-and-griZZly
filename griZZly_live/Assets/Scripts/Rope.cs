@@ -45,10 +45,13 @@ public class Rope : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-            if (hit.collider != null) {
-                if (hit.collider.name == "PauseButton") {
-                    return;
+            RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction);
+            foreach (RaycastHit2D h in hits) {
+                if (h.collider != null) {
+                    if (h.collider.name == "PauseButton" || h.collider.name == "Close") {
+                        Debug.Log("PauseButton or Close hit with raycast");
+                        return;
+                    }
                 }
             }
         }

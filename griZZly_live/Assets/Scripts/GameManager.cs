@@ -173,6 +173,10 @@ public class GameManager : MonoBehaviour {
         // kui pausimenüü on hetkel ees
         if (State == GameState.Pause) {
             disablePause();
+
+            if (GameObject.Find("SettingsMenu")) {
+                GameObject.Find("SettingsMenu").SetActive(false);
+            }
         }
         else {
             lastGameState = State;
