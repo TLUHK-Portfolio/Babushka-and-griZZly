@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
         Debug.Log(gameObject.name + " collided with " + col.collider.name);
 
         // if (!mutikeThrowing)
-        if (col.gameObject.tag == "Stone" || col.gameObject.tag == "Pomm" || col.gameObject.tag == "BabushkaHouse")
+        /*if (col.gameObject.tag == "Stone" || col.gameObject.tag == "Pomm" || col.gameObject.tag == "BabushkaHouse")
         {
             IndicateDamage();
 
@@ -68,7 +68,31 @@ public class PlayerManager : MonoBehaviour
             if (HealthBar.value <= 0) {
                 StartCoroutine(waitForIt());
             }
+        }*/
+        
+        if (col.gameObject.tag == "Stone" || col.gameObject.tag == "Pomm" || col.gameObject.tag == "BabushkaHouse")
+        {
+            ContactPoint2D[] contacts = new ContactPoint2D[col.contactCount];
+            col.GetContacts(contacts);
+            float totalImpulse = 0;
+            foreach (ContactPoint2D contact in contacts)
+            {
+                totalImpulse += contact.normalImpulse * .025f + debugDamage;
+            }
+
+            IndicateDamage();
+
+            if (mutikeHitSound)
+            {
+                mutikeHitSound.Play();
+            }
+
+            HealthBar.value -= totalImpulse;
+            if (HealthBar.value <= 0) {
+                StartCoroutine(waitForIt());
+            }
         }
+        
     }
 
     private void IndicateDamage()
