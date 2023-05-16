@@ -33,7 +33,9 @@ public class SettingsController : MonoBehaviour
         {
             if (resolutions[i].refreshRate == currentRefreshRate)
             {
-                filteredResolutions.Add(resolutions[i]);
+                if (!filteredResolutions.Contains(resolutions[i])){
+                    filteredResolutions.Add(resolutions[i]);
+                }
             }
         }
 
@@ -48,18 +50,16 @@ public class SettingsController : MonoBehaviour
                 options.Add(option);
             }
 
-            if (PlayerPrefs.GetInt("ResolutionIndex") != null)
+            if (filteredResolutions[i].width == Screen.currentResolution.width && filteredResolutions[i].height == Screen.currentResolution.height)
             {
-                currentResolutionIndex = PlayerPrefs.GetInt("ResolutionIndex");
-            }
-            else
-            {
-                if (filteredResolutions[i].width == Screen.currentResolution.width && filteredResolutions[i].height == Screen.currentResolution.height)
-                {
-                    currentResolutionIndex = i;
-                }
+                currentResolutionIndex = i;
             }
         }
+
+        if (PlayerPrefs.HasKey("ResolutionIndex"))
+        {
+            currentResolutionIndex = PlayerPrefs.GetInt("ResolutionIndex");
+        }        
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
@@ -68,7 +68,6 @@ public class SettingsController : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
-        Debug.Log("Resolution Index: " + resolutionIndex);
         if (filteredResolutions == null)
         {
             PopulateDResolutionDropdown();
@@ -78,6 +77,7 @@ public class SettingsController : MonoBehaviour
         {
             resolutionIndex = filteredResolutions.Count - 1;
         }
+        Debug.Log("Resolution Index: " + resolutionIndex);
 
         PlayerPrefs.SetInt("ResolutionIndex", resolutionIndex);
         Resolution resolution = filteredResolutions[resolutionIndex];

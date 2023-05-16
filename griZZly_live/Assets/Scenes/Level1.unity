@@ -6314,22 +6314,22 @@ PrefabInstance:
     - target: {fileID: 7328575922490358980, guid: 81e8c27352b584e4faa0deec7ea35674,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7328575922490358980, guid: 81e8c27352b584e4faa0deec7ea35674,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 941618463}
+      objectReference: {fileID: 1180159353}
     - target: {fileID: 7328575922490358980, guid: 81e8c27352b584e4faa0deec7ea35674,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PauseHandler
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7328575922490358980, guid: 81e8c27352b584e4faa0deec7ea35674,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81e8c27352b584e4faa0deec7ea35674, type: 3}

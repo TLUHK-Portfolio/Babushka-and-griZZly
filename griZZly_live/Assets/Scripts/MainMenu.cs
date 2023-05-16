@@ -7,10 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     private GameObject backgroundMusic;
 
-     [SerializeField]
-     private GameObject SettingsController;
+    [SerializeField] private GameObject SettingsController;
 
     private void Start() {
+        // PlayerPrefs.DeleteAll();
         backgroundMusic = GameObject.Find("BackgroundMusic");
         SettingsController.GetComponent<SettingsController>().SetResolution(PlayerPrefs.GetInt("ResolutionIndex", 1000));
         SettingsController.GetComponent<SettingsController>().LoadValues();

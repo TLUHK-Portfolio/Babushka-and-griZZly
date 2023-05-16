@@ -3773,4 +3773,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08d944c6c8103047a63cfb7f2d565dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SettingsController: {fileID: 0}
+  SettingsController: {fileID: 1269987640}
