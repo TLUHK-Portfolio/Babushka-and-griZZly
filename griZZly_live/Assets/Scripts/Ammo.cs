@@ -102,7 +102,7 @@ public class Ammo : MonoBehaviour {
         }
         else if (collision.collider.tag == "BabushkaHouse") {
             // kivi
-            if (kodumasinaHitSound) {
+            if (mutiKoduHitSound) {
                 mutiKoduHitSound.Play();
             }
         }
@@ -111,10 +111,9 @@ public class Ammo : MonoBehaviour {
     }
 
     IEnumerator NextStop() {
-        //Wait for 3 seconds
-        yield return new WaitForSeconds(destroyOnCollision ? 1.5f : 3f);
+        //Wait for 2 seconds
+        yield return new WaitForSeconds(destroyOnCollision ? 0.2f : 2f);
         Destroy(gameObject);
-
         switch (GameManager.Instance.State) {
             case GameState.FallowAmmo1:
                 GameManager.Instance.UpdateGameState(GameState.EnemyTurn);
