@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     public GameObject loseMenu;
     public AudioSource victorySound;
     public AudioSource loseSound;
+    private bool gameEnded = false;
 
     private void Awake() {
         Instance = this;
@@ -83,6 +84,9 @@ public class GameManager : MonoBehaviour {
 
     public void UpdateGameState(GameState newState) {
         State = newState;
+
+        if (gameEnded) return;
+
         switch (newState) {
             case GameState.Intro:
                 break;
@@ -96,7 +100,7 @@ public class GameManager : MonoBehaviour {
                 text.text = "GriZZly attacks";
                 break;
             case GameState.EnemyTurn:
-                text.text = "GriZZly turn";
+                text.text = "GriZZly's turn";
                 StartCoroutine(EnemyAttacks());
                 break;
             case GameState.Win:
@@ -108,13 +112,17 @@ public class GameManager : MonoBehaviour {
                 PlayerPrefs.SetInt("LevelOneCompleted", 1);
                 PathPoints.instance.Clear();
                 victorySound.Play();
+
+                gameEnded = true;
                 break;
             case GameState.Lose:
-                text.text = "You lose :(";
+                text.text = "You lost :(";
                 OpenLoseMenu();
                 // StartCoroutine(showMainMenu());
                 PathPoints.instance.Clear();
                 loseSound.Play();
+
+                gameEnded = true;
                 break;
             case GameState.Pause:
                 text.text = "Game paused";

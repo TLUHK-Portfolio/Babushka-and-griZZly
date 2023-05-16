@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Cinemachine;
 using UnityEngine;
@@ -51,15 +52,29 @@ public class CameraManager : MonoBehaviour {
             transposer.m_TrackedObjectOffset = new Vector3(0, 0, 0);
         }
         else if (state == GameState.Win) {
-            VMcam.Follow = GameObject.Find("Mutt").transform;
-            transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 4, 0);
-            VMcam.m_Lens.OrthographicSize = 6f;
+            StartCoroutine(waitSomeTimeOnWin());
         }
         else if (state == GameState.Lose) {
-            VMcam.Follow = GameObject.Find("Grizzly").transform;
-            transposer.m_TrackedObjectOffset = new Vector3(EnemyOffset, 4, 0);
-            VMcam.m_Lens.OrthographicSize = 6f;
+            StartCoroutine(waitSomeTimeOnLose());
         }
+    }
+
+    IEnumerator waitSomeTimeOnWin()
+    {
+        yield return new WaitForSeconds(1);
+
+        VMcam.Follow = GameObject.Find("Mutt").transform;
+        transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 4, 0);
+        VMcam.m_Lens.OrthographicSize = 6f;
+    }
+
+    IEnumerator waitSomeTimeOnLose()
+    {
+        yield return new WaitForSeconds(1);
+        
+        VMcam.Follow = GameObject.Find("Grizzly").transform;
+        transposer.m_TrackedObjectOffset = new Vector3(EnemyOffset, 4, 0);
+        VMcam.m_Lens.OrthographicSize = 6f;
     }
 
     void LateUpdate() {

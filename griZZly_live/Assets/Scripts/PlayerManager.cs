@@ -89,7 +89,8 @@ public class PlayerManager : MonoBehaviour
 
             HealthBar.value -= totalImpulse;
             if (HealthBar.value <= 0) {
-                StartCoroutine(waitForIt());
+                // StartCoroutine(waitForIt());
+                GameManager.Instance.UpdateGameState(GameState.Lose);
             }
         }
         
