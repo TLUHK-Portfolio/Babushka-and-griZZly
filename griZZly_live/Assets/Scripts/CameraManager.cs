@@ -61,7 +61,7 @@ public class CameraManager : MonoBehaviour {
 
     IEnumerator waitSomeTimeOnWin()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         VMcam.Follow = GameObject.Find("Mutt").transform;
         transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 4, 0);
@@ -70,7 +70,7 @@ public class CameraManager : MonoBehaviour {
 
     IEnumerator waitSomeTimeOnLose()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         
         VMcam.Follow = GameObject.Find("Grizzly").transform;
         transposer.m_TrackedObjectOffset = new Vector3(EnemyOffset, 4, 0);
