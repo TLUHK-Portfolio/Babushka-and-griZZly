@@ -81,7 +81,7 @@ public class EnemyManager : MonoBehaviour
             CreateAmmo();
             if (col)
             {
-                col.enabled = false;
+                // col.enabled = false;
             }
 
             grizzlyThrowing = true;
@@ -170,7 +170,7 @@ public class EnemyManager : MonoBehaviour
     IEnumerator EnableCollider()
     {
         yield return new WaitForSeconds(.5f);
-        col.enabled = true;
+        // col.enabled = true;
     }
     
     IEnumerator waitForIt()

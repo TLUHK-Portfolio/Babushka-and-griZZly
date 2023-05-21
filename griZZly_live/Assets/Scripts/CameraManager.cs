@@ -109,7 +109,7 @@ public class CameraManager : MonoBehaviour {
     }
     
     IEnumerator showPlayer() {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         VMcam.Follow = player.transform;
         VMcam.m_Lens.OrthographicSize = 4f;
         transposer.m_TrackedObjectOffset = new Vector3(PlayerOffset, 0, 0);
