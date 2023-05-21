@@ -47,29 +47,20 @@ public class Rope : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             // Debug.Log(hit.collider.name + " got hit wwit raycast");
             RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction);
-            
-            if (hit.collider.name == "PauseButton") {
-                Debug.Log("PauseButton hit with raycast");
-                return;
-            }
-            else if (hit.collider.name == "Close") {
-                Debug.Log("Close hit with raycast");
-                return;
-            }
 
-            // foreach (RaycastHit2D h in hits) {
-            //     if (h.collider != null) {
-            //         if (h.collider.name == "PauseButton")
-            //         {
-            //             Debug.Log("PauseButton hit with raycast");
-            //             return;
-            //         } else if (h.collider.name == "Close")
-            //         {
-            //             Debug.Log("Close hit with raycast");
-            //             return;
-            //         }
-            //     }
-            // }
+            foreach (RaycastHit2D h in hits) {
+                if (h.collider != null) {
+                    if (h.collider.name == "PauseButton")
+                    {
+                        Debug.Log("PauseButton hit with raycast");
+                        return;
+                    } else if (h.collider.name == "Close")
+                    {
+                        Debug.Log("Close hit with raycast");
+                        return;
+                    }
+                }
+            }
         }
 
         if (GameManager.Instance.State == GameState.PlayerTurn) {

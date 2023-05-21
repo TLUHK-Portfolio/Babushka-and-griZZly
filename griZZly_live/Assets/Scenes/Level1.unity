@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 429271080}
   - component: {fileID: 429271079}
   - component: {fileID: 429271078}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: euroalus1
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 468262247}
   - component: {fileID: 468262246}
   - component: {fileID: 468262249}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Kast2
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -2935,7 +2935,7 @@ GameObject:
   - component: {fileID: 787922937}
   - component: {fileID: 787922936}
   - component: {fileID: 787922935}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: euroalus1 (1)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -3164,7 +3164,7 @@ GameObject:
   - component: {fileID: 833560913}
   - component: {fileID: 833560912}
   - component: {fileID: 833560911}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: kast1 (1)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -3294,7 +3294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 844685945}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: MutiKindlus
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -3994,7 +3994,7 @@ GameObject:
   - component: {fileID: 1053234011}
   - component: {fileID: 1053234010}
   - component: {fileID: 1053234009}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: euroalus1 (3)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -4277,7 +4277,7 @@ GameObject:
   - component: {fileID: 1117335409}
   - component: {fileID: 1117335408}
   - component: {fileID: 1117335407}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: kast1
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -4410,7 +4410,7 @@ GameObject:
   - component: {fileID: 1141985433}
   - component: {fileID: 1141985432}
   - component: {fileID: 1141985431}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Kast2 (1)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -4619,7 +4619,7 @@ GameObject:
   - component: {fileID: 1176602304}
   - component: {fileID: 1176602303}
   - component: {fileID: 1176602302}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: euroalus1 (5)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -5415,7 +5415,7 @@ GameObject:
   - component: {fileID: 1415721531}
   - component: {fileID: 1415721530}
   - component: {fileID: 1415721529}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: kast1 (2)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -6355,7 +6355,7 @@ GameObject:
   - component: {fileID: 1880908271}
   - component: {fileID: 1880908270}
   - component: {fileID: 1880908269}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: euroalus1 (2)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
@@ -7328,7 +7328,7 @@ GameObject:
   - component: {fileID: 2079419809}
   - component: {fileID: 2079419808}
   - component: {fileID: 2079419807}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: euroalus1 (4)
   m_TagString: BabushkaHouse
   m_Icon: {fileID: 0}
