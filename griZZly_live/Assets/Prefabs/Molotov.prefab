@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collided: 0
   rotation: -9
-  splash: {fileID: 1478314613700728, guid: be6847dd39ab95f4daa2ed98e4f90564, type: 3}
+  splash: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
   waitUntilAirBorne: 0.5
   destroyOnCollision: 1
   kodumasinaHitSound: {fileID: 4919726592599682508}

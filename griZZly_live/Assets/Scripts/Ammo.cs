@@ -132,7 +132,7 @@ public class Ammo : MonoBehaviour {
         }
         else if (lr && ropeScript.ammoForce2.magnitude > 0 && !collided) {
             lr.positionCount = 0;
-            if (PlayerPrefs.GetInt("ShootingAid", 1) == 1 && SceneManager.GetActiveScene().buildIndex<2) {
+            if (PlayerPrefs.GetInt("ShootingAid", 1) == 1) {
                 SimulateArc();
             }
         }

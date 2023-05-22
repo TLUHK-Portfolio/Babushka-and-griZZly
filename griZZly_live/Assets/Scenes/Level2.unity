@@ -1970,7 +1970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572628577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.85, y: 7.14, z: -10.007747}
+  m_LocalPosition: {x: 5.85, y: 7.14, z: -10.007747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3310,7 +3310,7 @@ MonoBehaviour:
   VMcam: {fileID: 1359109130}
   player: {fileID: 919132148250807931}
   PlayerOffset: -5
-  EnemyOffset: 5
+  EnemyOffset: 8
   enemy: {fileID: 919132148037868327}
   ammo: {fileID: 0}
   introDuration: 2
@@ -4675,7 +4675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359109129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.85, y: 7.14, z: -10.007747}
+  m_LocalPosition: {x: 5.85, y: 7.14, z: -10.007747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

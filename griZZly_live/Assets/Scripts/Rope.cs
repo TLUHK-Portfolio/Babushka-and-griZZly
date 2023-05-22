@@ -81,7 +81,20 @@ public class Rope : MonoBehaviour {
         float xEnd = EndPoint.position.x;
         mousePositionWorld = Camera.main.ScreenToWorldPoint(new Vector3(screenMousePos.x, screenMousePos.y, 10));
         ammoForce = (mousePositionWorld - AmmoStartingPos.transform.position) * (force * -1);
-        if (moveToMouse && ammoForce.magnitude < maxForce) {
+
+        Vector3 limitedVec;
+        Vector3 playerVec = mousePositionWorld - Camera.main.ScreenToWorldPoint(AmmoStartingPos.transform.position); 
+        float distance = playerVec.magnitude;
+
+        if (distance < maxForce) {
+            limitedVec = (playerVec / distance) * 3f;
+        }
+        else {
+            limitedVec = playerVec;
+        }
+        ammo.transform.position = limitedVec + AmmoStartingPos.transform.position;
+        
+        /*if (moveToMouse && ammoForce.magnitude < maxForce) {
             ammoForce2 = ammoForce;
             Vector2 pos1 = new Vector2(mousePositionWorld.x, mousePositionWorld.y);
             Vector2 pos2 = new Vector2(AmmoStartingPos.transform.position.x, AmmoStartingPos.transform.position.y);
@@ -96,18 +109,8 @@ public class Rope : MonoBehaviour {
                 if (ammoForce.magnitude < maxForce) {
                     ammo.transform.position = mousePositionWorld;
                 }
-                else {
-
-                    Debug.Log(ammoForce.x);
-                    Debug.Log(ammoForce.y);
-                }
-            } /*else if (ammo && moveToMouse) {
-            Vector3 lookAt = mousePositionWorld;
-            float AngleRad = Mathf.Atan2(lookAt.y - ammo.transform.position.y, lookAt.x - ammo.transform.position.x);
-            float AngleDeg = (180 / Mathf.PI) * AngleRad;
-            ammo.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+            }
         }*/
-        }
     }
 
     public void CreateAmmo() {

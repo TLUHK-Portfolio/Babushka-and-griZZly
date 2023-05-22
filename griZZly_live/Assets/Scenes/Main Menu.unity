@@ -2095,6 +2095,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1478708565094551520, guid: 81e8c27352b584e4faa0deec7ea35674,
+        type: 3}
+      propertyPath: m_text
+      value: Easy shooting
+      objectReference: {fileID: 0}
     - target: {fileID: 7328575922490358980, guid: 81e8c27352b584e4faa0deec7ea35674,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -3674,6 +3679,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478708565094551520, guid: 81e8c27352b584e4faa0deec7ea35674,
+        type: 3}
+      propertyPath: m_text
+      value: Easy shooting
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478708565094551520, guid: 81e8c27352b584e4faa0deec7ea35674,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -114.58264
       objectReference: {fileID: 0}
     - target: {fileID: 7328575922490358980, guid: 81e8c27352b584e4faa0deec7ea35674,
         type: 3}
