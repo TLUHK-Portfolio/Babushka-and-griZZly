@@ -22,7 +22,7 @@ public class DemoManager : MonoBehaviour {
         source = GetComponent<AudioSource>();
         if (GameManager.Instance.State == GameState.Intro) {
          //
-         // source.Play();
+         source.Play();
         }
     }
 
@@ -31,19 +31,19 @@ public class DemoManager : MonoBehaviour {
         if (GameManager.Instance.State == GameState.Intro) {
             switch (State) {
                 case IntroState.MoveMouseToStartingPosition:
+                    if (!ammo) {
+                        ammo = Instantiate(demoAmmo, new Vector3(ammoStartPoint.position.x, ammoStartPoint.position.y, 0), Quaternion.identity);
+                        ammo.GetComponent<Rigidbody2D>().isKinematic = true;
+                    }
                     t += Time.deltaTime / introDuration;
                     demoMouse.transform.position = Vector3.Lerp(
-                        new Vector3(-15f, -7f, 0), 
-                        new Vector3(-12.64f, -2.8f, 0), 
+                        new Vector3(-20f, -16f, 0),
+                        new Vector3(-13f,-7.8f,0), //Vector3(-12.64f, -2.8f, 0),
                         t);
                     mousePos = demoMouse.transform.position;
-                    if (demoMouse.transform.position.y > -3) {
+                    if (demoMouse.transform.position.y > -8) {
                         mouseAnimator.SetBool("clicked", true);
-                        if (!ammo) {
-                            ammo = Instantiate(demoAmmo, ammoStartPoint.position, Quaternion.identity);
-                            ammo.GetComponent<Rigidbody2D>().isKinematic = true;
-                            State = IntroState.MoveMouseBack;
-                        }
+                        State = IntroState.MoveMouseBack;
                     }
 
                     break;
@@ -51,12 +51,12 @@ public class DemoManager : MonoBehaviour {
                     t2 += Time.deltaTime / 2;
                     demoMouse.transform.position = Vector3.Lerp(
                         mousePos,
-                        new Vector3(-13.64f, -3.8f, 0),
+                        new Vector3(-15.64f, -8.8f, 0),
                         t2);
                     ammo.transform.position = Vector3.Lerp(ammoStartPoint.position,
-                        new Vector3(-13.64f, -3.8f, 0),
+                        new Vector3(-15.64f, -8.8f, 0),
                         t2);
-                    if (demoMouse.transform.position.y < -3.79) {
+                    if (demoMouse.transform.position.x < -15) {
                         State = IntroState.ExitIntro;
                     }
 

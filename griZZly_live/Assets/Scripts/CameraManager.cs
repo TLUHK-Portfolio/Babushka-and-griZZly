@@ -34,7 +34,9 @@ public class CameraManager : MonoBehaviour {
     }
 
     public void GameManagerOnGameStateChanged(GameState state) {
-        if (state == GameState.Intro) { }
+        if (state == GameState.Intro) {
+            //StartCoroutine(showPlayer());
+        }
         else if (state == GameState.PlayerTurn) {
             StartCoroutine(showPlayer());
         }
@@ -97,7 +99,8 @@ public class CameraManager : MonoBehaviour {
                 VMcam.transform.position =
                     Vector3.Lerp(
                         new Vector3(7.9f, 7.3f, -10f),
-                        new Vector3(-11.6f, -1.8f, -10f),
+                        new Vector3(-15.1900005f,-6.8f,-10f),
+                        //new Vector3(-11.6f, -1.8f, -10f),
                         t); // move to babushka
             }
         }
