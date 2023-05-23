@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start() {
-        var showIntro = PlayerPrefs.GetInt("FirstGame", 1);
+        var showIntro = 1; //PlayerPrefs.GetInt("FirstGame", 1);
         if (showIntro == 1) {
             UpdateGameState(GameState.Intro);
             PlayerPrefs.SetInt("FirstGame", 0);

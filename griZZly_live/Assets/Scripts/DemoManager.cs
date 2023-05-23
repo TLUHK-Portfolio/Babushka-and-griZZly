@@ -22,7 +22,7 @@ public class DemoManager : MonoBehaviour {
         source = GetComponent<AudioSource>();
         if (GameManager.Instance.State == GameState.Intro) {
          //
-         source.Play();
+         //source.Play();
         }
     }
 
@@ -32,6 +32,7 @@ public class DemoManager : MonoBehaviour {
             switch (State) {
                 case IntroState.MoveMouseToStartingPosition:
                     if (!ammo) {
+                        source.Play();
                         ammo = Instantiate(demoAmmo, new Vector3(ammoStartPoint.position.x, ammoStartPoint.position.y, 0), Quaternion.identity);
                         ammo.GetComponent<Rigidbody2D>().isKinematic = true;
                     }
