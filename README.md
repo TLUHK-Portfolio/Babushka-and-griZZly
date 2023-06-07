@@ -24,12 +24,14 @@ Repositooriumis on järngevad kaustad:
 
 # :video_game: Babushka & griZZly mängukontseptsioon
 
-griZZly on kurjakuulutav karu, kes ühel päeval hakkab endast ohtu kujutama metsamajas elavale vanaemale (Babushka). Babushka on valmis griZZlyga võitlema, kuid tema laskemoonaks on kõik käepärane nagu moosipurgid ja molotovi kokteilid.  
-Selles 2D tulistamismängus aitad sina vanaemal oma kindlust kaitsta, olles sihtimisel täpne ning tehes strateegiliselt arukaid otsuseid. Pea meeles, et ka griZZly saab vastu rünnata. Laskmine käib korda-mööda. Karu ja mutike on statsionaarsed. Karu viskab esimesel tasemel kividega ja teisel pommidega. Karu viskab oma laskemoona käest, ning Babushka kasutab puude vahele asetatud pesunööri. Tegelastel on eluriba, mis väheneb vigastuste tekkimisel. Eluriba väheneb vastavalt laskemoona kahjutegurile ning kaugusele mängijast. Hoone/kindluse objektide kahjustused mõjutavad samuti eluriba. Laskemoona on mõlemal lõputult ehk mäng kestab seni kuni kummalgi saab elutase 0%.
-
-Mäng on jagatud kaheks tasemeks. Karu, laskemoon ja tema kindlus on teisel tasemel tugevam.
-
-Mäng on mõeldud arvutis mängimiseks ning FullHD resolutsioonis. Mängumaailma vaade on suurem, kui mänguhetkel pildis olev kaader ning kaamera liigub mööda vaadet ringi vastavalt sellele, mis hetkel on oluline. 
+„Babushka ja GriZZly“ on arvutis mängitav meelelahutusmäng kahe võimsa vastase vahel, kus mõlemad tegelased viskavad üksteise suunas esemeid. Rünnakud toimuvad kordamööda, kus
+mõlemal tegelasel on võimalus visata üks objekt korraga, luues dünaamilise ja põneva mängurütmi.
+Mängija on Babushka rollis ning tema eesmärk on olla täpsem kui GriZZly. Iga edukas vise vähendab vastase ehk GriZZly eluriba. Mäng jätkub seni, kuni ühe mängija eluriba on täielikult
+ammendunud. See paneb mängija tegema oskuslike viskeid, et saavutada võit GriZZly üle.
+Mängu haarav seiklus kulgeb läbi kahe erineva taseme, pakkudes mängijale mitmekesisust. Üks tase toimub suvise looduse taustal, teine aga talvise lumise maastiku keskel. Uus tase toob kaasa
+võimsama laskemoona ja oskuslikuma vastase.
+Mängimiseks kasutatakse hiirt, mis võimaldab täpset kontrolli. Visete tegemiseks tuleb hiirega laskemoonast lohistada, valides samal ajal viske suuna ja tugevuse. See pakub mängijale
+täieliku kontrolli oma tegude üle ning loob kaasahaarava mängukogemuse.
 
 ## Andmed
 
