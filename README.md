@@ -48,6 +48,16 @@ täieliku kontrolli oma tegude üle ning loob kaasahaarava mängukogemuse.
 3. Lahti pakitud kaustast leiab mängu nimega "Babushka&griZZly.exe" mille käivitamisel see avatakse
 4. Naudi mängu
 
+### Kasutatud rakendused
+Github - projektijuhtimine ja koodihoidla
+Unity - mängumootor
+Visual Studio Code - koodi kirjutamine
+Affinity Designer - graafika
+Reaper - heli
+Blender - animatsioon
+Figma - inspiratsioonitahvel
+
+
 ### Kasutatud abimaterjalid
 
 [Brackeys youtube kanal videomängude loomisest](https://www.youtube.com/@Brackeys/videos)  
