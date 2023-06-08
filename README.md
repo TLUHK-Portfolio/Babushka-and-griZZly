@@ -49,13 +49,13 @@ täieliku kontrolli oma tegude üle ning loob kaasahaarava mängukogemuse.
 4. Naudi mängu
 
 ### Kasutatud rakendused
-Github - projektijuhtimine ja koodihoidla
-Unity - mängumootor
-Visual Studio Code - koodi kirjutamine
-Affinity Designer - graafika
-Reaper - heli
-Blender - animatsioon
-Figma - inspiratsioonitahvel
+Github - projektijuhtimine ja koodihoidla  
+Unity - mängumootor  
+Visual Studio Code - koodi kirjutamine  
+Affinity Designer - graafika  
+Reaper - heli  
+Blender - animatsioon  
+Figma - inspiratsioonitahvel  
 
 
 ### Kasutatud abimaterjalid
